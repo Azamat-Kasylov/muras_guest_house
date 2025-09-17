@@ -1,36 +1,36 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import styled from "styled-components";
-import { FeedBackData } from "../data";
+import { FeedbackData } from "../data";
 
-const FeedBack = () => {
+const Feedback = () => {
   return (
-    <StyledFeedBack>
-      <FeedBackContent>
+    <StyledFeedback>
+      <FeedbackContent>
         <h2>Our guests</h2>
-        {FeedBackData.map((i) => (
+        {FeedbackData.map((i) => (
           <div key={i.imagePath}>
             <img src={i.imagePath} />
             <p>"{i.description}"</p>
             <p>{i.guest}</p>
           </div>
         ))}
-      </FeedBackContent>
-    </StyledFeedBack>
+      </FeedbackContent>
+    </StyledFeedback>
   );
 };
 
-const StyledFeedBack = styled.section`
-  height: 100vh;
+const StyledFeedback = styled.section`
+  min-height: 100vh;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const FeedBackContent = styled.div`
+const FeedbackContent = styled.div`
   width: 1200px;
-  padding: 0 2rem;
+  padding: 0 1rem 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -43,9 +43,6 @@ const FeedBackContent = styled.div`
   h2 {
     margin: 0;
     font-weight: normal;
-    @media (max-width: 768px) {
-      margin-bottom: 70px;
-    }
   }
 
   div {
@@ -78,4 +75,4 @@ const FeedBackContent = styled.div`
   }
 `;
 
-export default FeedBack;
+export default Feedback;

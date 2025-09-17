@@ -2,11 +2,11 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
-import Rooms from "./components/Rooms";
-import Servises from "./components/Servises";
-import FeedBack from "./components/FeedBack";
+import RoomsSection from "./components/RoomsSection";
 import Hero from "./components/Hero";
-import Gallery from "./components/Gallery";
+import ServicesSection from "./components/ServicesSection";
+import GalleryAutoCarousel from "./components/GalleryAutoCarousel";
+import FeedbackCarousel from "./components/FeedbackCarousle";
 
 function App() {
   return (
@@ -14,10 +14,10 @@ function App() {
       <Header />
       <Intro />
       <Hero />
-      <Rooms />
-      <Gallery />
-      <Servises />
-      <FeedBack />
+      <RoomsSection />
+      <GalleryAutoCarousel />
+      <ServicesSection />
+      <FeedbackCarousel />
       <Footer />
     </div>
   );

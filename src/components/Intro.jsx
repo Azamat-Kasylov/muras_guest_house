@@ -5,7 +5,7 @@ import FormArea from "./FormArea";
 const Intro = () => {
   return (
     <StyledIntro id="intro">
-      <img src="/alay2.jpg" alt="intro image" />
+      <img src="./alay2.jpg" alt="intro image" />
       <p className="suptitle">GUEST HOUSE</p>
       <p className="title">MURAS</p>
       <p className="subtitle">Welcome to Alay valley</p>
@@ -17,7 +17,7 @@ const Intro = () => {
 const StyledIntro = styled.section`
   margin: 0;
   padding: 0 16px;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

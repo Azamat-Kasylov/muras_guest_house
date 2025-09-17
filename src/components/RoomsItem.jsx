@@ -8,8 +8,8 @@ const RoomsItem = ({ title, price, description }) => {
       {roomsData.map((i) => (
         <StyledDiv key={i.imagePath}>
           <img src={i.imagePath} />
-          <p>{i.price}</p>
-          <p>{i.title}</p>
+          <p className="price">{i.price}</p>
+          <h3>{i.title}</h3>
           <p>{i.description}</p>
         </StyledDiv>
       ))}
@@ -45,24 +45,24 @@ const StyledDiv = styled.div`
   p {
     margin: 0;
     padding: 0;
+    color: #555;
   }
 
-  p:first-of-type {
+  .price {
     width: 70px;
     text-align: center;
     padding: 5px 0;
     border: 0.5px solid #fff;
     border-radius: 20px;
-    background-color: #f4d549;
-    color: #000;
+    background-color: #0077cc;
+    color: #fff;
     position: absolute;
     top: 25px;
     left: 25px;
   }
 
-  p:nth-of-type(2) {
+  h3 {
     margin: 8px 0;
-    font-weight: 700;
   }
 
   img {

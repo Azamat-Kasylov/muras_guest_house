@@ -1,17 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from "styled-components";
-import { ServisesData } from "../data";
+import { ServicesData } from "../data";
 
 const ServisesItem = ({ title, price, description }) => {
   return (
     <Wrapper>
-      {ServisesData.map((i) => (
+      {ServicesData.map((i) => (
         <StyledDiv key={i.imagePath}>
           <div>
             <img src={i.imagePath} />
           </div>
-          <p>{i.price}</p>
-          <p>{i.title}</p>
+          <p className="price">{i.price}</p>
+          <h3>{i.title}</h3>
           <p>{i.description}</p>
         </StyledDiv>
       ))}
@@ -43,9 +43,10 @@ const StyledDiv = styled.div`
   p {
     margin: 0;
     padding: 0;
+    color: #555;
   }
 
-  p:first-of-type {
+  .price {
     width: 70px;
     text-align: center;
     padding: 5px 0;
@@ -58,7 +59,7 @@ const StyledDiv = styled.div`
     left: 25px;
   }
 
-  p:nth-of-type(2) {
+  h3 {
     margin: 8px 0;
     font-weight: 700;
   }

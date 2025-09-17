@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-// import styled from "styled-components";
 import { GalleryData } from "../data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -97,7 +96,7 @@ function SimpleSlider() {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 2,
     slidesToScroll: 2,
     responsive: [
@@ -156,15 +155,10 @@ const StyledImgWrapper = styled.div`
   padding: 0 10px;
   transition: transform 0.3s;
 
-  &:hover {
-    transform: scale(1);
-  }
-
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
   }
 `;
 

@@ -6,8 +6,8 @@ const Location = () => {
   return (
     <StyledLocation>
       <div>
-        <img src="map1.png" />
-        <img src="meteo.png" />
+        <img src="./map1.png" />
+        <img src="./meteo.png" />
       </div>
     </StyledLocation>
   );

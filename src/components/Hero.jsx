@@ -6,7 +6,7 @@ const Hero = () => {
     <StyledHero id="aboutUs">
       <HeroWrapper>
         <ContentWrapper>
-          <StaticImg src="/3.jpeg" alt="Owner" />
+          <StaticImg src="./3_ainura.jpeg" alt="Owner" />
           <TextContent>
             <p>
               The Hotel Sonne Mellau in the Bregenzerwald is a place for
@@ -29,24 +29,20 @@ const Hero = () => {
 
 const StyledHero = styled.div`
   min-height: 100vh;
-  background-image: url(/14.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
 `;
 
 const HeroWrapper = styled.div`
   min-height: 100vh;
+  padding: 50px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 10%,
-    rgba(255, 255, 255, 0) 300%
-  );
+  background-color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 50px 3rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -54,7 +50,7 @@ const ContentWrapper = styled.div`
   align-self: center;
   justify-content: space-between;
   gap: 50px;
-  padding: 0 16px;
+
   @media (max-width: 768px) {
     flex-direction: column;
     display: flex;
@@ -65,8 +61,10 @@ const ContentWrapper = styled.div`
 const TextContent = styled.div`
   p {
     margin-bottom: 20px;
+    color: #555;
   }
   font-size: 24px;
+
   @media (max-width: 768px) {
     font-size: 18px;
   }
@@ -77,7 +75,7 @@ const StaticImg = styled.img`
   width: 100%;
   max-width: 50%;
   align-self: start;
-  border-radius: 20px;
+
   @media (max-width: 768px) {
     max-width: 100%;
   }

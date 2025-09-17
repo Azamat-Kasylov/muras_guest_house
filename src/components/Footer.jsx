@@ -16,7 +16,7 @@ const Footer = () => {
 
 const StyledFooter = styled.footer`
   height: 100vh;
-  background-image: url(/footer.jpg);
+  background-image: url(./footer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -36,6 +36,26 @@ const StyledFooter = styled.footer`
       rgba(0, 0, 0, 1) 10%,
       rgba(0, 0, 0, 0) 50%
     );
+  }
+
+  @media (max-width: 500px) {
+    height: 75vh;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 5%,
+        rgba(0, 0, 0, 1) 15%,
+        rgba(0, 0, 0, 0) 70%
+      );
+    }
   }
 `;
 
