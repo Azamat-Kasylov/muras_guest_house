@@ -16,12 +16,16 @@ const Intro = () => {
 
 const StyledIntro = styled.section`
   margin: 0;
-  padding: 0 16px;
+  padding: 0 50px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 500px) {
+    padding: 0 3rem;
+  }
 
   img {
     object-fit: cover;

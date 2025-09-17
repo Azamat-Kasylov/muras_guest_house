@@ -34,7 +34,7 @@ const StyledGallery = styled.section`
     flex-direction: column;
   }
   @media (max-width: 500px) {
-    padding: 50px 1rem;
+    padding: 50px 2rem;
   }
 
   .title_wrapper {
@@ -92,6 +92,7 @@ function SimpleSlider() {
 const StyledImgWrapper = styled.div`
   width: 100%;
   height: 100%;
+  padding: 0 10px;
   transition: transform 0.3s;
 
   @media (max-width: 768px) {

@@ -2,25 +2,11 @@
 import Button from "./Button";
 import NavBar from "./NavBar";
 import styled from "styled-components";
-import { useState, useRef } from "react";
+import { useState } from "react";
+import Music from "./Music";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
-
-  const [play, setPlay] = useState(false);
-  const audioRef = useRef(null);
-
-  const audioClick = () => {
-    if (!audioRef.current) return;
-
-    if (play) {
-      audioRef.current.pause();
-      setPlay(false);
-    } else {
-      audioRef.current.play();
-      setPlay(true);
-    }
-  };
 
   const handleClick = () => {
     setIsVisible(!isVisible);
@@ -31,15 +17,7 @@ const Header = () => {
       <a href="/#">
         <img src="./logo.png" alt="muras logo" />
       </a>
-      <audio src="/komuz-leto.mp3" id="audio_tag" ref={audioRef}></audio>
-      <div className="audio_btn-wrapper">
-        <img
-          src="./komuz.png"
-          alt="Play/Pause"
-          onClick={audioClick}
-          className="audio_btn-image"
-        />
-      </div>
+      <Music />
       <NavBar isVisible={isVisible} />
       <Button />
       <button onClick={handleClick} className="burgerHidden">
@@ -52,9 +30,8 @@ const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  margin: 16px;
   padding: 0 20px;
-  width: calc(100% - 32px);
+  width: 100%;
   height: 60px;
   position: fixed;
   display: flex;
@@ -63,42 +40,7 @@ const StyledHeader = styled.header`
   align-items: center;
   background-color: rgba(0, 163, 165, 0.8);
   backdrop-filter: blur(3px);
-  border-radius: 30px;
   z-index: 1;
-
-  .audio_btn-wrapper {
-    width: 80px;
-    height: 40px;
-    overflow: hidden;
-
-    @media (max-width: 992px) {
-      width: 80px;
-      height: 50px;
-    }
-  }
-
-  .audio_btn-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    color: #000;
-    text-align: center;
-    border: none;
-    background: none;
-    filter: drop-shadow(1, 1, 1);
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    @media (max-width: 992px) {
-      width: 60px;
-      height: 40px;
-      position: absolute;
-      left: 25px;
-      top: 10px;
-    }
-  }
 
   .burgerHidden {
     display: none;

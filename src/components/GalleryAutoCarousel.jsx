@@ -74,7 +74,7 @@ const StyledGallery = styled.section`
     grid-auto-columns: 500px;
     justify-content: stretch;
     gap: 30px;
-    animation: scroll 40s linear infinite;
+    animation: scroll 30s linear infinite;
 
     @keyframes scroll {
       to {
@@ -106,7 +106,6 @@ const StyledGallery = styled.section`
   .gallery_item {
     aspect-ratio: 16/11;
     overflow: hidden;
-    /* border-radius: 10px; */
   }
 
   .gallery_image {

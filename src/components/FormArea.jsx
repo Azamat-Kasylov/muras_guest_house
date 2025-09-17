@@ -217,8 +217,8 @@ const StyledForm = styled.form`
   @media (max-width: 992px) {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    min-width: 50%;
+    width: 70%;
+    min-width: 70%;
     border-radius: 1rem;
     label {
       border-radius: 0;
