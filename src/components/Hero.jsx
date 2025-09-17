@@ -17,8 +17,7 @@ const Hero = () => {
               Unforgettable moments to be shared together or enjoyed on your
               own. It's a place for special encounters and good conversations.
               An open atmosphere, style wherever you look, and enjoyment for all
-              the senses.
-              <span>Your happy place.</span>
+              the senses. Your happy place.
             </p>
           </TextContent>
         </ContentWrapper>
