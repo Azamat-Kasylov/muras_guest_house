@@ -4,7 +4,7 @@ export const data = [
   { title: "rooms", id: "rooms" },
   { title: "gallery", id: "gallery" },
   // { title: "location", id: "location" },
-  { title: "servises", id: "servises" },
+  { title: "services", id: "services" },
   { title: "contacts", id: "contacts" },
 ];
 

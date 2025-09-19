@@ -13,21 +13,16 @@ const GalleryAutoCarousel = () => {
     const gallery = GalleryRef.current;
 
     if (!paused) {
-      const style = window.getComputedStyle(gallery);
-      const matrix = new DOMMatrixReadOnly(style.transform);
-      const currentX = matrix.m41;
-
-      gallery.style.transform = `translateX(${currentX}px)`;
-      gallery.style.animation = "none";
+      gallery.style.animationPlayState = "paused";
       setPaused(true);
     } else {
-      gallery.style.animation = "";
+      gallery.style.animationPlayState = "running";
       setPaused(false);
     }
   };
 
   return (
-    <StyledGallery>
+    <StyledGallery id="gallery">
       <div className="container">
         <div
           className="gallery"
@@ -74,7 +69,7 @@ const StyledGallery = styled.section`
     grid-auto-columns: 500px;
     justify-content: stretch;
     gap: 30px;
-    animation: scroll 30s linear infinite;
+    animation: scroll 50s linear infinite;
 
     @keyframes scroll {
       to {
@@ -112,6 +107,10 @@ const StyledGallery = styled.section`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
 

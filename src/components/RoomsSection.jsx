@@ -23,7 +23,7 @@ const RoomsSection = () => {
 };
 
 const StyledRooms = styled.section`
-  min-height: 100vh;
+  min-height: 100%;
   padding: 0 50px 50px;
   background-color: #f8fafc;
   overflow: hidden;

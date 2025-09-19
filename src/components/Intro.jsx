@@ -35,23 +35,24 @@ const StyledIntro = styled.section`
     filter: brightness(80%);
   }
 
+  p {
+    color: #f8fafc;
+  }
+
   .suptitle {
     font-size: 30px;
     letter-spacing: 20px;
-    color: #fff7e5;
   }
 
   .title {
     font-size: 120px;
     line-height: 0.8em;
-    color: #fff7e5;
   }
 
   .subtitle {
     margin: 0;
     font-size: 43px;
     text-align: center;
-    color: #fff7e5;
   }
 
   @media (max-width: 992px) {

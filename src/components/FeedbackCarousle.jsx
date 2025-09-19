@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const Gallery = () => {
   return (
-    <StyledGallery id="gallery">
+    <StyledGallery id="feedback">
       <div className="title_wrapper">
         <h2>Our guests</h2>
       </div>

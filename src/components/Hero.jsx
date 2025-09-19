@@ -27,11 +27,11 @@ const Hero = () => {
 };
 
 const StyledHero = styled.div`
-  min-height: 100vh;
+  min-height: 100%;
 `;
 
 const HeroWrapper = styled.div`
-  min-height: 100vh;
+  min-height: 100%;
   padding: 50px 50px;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ const TextContent = styled.div`
 const StaticImg = styled.img`
   position: relative;
   width: 100%;
-  max-width: 50%;
+  max-width: 40%;
   align-self: start;
 
   @media (max-width: 768px) {

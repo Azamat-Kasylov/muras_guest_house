@@ -10,13 +10,13 @@ const Button = () => {
 
 const StyledButton = styled.button`
   padding: 10px 15px;
-  background-color: #f6e7a7;
+  background-color: #f8fafc;
   border: none;
   border-radius: 30px;
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #ffe46d;
+    background-color: #bddde4;
     cursor: pointer;
   }
 

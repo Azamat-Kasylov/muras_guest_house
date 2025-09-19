@@ -110,7 +110,7 @@ const FormArea = () => {
             />
           </label>
         </Row>
-        <label>
+        <label className="submit">
           <input
             className="submit"
             type="submit"
@@ -119,11 +119,6 @@ const FormArea = () => {
             value="Book"
             disabled={formData.loading}
           />
-          {/* {formData.loading && (
-          <div className="loading" style={{ marginTop: 5, fontWeight: "bold" }}>
-            Loading...
-          </div>
-        )} */}
         </label>
       </StyledForm>
       {isPopupVisible && <PopupFormMessage onButtonClick={setIsPopupVisible} />}
@@ -143,7 +138,7 @@ const StyledForm = styled.form`
     display: inline-flex;
     align-items: center;
     height: 60px;
-    background-color: #fff7e5;
+    background-color: #f8fafc;
     border-left: 1px solid #d2d2d2;
     overflow: hidden;
   }
@@ -154,7 +149,7 @@ const StyledForm = styled.form`
     padding-left: 20px;
     padding-right: 20px;
     border: none;
-    background-color: #fff7e5;
+    background-color: #f8fafc;
     border: 0;
     width: 100%;
     height: 100%;
@@ -163,7 +158,7 @@ const StyledForm = styled.form`
   }
 
   p {
-    width: 100%;
+    width: 100px;
     font-size: 13px;
     position: absolute;
   }
@@ -198,7 +193,7 @@ const StyledForm = styled.form`
     padding: 0 40px;
     font-size: 16px;
     font-weight: normal;
-    background-color: #f6e7a7;
+    background-color: #bddde4;
     color: #000;
     border: none;
     transition: background-color 0.3s;
@@ -207,7 +202,7 @@ const StyledForm = styled.form`
 
   .submit:hover {
     cursor: pointer;
-    background-color: #ffe46d;
+    background-color: #ffbc4c;
   }
 
   .loading {
