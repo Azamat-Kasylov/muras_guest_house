@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { NavBarDataInterface } from "../data";
 
-const NavBarItem = ({ title, id }) => {
+const NavBarItem: React.FC<NavBarDataInterface> = ({ title, id }) => {
   return (
     <StyledNavBarItem className="nav-item">
       <a href={`#${id}`}>{title}</a>

@@ -1,20 +1,33 @@
-import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import PopupFormMessage from "./PopupFormMessage";
 
-const initFormData = {
+interface Error {
+  name?: string;
+  email?: string;
+}
+
+type InitFormDataType = {
+  name: string;
+  email: string;
+  guests?: number;
+  date: string;
+  errors: Error;
+};
+
+const initFormData: InitFormDataType = {
   name: "",
   email: "",
-  guests: "",
   date: "",
   errors: {},
 };
-const FormArea = () => {
+
+const FormArea: React.FC = () => {
   const [formData, setFormData] = useState(initFormData);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+
   const validateForm = () => {
-    const errors = {};
+    const errors: Error = {};
 
     if (!formData.name) {
       errors.name = "Name is required";
@@ -29,12 +42,12 @@ const FormArea = () => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (validateForm()) {
       setIsPopupVisible(true);
@@ -43,7 +56,7 @@ const FormArea = () => {
     }
   };
 
-  const cleanInput = (inputId) => {
+  const cleanInput = (inputId: string) => {
     let errorName = document.getElementById("errorName");
     let errorEmail = document.getElementById("errorEmail");
     if (errorName && inputId === "name") {
@@ -117,7 +130,6 @@ const FormArea = () => {
             id="submit"
             name="submit"
             value="Book"
-            disabled={formData.loading}
           />
         </label>
       </StyledForm>

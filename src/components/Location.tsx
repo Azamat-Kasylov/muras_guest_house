@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Location = () => {
+const Location: React.FC = () => {
   return (
     <StyledLocation>
       <div>

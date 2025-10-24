@@ -2,9 +2,9 @@
 import styled from "styled-components";
 import { useState, useRef } from "react";
 
-const Music = () => {
+const Music: React.FC = () => {
   const [play, setPlay] = useState(false);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   const audioClick = () => {
     if (!audioRef.current) return;

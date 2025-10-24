@@ -1,13 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import ServisesItem from "./ServisesItem";
+import { ServicesDataInterface } from "../data";
 
-const Servises = () => {
+const Servises: React.FC<ServicesDataInterface> = ({
+  price,
+  title,
+  description,
+  imagePath,
+}) => {
   return (
     <StyledServises id="servises">
       <h2>Our servises</h2>
       <Container>
-        <ServisesItem />
+        <ServisesItem
+          price={price}
+          title={title}
+          description={description}
+          imagePath={imagePath}
+        />
       </Container>
     </StyledServises>
   );

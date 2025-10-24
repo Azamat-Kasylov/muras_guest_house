@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
 import { GalleryData } from "../data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 
-const Gallery = () => {
+const Gallery: React.FC = () => {
   return (
     <StyledGallery id="gallery">
       <div>
@@ -137,14 +136,17 @@ function SimpleSlider() {
       },
     ],
   };
+
+  const SliderCustom: any = Slider;
+
   return (
-    <Slider {...settings}>
+    <SliderCustom {...settings}>
       {GalleryData.map((i) => (
         <StyledImgWrapper key={i.imagePath}>
           <img src={i.imagePath} />
         </StyledImgWrapper>
       ))}
-    </Slider>
+    </SliderCustom>
   );
 }
 

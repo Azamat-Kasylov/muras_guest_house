@@ -1,14 +1,26 @@
 /* eslint-disable no-dupe-keys */
-export const data = [
+
+export interface NavBarDataInterface {
+  title: string;
+  id: string;
+}
+
+export const NavBarData: NavBarDataInterface[] = [
   { title: "about us", id: "aboutUs" },
   { title: "rooms", id: "rooms" },
-  { title: "gallery", id: "gallery" },
-  // { title: "location", id: "location" },
+  { title: "gallery", id: "gallerySection" },
   { title: "services", id: "services" },
   { title: "contacts", id: "contacts" },
 ];
 
-export const roomsData = [
+export interface roomsDataInterface {
+  price: string;
+  title: string;
+  description: string;
+  imagePath: string;
+}
+
+export const roomsData: roomsDataInterface[] = [
   {
     price: "50$",
     title: "Yurt",
@@ -39,7 +51,12 @@ export const roomsData = [
   },
 ];
 
-export const SocialsData = [
+interface SocialsDataInterface {
+  iconPath: string;
+  href: string;
+}
+
+export const SocialsData: SocialsDataInterface[] = [
   {
     iconPath: "./facebook.svg",
     href: "https://www.facebook.com/profile.php?id=100063488356149",
@@ -50,7 +67,14 @@ export const SocialsData = [
   },
 ];
 
-export const ServicesData = [
+export interface ServicesDataInterface {
+  price: string;
+  title: string;
+  description: string;
+  imagePath: string;
+}
+
+export const ServicesData: ServicesDataInterface[] = [
   {
     price: "5$",
     title: "Breakfast",
@@ -81,7 +105,11 @@ export const ServicesData = [
   },
 ];
 
-export const GalleryData = [
+interface GalleryDataInterface {
+  imagePath: string;
+}
+
+export const GalleryData: GalleryDataInterface[] = [
   { imagePath: "./3_ainura.jpeg" },
   { imagePath: "./7_hotel-front-view.jpeg" },
   { imagePath: "./14_hotel-back-view.jpeg" },
@@ -99,8 +127,13 @@ export const GalleryData = [
   { imagePath: "./19_pamir-mountains.jpeg" },
   { imagePath: "./20_pamir-mountains.jpeg" },
 ];
+interface FeedbackDataInterface {
+  imagePath: string;
+  description: string;
+  guest: string;
+}
 
-export const FeedbackData = [
+export const FeedbackData: FeedbackDataInterface[] = [
   {
     imagePath: "./profile.jpg",
     description:
@@ -111,7 +144,7 @@ export const FeedbackData = [
     imagePath: "./profile_female.jpg",
     description:
       "Шикарный отель! Каждую командировку в Краснодар останавливаемся в этом отеле! Очень вежливый и гостеприимный персонал, комфортные, уютные, чистые номера с красивым видом из окна на город. Ресторан при отеле безумно вкусно готовит! Завтраки в отеле на любой вкус и предпочтение! Всё меню — просто гастрономическая сказка! В командировку приезжаем два раза в год с 2018 года и во многих отелях Краснодара останавливались. Смело могу заявить: это самый лучший и топовый отель Краснодара! Всем рекомендую!",
-    guest: "Роман Пчелкин | Питер (Россия)",
+    guest: "Ирина Пчелкина | Питер (Россия)",
   },
   {
     imagePath: "./couple.jpg",

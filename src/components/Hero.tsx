@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <StyledHero id="aboutUs">
       <HeroWrapper>

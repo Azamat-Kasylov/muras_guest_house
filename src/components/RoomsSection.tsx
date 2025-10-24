@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { roomsData } from "../data";
 
-const RoomsSection = () => {
+const RoomsSection: React.FC = () => {
   return (
     <StyledRooms id="rooms" className="rooms">
-      <h2 className="section-title">Our rooms</h2>
+      <h2 className="section-title">Our rooms and Yurts</h2>
       <div className="rooms-grid">
         {roomsData.map((room, index) => (
           <div key={index} className="room-card">

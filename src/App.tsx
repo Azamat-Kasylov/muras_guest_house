@@ -7,8 +7,9 @@ import Hero from "./components/Hero";
 import ServicesSection from "./components/ServicesSection";
 import GalleryAutoCarousel from "./components/GalleryAutoCarousel";
 import FeedbackCarousel from "./components/FeedbackCarousle";
+import React from "react";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
@@ -21,6 +22,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

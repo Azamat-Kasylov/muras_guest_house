@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import FormArea from "./FormArea";
 
-const Intro = () => {
+const Intro: React.FC = () => {
   return (
     <StyledIntro id="intro">
       <img src="./alay2.jpg" alt="intro image" />

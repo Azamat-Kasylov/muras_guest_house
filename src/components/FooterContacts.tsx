@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const FooterContacts = () => {
+const FooterContacts: React.FC = () => {
   return (
     <Contacts id="contacts">
       <p>Сontacts:</p>

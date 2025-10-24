@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 import FooterSocial from "./FooterSocial";
 import FooterContacts from "./FooterContacts";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <FooterContent>

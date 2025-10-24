@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ServicesData } from "../data";
 
-const ServicesSection = () => {
+const ServicesSection: React.FC = () => {
   return (
     <StyledServices id="services" className="services">
       <h2 className="section-title">Our services</h2>
@@ -78,13 +78,8 @@ const StyledServices = styled.section`
   }
 
   .services-price {
-    width: 50px;
-    text-align: center;
     font-weight: bold;
     color: #0077cc;
-    padding: 3px 0;
-    border: 0.5px solid #555;
-    border-radius: 15px;
   }
 `;
 

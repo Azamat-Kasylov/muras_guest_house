@@ -1,35 +1,26 @@
-import React from "react";
 import styled from "styled-components";
 import { GalleryData } from "../data";
 import { useState, useRef } from "react";
 
-const GalleryAutoCarousel = () => {
-  const GalleryRef = useRef(null);
+const GalleryAutoCarousel: React.FC = () => {
+  const GalleryRef = useRef<HTMLDivElement | null>(null);
   const [paused, setPaused] = useState(false);
 
-  const HandleClick = (e) => {
-    if (e.target.tagName !== "IMG") return;
+  const HandleClick = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).tagName !== "IMG") return;
 
     const gallery = GalleryRef.current;
 
-    if (!paused) {
-      gallery.style.animationPlayState = "paused";
-      setPaused(true);
-    } else {
-      gallery.style.animationPlayState = "running";
-      setPaused(false);
-    }
+    if (!gallery) return;
+
+    gallery.style.animationPlayState = paused ? "running" : "paused";
+    setPaused(!paused);
   };
 
   return (
-    <StyledGallery id="gallery">
+    <StyledGallery id="gallerySection">
       <div className="container">
-        <div
-          className="gallery"
-          onClick={HandleClick}
-          ref={GalleryRef}
-          style={{ "--items": GalleryData.length }}
-        >
+        <div className="gallery" onClick={HandleClick} ref={GalleryRef}>
           {GalleryData.map((i) => (
             <div className="gallery_item" key={i.imagePath}>
               <img className="gallery_image" src={i.imagePath} alt="" />

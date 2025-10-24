@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
 import { FeedbackData } from "../data";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 
-const Gallery = () => {
+const Gallery: React.FC = () => {
   return (
     <StyledGallery id="feedback">
       <div className="title_wrapper">
@@ -66,16 +65,19 @@ const StyledSliderWrapper = styled.div`
   }
 `;
 
-function SimpleSlider() {
-  var settings = {
+const SlickSlider = Slider as unknown as React.ComponentType<Settings>;
+
+const SimpleSlider: React.FC = () => {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
   return (
-    <Slider {...settings}>
+    <SlickSlider {...settings}>
       {FeedbackData.map((i) => (
         <StyledImgWrapper key={i.imagePath}>
           <div key={i.imagePath}>
@@ -85,9 +87,9 @@ function SimpleSlider() {
           </div>
         </StyledImgWrapper>
       ))}
-    </Slider>
+    </SlickSlider>
   );
-}
+};
 
 const StyledImgWrapper = styled.div`
   width: 100%;

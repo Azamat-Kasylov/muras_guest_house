@@ -1,16 +1,14 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React from "react";
 import styled from "styled-components";
 import { FeedbackData } from "../data";
 
-const Feedback = () => {
+const Feedback: React.FC = () => {
   return (
     <StyledFeedback>
       <FeedbackContent>
         <h2>Our guests</h2>
         {FeedbackData.map((i) => (
           <div key={i.imagePath}>
-            <img src={i.imagePath} />
+            <img src={i.imagePath} alt={i.guest} />
             <p>"{i.description}"</p>
             <p>{i.guest}</p>
           </div>

@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
-const Button = () => {
+const Button: React.FC = () => {
+  const handleClick = () => {
+    let obj1 = { name: "aza" };
+    let obj2 = obj1;
+    obj1.name = "sasha";
+
+    console.log(obj2);
+  };
+
   return (
-    <StyledButton className="button">
+    <StyledButton className="button" onClick={handleClick}>
       <a href="#intro">Book now</a>
     </StyledButton>
   );
@@ -32,3 +40,5 @@ const StyledButton = styled.button`
 `;
 
 export default Button;
+
+// Код бронирования: 70L4GCКод доступа: U4G698Итого: $497.40

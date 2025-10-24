@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import Music from "./Music";
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleClick = () => {
@@ -29,7 +29,11 @@ const Header = () => {
   );
 };
 
-const StyledHeader = styled.header`
+interface StyledHeaderProp {
+  isVisible: boolean;
+}
+
+const StyledHeader = styled.header<StyledHeaderProp>`
   padding: 0 20px;
   width: 100%;
   height: 60px;

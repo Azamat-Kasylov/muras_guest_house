@@ -1,11 +1,22 @@
 import styled from "styled-components";
 import RoomsItem from "./RoomsItem";
+import { roomsDataInterface } from "../data";
 
-const Rooms = () => {
+const Rooms: React.FC<roomsDataInterface> = ({
+  title,
+  description,
+  price,
+  imagePath,
+}) => {
   return (
     <StyledRooms id="rooms">
       <h2>Our rooms and Yurts</h2>
-      <RoomsItem />
+      <RoomsItem
+        title={title}
+        description={description}
+        price={price}
+        imagePath={imagePath}
+      />
     </StyledRooms>
   );
 };

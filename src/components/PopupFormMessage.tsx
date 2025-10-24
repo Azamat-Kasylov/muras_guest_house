@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const PopupFormMessage = ({ onButtonClick }) => {
+interface Props {
+  onButtonClick: Function;
+}
+
+const PopupFormMessage: React.FC<Props> = ({ onButtonClick }) => {
   return (
     <PopupWrapper>
       <PopupMessage>
