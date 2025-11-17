@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { NavBarDataInterface } from "../data";
+import { NavLink } from "react-router";
 
-const NavBarItem: React.FC<NavBarDataInterface> = ({ title, id }) => {
+const NavBarItem: React.FC<NavBarDataInterface> = ({ title, link }) => {
   return (
     <StyledNavBarItem className="nav-item">
-      <a href={`#${id}`}>{title}</a>
+      <NavLink to={link}>{title}</NavLink>
     </StyledNavBarItem>
   );
 };

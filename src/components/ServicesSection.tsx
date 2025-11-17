@@ -17,7 +17,7 @@ const ServicesSection: React.FC = () => {
             <div className="services-content">
               <h3 className="services-title">{services.title}</h3>
               <p className="services-description">{services.description}</p>
-              <p className="services-price">{services.price}</p>
+              {/* <p className="services-price">{services.price}</p> */}
             </div>
           </div>
         ))}

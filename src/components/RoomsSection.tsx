@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { roomsData } from "../data";
+import { NavLink } from "react-router";
 
 const RoomsSection: React.FC = () => {
   return (
@@ -8,14 +9,14 @@ const RoomsSection: React.FC = () => {
       <h2 className="section-title">Our rooms and Yurts</h2>
       <div className="rooms-grid">
         {roomsData.map((room, index) => (
-          <div key={index} className="room-card">
+          <NavLink to={room.link} key={index} className="room-card">
             <img src={room.imagePath} alt={room.title} className="room-image" />
             <div className="room-content">
               <h3 className="room-title">{room.title}</h3>
               <p className="room-description">{room.description}</p>
-              <p className="room-price">{room.price}</p>
+              {/* <p className="room-price">{room.price}</p> */}
             </div>
-          </div>
+          </NavLink>
         ))}
       </div>
     </StyledRooms>
@@ -48,6 +49,7 @@ const StyledRooms = styled.section`
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: transform 0.2s ease;
+    text-decoration: none;
   }
 
   .room-card:hover {
@@ -65,6 +67,7 @@ const StyledRooms = styled.section`
   }
 
   .room-title {
+    color: #000;
     font-size: 20px;
     margin: 0 0 10px;
   }

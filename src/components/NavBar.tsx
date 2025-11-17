@@ -9,8 +9,8 @@ interface Props {
 const NavBar: React.FC<Props> = ({ isVisible }) => {
   return (
     <StyledNavBar className={` ${!isVisible ? "hiddenNav" : ""}`}>
-      {NavBarData.map((i) => (
-        <NavBarItem title={i.title} id={i.id} key={i.id} />
+      {NavBarData.map((i, index) => (
+        <NavBarItem link={i.link} title={i.title} key={index} />
       ))}
     </StyledNavBar>
   );

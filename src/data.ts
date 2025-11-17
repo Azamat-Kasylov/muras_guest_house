@@ -2,15 +2,14 @@
 
 export interface NavBarDataInterface {
   title: string;
-  id: string;
+  link: string;
 }
 
 export const NavBarData: NavBarDataInterface[] = [
-  { title: "about us", id: "aboutUs" },
-  { title: "rooms", id: "rooms" },
-  { title: "gallery", id: "gallerySection" },
-  { title: "services", id: "services" },
-  { title: "contacts", id: "contacts" },
+  { title: "main", link: "main" },
+  { title: "about us", link: "aboutUs" },
+  { title: "rooms", link: "rooms" },
+  { title: "services", link: "services" },
 ];
 
 export interface roomsDataInterface {
@@ -18,6 +17,7 @@ export interface roomsDataInterface {
   title: string;
   description: string;
   imagePath: string;
+  link: string;
 }
 
 export const roomsData: roomsDataInterface[] = [
@@ -27,6 +27,7 @@ export const roomsData: roomsDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./yurt.jpg",
+    link: "/rooms",
   },
   {
     price: "50$",
@@ -34,6 +35,7 @@ export const roomsData: roomsDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./bed1.jpg",
+    link: "/rooms",
   },
   {
     price: "30$",
@@ -41,6 +43,7 @@ export const roomsData: roomsDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./bed1.jpg",
+    link: "/rooms",
   },
   {
     price: "10$",
@@ -48,7 +51,35 @@ export const roomsData: roomsDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./bed2.jpg",
+    link: "/rooms",
   },
+];
+
+export interface roomsYurtInterface {
+  price?: string;
+  title?: string;
+  description?: string;
+  imagePath?: string;
+}
+
+export const roomsYurt: roomsYurtInterface[] = [
+  {
+    price: "50$",
+    title: "Yurt",
+    description:
+      "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+    imagePath: "./yurt.jpg",
+  },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg" },
 ];
 
 interface SocialsDataInterface {

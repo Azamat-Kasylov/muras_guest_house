@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
   );
 };
 
-const StyledHero = styled.div`
+const StyledHero = styled.section`
   min-height: 100%;
 `;
 

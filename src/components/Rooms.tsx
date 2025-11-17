@@ -7,6 +7,7 @@ const Rooms: React.FC<roomsDataInterface> = ({
   description,
   price,
   imagePath,
+  link,
 }) => {
   return (
     <StyledRooms id="rooms">
@@ -16,6 +17,7 @@ const Rooms: React.FC<roomsDataInterface> = ({
         description={description}
         price={price}
         imagePath={imagePath}
+        link={link}
       />
     </StyledRooms>
   );
