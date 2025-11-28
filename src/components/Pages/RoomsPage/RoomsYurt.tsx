@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { roomsYurt } from "../data";
+import { roomsYurt } from "../../../data";
 import RoomsYurtGallery from "./RoomsYurtGallery";
 
-const RoomsSection: React.FC = () => {
+const RoomsYurt: React.FC = () => {
   return (
     <StyledYurt className="yurt">
       <div className="yurt-grid">
         <RoomsYurtGallery />
         {roomsYurt.map((room, index) => (
           <div key={index} className="yurt-card">
-            {/* <img src={room.imagePath} alt={room.title} className="yurt-image" /> */}
             <div className="yurt-text-content">
               <h3 className="yurt-title">{room.title}</h3>
               <p className="yurt-description">{room.description}</p>
@@ -24,14 +23,27 @@ const RoomsSection: React.FC = () => {
 };
 
 const StyledYurt = styled.section`
-  padding: 100px 50px 50px;
+  margin-bottom: 100px;
+
+  .yurt-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yurt-card {
+    width: 100%;
+    margin-top: 50px;
+  }
 
   .yurt-title {
     color: #000;
+    padding-bottom: 20px;
   }
 
   .yurt-description {
     color: #555;
+    padding-bottom: 10px;
   }
 
   .yurt-price {
@@ -40,4 +52,4 @@ const StyledYurt = styled.section`
   }
 `;
 
-export default RoomsSection;
+export default RoomsYurt;

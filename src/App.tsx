@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import React from "react";
 import Main from "./components/Main";
+import FormAreaHookForm from "./components/Form/FormAreaHookForm";
 
 const App: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <Header />
       <Main />
       <Footer />
+      <FormAreaHookForm />
     </div>
   );
 };

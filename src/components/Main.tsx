@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router";
 import HomePage from "./HomePage";
 import Hero from "./Hero";
 import ServicesSection from "./ServicesSection";
-import RoomsPage from "./RoomsPage";
+import RoomsPage from "./Pages/RoomsPage/RoomsPage";
 
 const Main = () => {
   return (

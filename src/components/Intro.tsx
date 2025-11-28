@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import styled from "styled-components";
-import FormArea from "./FormArea";
+import FormAreaHookForm from "./Form/FormAreaHookForm";
 
 const Intro: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Intro: React.FC = () => {
       <p className="suptitle">GUEST HOUSE</p>
       <p className="title">MURAS</p>
       <p className="subtitle">Welcome to Alay valley</p>
-      <FormArea />
+      <FormAreaHookForm />
     </StyledIntro>
   );
 };
@@ -35,7 +35,9 @@ const StyledIntro = styled.section`
     filter: brightness(80%);
   }
 
-  p {
+  .suptitle,
+  .title,
+  .subtitle {
     color: #f8fafc;
   }
 

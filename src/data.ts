@@ -6,7 +6,7 @@ export interface NavBarDataInterface {
 }
 
 export const NavBarData: NavBarDataInterface[] = [
-  { title: "main", link: "main" },
+  { title: "home", link: "main" },
   { title: "about us", link: "aboutUs" },
   { title: "rooms", link: "rooms" },
   { title: "services", link: "services" },
@@ -31,7 +31,7 @@ export const roomsData: roomsDataInterface[] = [
   },
   {
     price: "50$",
-    title: "Room Comfort",
+    title: "Room Standard",
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./bed1.jpg",
@@ -39,7 +39,7 @@ export const roomsData: roomsDataInterface[] = [
   },
   {
     price: "30$",
-    title: "Room",
+    title: "Room Comfort",
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./bed1.jpg",
@@ -56,10 +56,9 @@ export const roomsData: roomsDataInterface[] = [
 ];
 
 export interface roomsYurtInterface {
-  price?: string;
-  title?: string;
-  description?: string;
-  imagePath?: string;
+  price: string;
+  title: string;
+  description: string;
 }
 
 export const roomsYurt: roomsYurtInterface[] = [
@@ -68,8 +67,14 @@ export const roomsYurt: roomsYurtInterface[] = [
     title: "Yurt",
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-    imagePath: "./yurt.jpg",
   },
+];
+
+export interface roomsYurtImagesInterface {
+  imagePath: string;
+}
+
+export const roomsYurtImages: roomsYurtImagesInterface[] = [
   { imagePath: "./yurt.jpg" },
   { imagePath: "./yurt.jpg" },
   { imagePath: "./yurt.jpg" },
@@ -81,6 +86,72 @@ export const roomsYurt: roomsYurtInterface[] = [
   { imagePath: "./yurt.jpg" },
   { imagePath: "./yurt.jpg" },
 ];
+
+export interface roomsStandardInterface {
+  price: string;
+  title: string;
+  description: string;
+}
+
+export const roomsStandard: roomsStandardInterface[] = [
+  {
+    price: "50$",
+    title: "Standard room",
+    description:
+      "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+  },
+];
+
+export interface roomsStandardImagesInterface {
+  imagePath: string;
+}
+
+export const roomsStandardImages: roomsStandardImagesInterface[] = [
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg" },
+];
+
+//
+export interface roomsComfortInterface {
+  price: string;
+  title: string;
+  description: string;
+}
+
+export const roomsComfort: roomsComfortInterface[] = [
+  {
+    price: "50$",
+    title: "Standard room",
+    description:
+      "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+  },
+];
+
+export interface roomsComfortImagesInterface {
+  imagePath: string;
+}
+
+export const roomsComfortImages: roomsComfortImagesInterface[] = [
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg" },
+];
+//
 
 interface SocialsDataInterface {
   iconPath: string;

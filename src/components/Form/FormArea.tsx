@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import PopupFormMessage from "./PopupFormMessage";
+import ErrorMessage from "./ErrorMessage";
 
 interface Error {
   name?: string;
@@ -56,17 +57,6 @@ const FormArea: React.FC = () => {
     }
   };
 
-  const cleanInput = (inputId: string) => {
-    let errorName = document.getElementById("errorName");
-    let errorEmail = document.getElementById("errorEmail");
-    if (errorName && inputId === "name") {
-      errorName.classList.add("hidden");
-    }
-    if (errorEmail && inputId === "email") {
-      errorEmail.classList.add("hidden");
-    }
-  };
-
   return (
     <>
       <StyledForm onSubmit={handleSubmit}>
@@ -78,12 +68,11 @@ const FormArea: React.FC = () => {
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            onClick={() => cleanInput("name")}
           />
           {formData.errors.name && (
-            <p id="errorName" style={{ color: "red" }}>
+            <ErrorMessage className="errorName">
               {formData.errors.name}
-            </p>
+            </ErrorMessage>
           )}
         </label>
         <label className="email">
@@ -94,12 +83,11 @@ const FormArea: React.FC = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            onClick={() => cleanInput("email")}
           />
           {formData.errors.email && (
-            <p id="errorEmail" style={{ color: "red" }}>
+            <ErrorMessage className="errorEmail">
               {formData.errors.email}
-            </p>
+            </ErrorMessage>
           )}
         </label>
         <Row>
@@ -169,13 +157,7 @@ const StyledForm = styled.form`
     border-radius: 0;
   }
 
-  p {
-    width: 100px;
-    font-size: 13px;
-    position: absolute;
-  }
-
-  #errorName {
+  .errorName {
     top: 39px;
     left: 20px;
     @media (max-width: 992px) {
@@ -184,7 +166,7 @@ const StyledForm = styled.form`
     }
   }
 
-  #errorEmail {
+  .errorEmail {
     top: 39px;
     left: 200px;
     @media (max-width: 992px) {

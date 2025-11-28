@@ -44,7 +44,7 @@ const StyledHeader = styled.header<StyledHeaderProp>`
   align-items: center;
   background-color: rgba(0, 163, 165, 0.8);
   backdrop-filter: blur(3px);
-  z-index: 1;
+  z-index: 10;
 
   .burgerHidden {
     display: none;

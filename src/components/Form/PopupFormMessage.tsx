@@ -10,11 +10,12 @@ const PopupFormMessage: React.FC<Props> = ({ onButtonClick }) => {
     <PopupWrapper>
       <PopupMessage>
         Your message was successfully sended
-        <Button onClick={() => onButtonClick(false)}>Ok</Button>
+        <Button onClick={() => onButtonClick()}>Ok</Button>
       </PopupMessage>
     </PopupWrapper>
   );
 };
+
 const PopupWrapper = styled.div`
   width: 100%;
   min-height: 100%;
@@ -25,6 +26,7 @@ const PopupWrapper = styled.div`
   left: 0;
   z-index: 101;
 `;
+
 const PopupMessage = styled.div`
   padding: 40px 20px;
   width: calc(100% - 32px);
@@ -41,6 +43,7 @@ const PopupMessage = styled.div`
   font-size: 24px;
   text-align: center;
 `;
+
 const Button = styled.button`
   padding: 10px 40px;
   display: block;
