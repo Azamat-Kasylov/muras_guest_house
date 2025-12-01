@@ -52,7 +52,7 @@ const StyledHeader = styled.header<StyledHeaderProp>`
 
   @media (max-width: 992px) {
     padding-bottom: 1rem;
-    height: ${({ isVisible }) => (isVisible ? "35%" : "60px")};
+    height: ${({ isVisible }) => (isVisible ? "30%" : "60px")};
     display: flex;
     flex-direction: column;
     justify-content: stretch;

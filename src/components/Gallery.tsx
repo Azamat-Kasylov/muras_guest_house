@@ -43,51 +43,35 @@ const StyledSliderWrapper = styled.div`
   }
   @media (max-width: 480px) {
     max-width: 380px;
+    padding: 0 20px;
   }
-  @media (max-width: 390px) {
-    max-width: 350px;
+  @media (max-width: 410px) {
+    max-width: 300px;
   }
 
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 60px;
-    color: #f6e7a7;
+  .slick-arrow {
+    background-color: #d8e1ec;
+    width: 40px;
+    height: 100%;
+    opacity: 0.4;
+    transition: opacity 0.3s;
+    z-index: 1;
+  }
 
-    @media (max-width: 1024px) {
-      font-size: 40px;
-    }
-    @media (max-width: 900px) {
-      font-size: 40px;
-    }
-    @media (max-width: 600px) {
-      font-size: 30px;
-    }
-    @media (max-width: 480px) {
-      font-size: 30px;
-    }
-    @media (max-width: 390px) {
-      font-size: 30px;
-    }
+  .slick-arrow:hover {
+    opacity: 0.6;
+  }
+
+  .slick-arrow::before {
+    opacity: 1;
+  }
+
+  .slick-next {
+    right: -30px;
   }
 
   .slick-prev {
-    left: -65px;
-
-    @media (max-width: 1024px) {
-      left: -45px;
-    }
-    @media (max-width: 900px) {
-      left: -45px;
-    }
-    @media (max-width: 600px) {
-      left: -35px;
-    }
-    @media (max-width: 480px) {
-      left: -35px;
-    }
-    @media (max-width: 390px) {
-      left: -35px;
-    }
+    left: -30px;
   }
 `;
 

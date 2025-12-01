@@ -2,9 +2,9 @@ import React from "react";
 import Intro from "./Intro";
 import Hero from "./Hero";
 import RoomsSection from "./RoomsSection";
-import GalleryAutoCarousel from "./GalleryAutoCarousel";
 import ServicesSection from "./ServicesSection";
 import FeedbackCarousel from "./FeedbackCarousel";
+import Gallery from "./Gallery";
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
       <Intro />
       <Hero />
       <RoomsSection />
-      <GalleryAutoCarousel />
+      <Gallery />
       <ServicesSection />
       <FeedbackCarousel />
     </div>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { NavBarDataInterface } from "../data";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 const NavBarItem: React.FC<NavBarDataInterface> = ({ title, link }) => {
   return (
@@ -19,6 +19,10 @@ const StyledNavBarItem = styled.li`
     transition: color 0.3s;
   }
   a:hover {
+    color: #f6e7a7;
+  }
+
+  .active {
     color: #f6e7a7;
   }
 `;

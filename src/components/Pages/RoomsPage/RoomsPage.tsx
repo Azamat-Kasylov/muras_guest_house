@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router";
 import RoomsYurt from "./RoomsYurt";
 import RoomsStandard from "./RoomsStandard";
 import RoomsComfort from "./RoomsComfort";
+import { NavLink } from "react-router-dom";
 
 const RoomsPage: React.FC = () => {
   return (

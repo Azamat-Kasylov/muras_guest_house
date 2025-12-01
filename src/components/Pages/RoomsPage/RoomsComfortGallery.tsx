@@ -18,9 +18,45 @@ function SimpleSlider() {
     dots: true,
     infinite: true,
     speed: 400,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    responsive: [],
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+    ],
   };
 
   const SliderCustom: any = Slider;
@@ -35,7 +71,27 @@ function SimpleSlider() {
 }
 
 const StyledYurtGallery = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
+  width: 100%;
+  @media (max-width: 1200px) {
+    max-width: 950px;
+  }
+  @media (max-width: 1024px) {
+    max-width: 800px;
+  }
+  @media (max-width: 900px) {
+    max-width: 580px;
+  }
+  @media (max-width: 600px) {
+    max-width: 470px;
+  }
+  @media (max-width: 480px) {
+    max-width: 380px;
+    padding: 0 20px;
+  }
+  @media (max-width: 410px) {
+    max-width: 300px;
+  }
 
   .slick-arrow {
     background-color: #d8e1ec;
@@ -63,6 +119,8 @@ const StyledYurtGallery = styled.div`
   }
 
   img {
+    width: 100%;
+    height: 100%;
     padding: 0 5px;
     aspect-ratio: 4/3;
     object-fit: cover;

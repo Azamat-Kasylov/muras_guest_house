@@ -6,10 +6,10 @@ export interface NavBarDataInterface {
 }
 
 export const NavBarData: NavBarDataInterface[] = [
-  { title: "home", link: "main" },
-  { title: "about us", link: "aboutUs" },
-  { title: "rooms", link: "rooms" },
-  { title: "services", link: "services" },
+  { title: "home", link: "/main" },
+  { title: "about us", link: "/aboutUs" },
+  { title: "rooms", link: "/rooms" },
+  { title: "services", link: "/services" },
 ];
 
 export interface roomsDataInterface {
@@ -215,15 +215,11 @@ export const GalleryData: GalleryDataInterface[] = [
   { imagePath: "./3_ainura.jpeg" },
   { imagePath: "./7_hotel-front-view.jpeg" },
   { imagePath: "./14_hotel-back-view.jpeg" },
-  { imagePath: "./10_new-dinning-room.jpeg" },
   { imagePath: "./13_new-dinning-room.jpeg" },
-  { imagePath: "./15_new-dinning-room.jpeg" },
   { imagePath: "./4_window-view.jpeg" },
-  { imagePath: "./5_window-view.jpeg" },
   { imagePath: "./6_guests-lunch.jpeg" },
   { imagePath: "./8_old-room-view.jpeg" },
   { imagePath: "./9_new-room-view.jpeg" },
-  { imagePath: "./12_old-dinning-room.jpeg" },
   { imagePath: "./17_alay-valley.jpeg" },
   { imagePath: "./18_taldyk-road.jpeg" },
   { imagePath: "./19_pamir-mountains.jpeg" },

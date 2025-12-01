@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { roomsData } from "../data";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
 const RoomsSection: React.FC = () => {
   return (
