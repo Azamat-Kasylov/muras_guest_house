@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ServicesData } from "../data";
+import { NavLink } from "react-router-dom";
 
 const ServicesSection: React.FC = () => {
   return (
@@ -8,7 +9,7 @@ const ServicesSection: React.FC = () => {
       <h2 className="section-title">Our services</h2>
       <div className="services-grid">
         {ServicesData.map((services, index) => (
-          <div key={index} className="services-card">
+          <NavLink to={services.link} key={index} className="services-card">
             <img
               src={services.imagePath}
               alt={services.title}
@@ -19,7 +20,7 @@ const ServicesSection: React.FC = () => {
               <p className="services-description">{services.description}</p>
               {/* <p className="services-price">{services.price}</p> */}
             </div>
-          </div>
+          </NavLink>
         ))}
       </div>
     </StyledServices>

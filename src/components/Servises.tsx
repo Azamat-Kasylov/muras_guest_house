@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ServisesItem from "./ServisesItem";
+// import ServisesItem from "./ServisesItem";
 import { ServicesDataInterface } from "../data";
 
 const Servises: React.FC<ServicesDataInterface> = ({
@@ -13,12 +13,12 @@ const Servises: React.FC<ServicesDataInterface> = ({
     <StyledServises id="servises">
       <h2>Our servises</h2>
       <Container>
-        <ServisesItem
+        {/* <ServisesItem
           price={price}
           title={title}
           description={description}
           imagePath={imagePath}
-        />
+        /> */}
       </Container>
     </StyledServises>
   );

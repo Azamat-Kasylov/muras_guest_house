@@ -174,6 +174,7 @@ export interface ServicesDataInterface {
   title: string;
   description: string;
   imagePath: string;
+  link: string;
 }
 
 export const ServicesData: ServicesDataInterface[] = [
@@ -183,6 +184,7 @@ export const ServicesData: ServicesDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./breakfast.jpg",
+    link: "/services",
   },
   {
     price: "8$",
@@ -190,6 +192,7 @@ export const ServicesData: ServicesDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./lunch.jpg",
+    link: "/services",
   },
   {
     price: "10$",
@@ -197,6 +200,7 @@ export const ServicesData: ServicesDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./dinner.jpg",
+    link: "/services",
   },
   {
     price: "5$",
@@ -204,6 +208,7 @@ export const ServicesData: ServicesDataInterface[] = [
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
     imagePath: "./laundry.jpeg",
+    link: "/services",
   },
 ];
 

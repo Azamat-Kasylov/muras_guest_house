@@ -67,11 +67,11 @@ const StyledSliderWrapper = styled.div`
   }
 
   .slick-next {
-    right: -30px;
+    right: -35px;
   }
 
   .slick-prev {
-    left: -30px;
+    left: -35px;
   }
 `;
 
@@ -79,9 +79,9 @@ function SimpleSlider() {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 800,
+    speed: 600,
     slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -138,7 +138,7 @@ const StyledImgWrapper = styled.div`
   width: 100%;
   height: 100%;
   aspect-ratio: 4/3;
-  padding: 0 10px;
+  padding: 0 5px;
   transition: transform 0.3s;
 
   img {
