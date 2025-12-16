@@ -42,7 +42,7 @@ const StyledSliderWrapper = styled.div`
     max-width: 470px;
   }
   @media (max-width: 480px) {
-    max-width: 380px;
+    max-width: 360px;
     padding: 0 20px;
   }
   @media (max-width: 410px) {
@@ -56,6 +56,10 @@ const StyledSliderWrapper = styled.div`
     opacity: 0.4;
     transition: opacity 0.3s;
     z-index: 1;
+    @media (max-width: 410px) {
+      width: 123px;
+      height: 30px;
+    }
   }
 
   .slick-arrow:hover {
@@ -68,10 +72,18 @@ const StyledSliderWrapper = styled.div`
 
   .slick-next {
     right: -35px;
+    @media (max-width: 410px) {
+      top: 215px;
+      right: 5px;
+    }
   }
 
   .slick-prev {
     left: -35px;
+    @media (max-width: 410px) {
+      top: 215px;
+      left: 5px;
+    }
   }
 `;
 
@@ -79,7 +91,7 @@ function SimpleSlider() {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
@@ -87,7 +99,7 @@ function SimpleSlider() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -106,7 +118,7 @@ function SimpleSlider() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 2,
+          initialSlide: 1,
           dots: false,
         },
       },

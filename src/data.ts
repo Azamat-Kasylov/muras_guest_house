@@ -128,8 +128,8 @@ export interface roomsComfortInterface {
 
 export const roomsComfort: roomsComfortInterface[] = [
   {
-    price: "50$",
-    title: "Standard room",
+    price: "30$",
+    title: "Comfort room",
     description:
       "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
   },

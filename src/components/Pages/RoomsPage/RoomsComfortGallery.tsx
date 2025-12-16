@@ -86,11 +86,10 @@ const StyledYurtGallery = styled.div`
     max-width: 470px;
   }
   @media (max-width: 480px) {
-    max-width: 380px;
-    padding: 0 20px;
+    max-width: 330px;
   }
   @media (max-width: 410px) {
-    max-width: 300px;
+    max-width: 250px;
   }
 
   .slick-arrow {

@@ -19,6 +19,9 @@ const RoomsPage: React.FC = () => {
 
 const StyledRooms = styled.section`
   padding: 60px 50px 50px;
+  @media (max-width: 480px) {
+    padding: 60px 1rem 50px;
+  }
 `;
 
 export default RoomsPage;
