@@ -9,7 +9,7 @@ const RoomsPage: React.FC = () => {
   return (
     <StyledRooms className="rooms">
       <NavLink to="link" className="room-link"></NavLink>
-      <h2>Our rooms and Yurts</h2>
+      <h2 className="title">Our rooms and Yurts</h2>
       <RoomsYurt />
       <RoomsStandard />
       <RoomsComfort />
@@ -18,9 +18,14 @@ const RoomsPage: React.FC = () => {
 };
 
 const StyledRooms = styled.section`
-  padding: 60px 50px 50px;
-  @media (max-width: 480px) {
-    padding: 60px 1rem 50px;
+  padding: 80px 50px 50px;
+  @media (max-width: 900px) {
+    padding: 80px 0 50px;
+  }
+
+  .title {
+    padding: 0 1rem;
+    margin-bottom: 25px;
   }
 `;
 

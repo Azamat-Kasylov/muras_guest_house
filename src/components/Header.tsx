@@ -42,7 +42,7 @@ const StyledHeader = styled.header<StyledHeaderProp>`
   justify-content: space-between;
   justify-self: center;
   align-items: center;
-  background-color: rgba(0, 163, 165, 0.8);
+  background-color: rgba(0, 163, 165, 0.9);
   backdrop-filter: blur(3px);
   z-index: 10;
 

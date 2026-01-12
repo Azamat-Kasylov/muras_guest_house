@@ -17,7 +17,7 @@ function SimpleSlider() {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 400,
+    speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
     responsive: [
@@ -25,7 +25,7 @@ function SimpleSlider() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -33,27 +33,40 @@ function SimpleSlider() {
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          className: "center",
+          centerMode: true,
           infinite: true,
-          dots: false,
+          centerPadding: "100px",
+          slidesToShow: 1,
+          speed: 300,
+          dots: true,
+          arrows: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
+          className: "center",
+          centerMode: true,
+          infinite: true,
+          centerPadding: "60px",
           slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 2,
-          dots: false,
+          speed: 300,
+          dots: true,
+          arrows: false,
         },
       },
       {
         breakpoint: 480,
         settings: {
+          className: "center",
+          centerMode: true,
+          infinite: true,
+          centerPadding: "40px",
           slidesToShow: 1,
-          slidesToScroll: 1,
+          speed: 300,
           dots: false,
+          arrows: false,
         },
       },
     ],
@@ -71,26 +84,8 @@ function SimpleSlider() {
 }
 
 const StyledYurtGallery = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
-  @media (max-width: 1200px) {
-    max-width: 950px;
-  }
-  @media (max-width: 1024px) {
-    max-width: 800px;
-  }
-  @media (max-width: 900px) {
-    max-width: 580px;
-  }
-  @media (max-width: 600px) {
-    max-width: 470px;
-  }
-  @media (max-width: 480px) {
-    max-width: 330px;
-  }
-  @media (max-width: 410px) {
-    max-width: 250px;
-  }
 
   .slick-arrow {
     background-color: #d8e1ec;

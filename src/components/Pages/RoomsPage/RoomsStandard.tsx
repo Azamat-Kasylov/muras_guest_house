@@ -10,11 +10,9 @@ const RoomsStandard: React.FC = () => {
         <RoomsStandardGallery />
         {roomsStandard.map((room, index) => (
           <div key={index} className="yurt-card">
-            <div className="yurt-text-content">
-              <h3 className="yurt-title">{room.title}</h3>
-              <p className="yurt-description">{room.description}</p>
-              <p className="yurt-price">{room.price}</p>
-            </div>
+            <h3 className="yurt-title">{room.title}</h3>
+            <p className="yurt-description">{room.description}</p>
+            <p className="yurt-price">{room.price}</p>
           </div>
         ))}
       </div>
@@ -33,6 +31,9 @@ const StyledYurt = styled.section`
   .yurt-card {
     width: 100%;
     margin-top: 50px;
+    @media (max-width: 900px) {
+      padding: 0 1rem;
+    }
   }
 
   .yurt-title {

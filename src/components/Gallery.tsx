@@ -7,47 +7,32 @@ import styled from "styled-components";
 
 const Gallery: React.FC = () => {
   return (
-    <StyledGallery id="gallery">
-      <div>
-        <StyledSliderWrapper className="slider-container">
-          <SimpleSlider />
-        </StyledSliderWrapper>
-      </div>
-    </StyledGallery>
+    <Section id="gallery">
+      <Wrapper className="slider-container">
+        <SimpleSlider />
+      </Wrapper>
+    </Section>
   );
 };
 
-const StyledGallery = styled.section`
-  padding: 100px 1rem;
+const Section = styled.section`
+  padding: 100px 60px;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
 
-const StyledSliderWrapper = styled.div`
-  max-width: 1100px;
-  width: 100%;
-  padding: 0 50px;
-  @media (max-width: 1200px) {
-    max-width: 950px;
-  }
-  @media (max-width: 1024px) {
-    max-width: 800px;
-  }
   @media (max-width: 900px) {
-    max-width: 580px;
+    padding: 100px 1rem;
   }
   @media (max-width: 600px) {
-    max-width: 470px;
+    padding: 100px 0;
   }
-  @media (max-width: 480px) {
-    max-width: 360px;
-    padding: 0 20px;
-  }
-  @media (max-width: 410px) {
-    max-width: 300px;
-  }
+`;
+
+const Wrapper = styled.div`
+  max-width: 1200px;
+  width: 100%;
 
   .slick-arrow {
     background-color: #d8e1ec;
@@ -56,10 +41,6 @@ const StyledSliderWrapper = styled.div`
     opacity: 0.4;
     transition: opacity 0.3s;
     z-index: 1;
-    @media (max-width: 410px) {
-      width: 123px;
-      height: 30px;
-    }
   }
 
   .slick-arrow:hover {
@@ -72,18 +53,10 @@ const StyledSliderWrapper = styled.div`
 
   .slick-next {
     right: -35px;
-    @media (max-width: 410px) {
-      top: 215px;
-      right: 5px;
-    }
   }
 
   .slick-prev {
     left: -35px;
-    @media (max-width: 410px) {
-      top: 215px;
-      left: 5px;
-    }
   }
 `;
 
@@ -107,27 +80,40 @@ function SimpleSlider() {
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          className: "center",
+          centerMode: true,
           infinite: true,
-          dots: false,
+          centerPadding: "100px",
+          slidesToShow: 1,
+          speed: 300,
+          dots: true,
+          arrows: false,
         },
       },
       {
         breakpoint: 600,
         settings: {
+          className: "center",
+          centerMode: true,
+          infinite: true,
+          centerPadding: "60px",
           slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1,
-          dots: false,
+          speed: 300,
+          dots: true,
+          arrows: false,
         },
       },
       {
         breakpoint: 480,
         settings: {
+          className: "center",
+          centerMode: true,
+          infinite: true,
+          centerPadding: "40px",
           slidesToShow: 1,
-          slidesToScroll: 1,
+          speed: 300,
           dots: false,
+          arrows: false,
         },
       },
     ],
@@ -147,15 +133,13 @@ function SimpleSlider() {
 }
 
 const StyledImgWrapper = styled.div`
-  width: 100%;
-  height: 100%;
   aspect-ratio: 4/3;
-  padding: 0 5px;
   transition: transform 0.3s;
 
   img {
     width: 100%;
     height: 100%;
+    padding: 0 5px;
     object-fit: cover;
   }
 `;
