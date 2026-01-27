@@ -3,7 +3,7 @@ import styled from "styled-components";
 // import ServisesItem from "./ServisesItem";
 import { ServicesDataInterface } from "../data";
 
-const Servises: React.FC<ServicesDataInterface> = ({
+const Services: React.FC<ServicesDataInterface> = ({
   price,
   title,
   description,
@@ -38,4 +38,4 @@ const Container = styled.div`
   align-items: center;
 `;
 
-export default Servises;
+export default Services;

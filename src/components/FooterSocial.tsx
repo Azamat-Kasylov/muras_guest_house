@@ -17,6 +17,7 @@ const FooterSocial: React.FC = () => {
 const Socials = styled.div`
   text-align: center;
   display: flex;
+  gap: 20px;
 
   img {
     width: 30px;
@@ -32,9 +33,6 @@ const Socials = styled.div`
   }
   a:hover {
     border: 1px dashed #fff;
-  }
-  a + a {
-    margin-left: 20px;
   }
 `;
 

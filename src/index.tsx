@@ -10,5 +10,5 @@ root.render(
   <BrowserRouter basename="/muras_guest_house">
     <ScrollToTop />
     <App />
-  </BrowserRouter>
+  </BrowserRouter>,
 );

@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { ServicesData, ServicesDataInterface } from "../data";
 
-const ServisesItem: React.FC<ServicesDataInterface> = ({
+const ServicesItem: React.FC<ServicesDataInterface> = ({
   title,
   price,
   description,
@@ -76,4 +76,4 @@ const StyledDiv = styled.div`
   }
 `;
 
-export default ServisesItem;
+export default ServicesItem;

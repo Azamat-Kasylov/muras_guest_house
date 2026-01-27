@@ -20,7 +20,6 @@ const FormArea: React.FC = () => {
 
   const nameError = errors["name"]?.message;
   const emailError = errors["email"]?.message;
-  console.log(isSubmitSuccessful);
 
   const onSubmit: SubmitHandler<IForm> = (data) => {
     console.log(data);

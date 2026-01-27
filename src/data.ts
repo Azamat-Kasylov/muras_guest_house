@@ -1,5 +1,7 @@
 /* eslint-disable no-dupe-keys */
 
+// navbar data
+
 export interface NavBarDataInterface {
   title: string;
   link: string;
@@ -11,6 +13,8 @@ export const NavBarData: NavBarDataInterface[] = [
   { title: "rooms", link: "/rooms" },
   { title: "services", link: "/services" },
 ];
+
+// rooms data
 
 export interface roomsDataInterface {
   price: string;
@@ -151,7 +155,8 @@ export const roomsComfortImages: roomsComfortImagesInterface[] = [
   { imagePath: "./bed1.jpg" },
   { imagePath: "./bed1.jpg" },
 ];
-//
+
+// Social data
 
 interface SocialsDataInterface {
   iconPath: string;
@@ -168,6 +173,8 @@ export const SocialsData: SocialsDataInterface[] = [
     href: "https://www.instagram.com/guest_house_muras_sarytash/",
   },
 ];
+
+// Servisies data
 
 export interface ServicesDataInterface {
   price: string;
@@ -212,6 +219,43 @@ export const ServicesData: ServicesDataInterface[] = [
   },
 ];
 
+export interface breakfastImagesInterface {
+  imagePath: string;
+  alt: string;
+}
+
+export const BreakfastImages: breakfastImagesInterface[] = [
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+  { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+];
+
+export interface breakfastInterface {
+  price: string;
+  title: string;
+  menu: string;
+  description: string;
+}
+
+export const breakfastData: breakfastInterface[] = [
+  {
+    price: "5$",
+    title: "Breackfast",
+    menu: "Fried eggs, omelette, porridge, pancakes, butter, gem",
+    description:
+      "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+  },
+];
+
+// Gallery data
+
 interface GalleryDataInterface {
   imagePath: string;
 }
@@ -230,6 +274,9 @@ export const GalleryData: GalleryDataInterface[] = [
   { imagePath: "./19_pamir-mountains.jpeg" },
   { imagePath: "./20_pamir-mountains.jpeg" },
 ];
+
+// Feedback data
+
 interface FeedbackDataInterface {
   imagePath: string;
   description: string;

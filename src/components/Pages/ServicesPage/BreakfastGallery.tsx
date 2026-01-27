@@ -3,9 +3,9 @@ import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { roomsComfortImages } from "../../../data";
+import { BreakfastImages } from "../../../data";
 
-const RoomsComfortGallery: React.FC = () => {
+const BreackfastGallery: React.FC = () => {
   return (
     <StyledYurtGallery>
       <SimpleSlider />
@@ -76,8 +76,8 @@ function SimpleSlider() {
 
   return (
     <SliderCustom {...settings}>
-      {roomsComfortImages.map((i, index) => (
-        <img key={index} src={i.imagePath} alt="yurt-photo" />
+      {BreakfastImages.map((i, index) => (
+        <img key={index} src={i.imagePath} alt={i.alt} />
       ))}
     </SliderCustom>
   );
@@ -113,12 +113,10 @@ const StyledYurtGallery = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
     padding: 0 5px;
     aspect-ratio: 4/3;
     object-fit: cover;
   }
 `;
 
-export default RoomsComfortGallery;
+export default BreackfastGallery;

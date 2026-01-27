@@ -36,7 +36,7 @@ function SimpleSlider() {
           className: "center",
           centerMode: true,
           infinite: true,
-          centerPadding: "100px",
+          centerPadding: "130px",
           slidesToShow: 1,
           speed: 300,
           dots: true,
@@ -49,7 +49,7 @@ function SimpleSlider() {
           className: "center",
           centerMode: true,
           infinite: true,
-          centerPadding: "60px",
+          centerPadding: "80px",
           slidesToShow: 1,
           speed: 300,
           dots: true,
@@ -84,7 +84,7 @@ function SimpleSlider() {
 }
 
 const StyledYurtGallery = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
 
   .slick-arrow {

@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
-import Hero from "./Hero";
-import ServicesSection from "./ServicesSection";
+import HeroPage from "./Pages/HeroPage/HeroPage";
+import ServicesPage from "./Pages/ServicesPage/ServicesPage";
 import RoomsPage from "./Pages/RoomsPage/RoomsPage";
 
 const Main: React.FC = () => {
@@ -11,9 +11,9 @@ const Main: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/main" element={<HomePage />} />
-        <Route path="/aboutUs" element={<Hero />} />
+        <Route path="/aboutUs" element={<HeroPage />} />
         <Route path="/rooms" element={<RoomsPage />} />
-        <Route path="/services" element={<ServicesSection />} />
+        <Route path="/services" element={<ServicesPage />} />
       </Routes>
     </div>
   );
