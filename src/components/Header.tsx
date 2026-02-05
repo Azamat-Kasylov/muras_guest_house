@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 
   return (
     <StyledHeader className="header" isVisible={isVisible}>
-      <a href="/muras_guest_house/main">
+      <a href="/muras_guest_house/">
         <img src="./logo.png" alt="muras logo" />
       </a>
       <Music />
