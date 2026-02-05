@@ -31,7 +31,7 @@ const PopupMessage = styled.div`
   padding: 40px 20px;
   width: calc(100% - 32px);
   position: absolute;
-  bottom: 200px;
+  bottom: 210px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;

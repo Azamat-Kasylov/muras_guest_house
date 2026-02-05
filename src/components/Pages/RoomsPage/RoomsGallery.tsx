@@ -27,16 +27,6 @@ const defaultSettings: Settings = {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true,
-        touchThreshold: 20,
-      },
-    },
-    {
-      breakpoint: 1024,
-      settings: {
         className: "center",
         centerMode: true,
         infinite: true,
@@ -49,7 +39,7 @@ const defaultSettings: Settings = {
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
         className: "center",
         centerMode: true,
@@ -110,7 +100,7 @@ const RoomsGallery: React.FC<GalleryProps> = ({
 };
 
 const StyledGallery = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 

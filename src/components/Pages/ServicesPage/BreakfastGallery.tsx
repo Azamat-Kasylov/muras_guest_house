@@ -24,15 +24,6 @@ function SimpleSlider() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
           className: "center",
           centerMode: true,
           infinite: true,
@@ -44,7 +35,7 @@ function SimpleSlider() {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           className: "center",
           centerMode: true,

@@ -98,7 +98,7 @@ function SimpleSlider() {
         },
       },
       {
-        breakpoint: 375,
+        breakpoint: 430,
         settings: {
           className: "center",
           centerMode: true,
