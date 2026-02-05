@@ -22,10 +22,10 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 900px) {
-    padding: 100px 1rem;
+  @media (max-width: 1024px) {
+    padding: 100px 0;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     padding: 100px 0;
   }
 `;
@@ -67,50 +67,45 @@ function SimpleSlider() {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
+    touchThreshold: 20,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
+          className: "center",
+          centerMode: true,
+          infinite: true,
+          centerPadding: "40px",
           slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          className: "center",
-          centerMode: true,
-          infinite: true,
-          centerPadding: "100px",
-          slidesToShow: 1,
+          touchThreshold: 20,
           speed: 300,
           dots: true,
           arrows: false,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           className: "center",
           centerMode: true,
           infinite: true,
-          centerPadding: "60px",
+          centerPadding: "80px",
           slidesToShow: 1,
+          touchThreshold: 20,
           speed: 300,
           dots: true,
           arrows: false,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 375,
         settings: {
           className: "center",
           centerMode: true,
           infinite: true,
           centerPadding: "40px",
           slidesToShow: 1,
+          touchThreshold: 20,
           speed: 300,
           dots: false,
           arrows: false,

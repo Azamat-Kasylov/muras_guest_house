@@ -78,7 +78,7 @@ const StyledGallery = styled.section`
       }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 430px) {
       grid-auto-columns: 300px;
 
       @keyframes scroll {

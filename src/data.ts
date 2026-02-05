@@ -76,19 +76,20 @@ export const roomsYurt: roomsYurtInterface[] = [
 
 export interface roomsYurtImagesInterface {
   imagePath: string;
+  alt?: string;
 }
 
 export const roomsYurtImages: roomsYurtImagesInterface[] = [
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
-  { imagePath: "./yurt.jpg" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
+  { imagePath: "./yurt.jpg", alt: "Yurt" },
 ];
 
 export interface roomsStandardInterface {
@@ -108,19 +109,20 @@ export const roomsStandard: roomsStandardInterface[] = [
 
 export interface roomsStandardImagesInterface {
   imagePath: string;
+  alt: string;
 }
 
 export const roomsStandardImages: roomsStandardImagesInterface[] = [
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
-  { imagePath: "./bed2.jpg" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
+  { imagePath: "./bed2.jpg", alt: "Standart room" },
 ];
 
 //
@@ -141,19 +143,20 @@ export const roomsComfort: roomsComfortInterface[] = [
 
 export interface roomsComfortImagesInterface {
   imagePath: string;
+  alt: string;
 }
 
 export const roomsComfortImages: roomsComfortImagesInterface[] = [
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
-  { imagePath: "./bed1.jpg" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
+  { imagePath: "./bed1.jpg", alt: "Comfort room" },
 ];
 
 // Social data

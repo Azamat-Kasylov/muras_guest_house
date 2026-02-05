@@ -36,7 +36,7 @@ const StyledMusic = styled.div`
   height: 40px;
   overflow: hidden;
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     width: 80px;
     height: 50px;
   }
@@ -51,7 +51,7 @@ const StyledMusic = styled.div`
       cursor: pointer;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       width: 60px;
       height: 40px;
       position: absolute;

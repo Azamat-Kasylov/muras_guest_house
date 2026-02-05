@@ -9,9 +9,9 @@ const Hero: React.FC = () => {
           <StaticImg src="./3_ainura.jpeg" alt="Owner" />
           <TextContent>
             <p>
-              The Hotel Sonne Mellau in the Bregenzerwald is a place for
-              connoisseurs, those seeking relaxation, and active holidaymakers –
-              one does not exclude the other.
+              The Muras Guest House in Sary-Tash is a place for connoisseurs,
+              those seeking relaxation, and active holidaymakers – one does not
+              exclude the other.
             </p>
             <p>
               Unforgettable moments to be shared together or enjoyed on your

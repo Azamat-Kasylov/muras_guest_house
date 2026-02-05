@@ -31,7 +31,7 @@ const StyledServices = styled.section`
   padding: 0 50px 50px;
   background-color: #f8fafc;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     padding: 0 3rem 50px;
   }
 
@@ -79,7 +79,7 @@ const StyledServices = styled.section`
   }
 
   .services-price {
-    font-weight: bold;
+    font-weight: 700;
     color: #0077cc;
   }
 `;

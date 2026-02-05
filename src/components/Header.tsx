@@ -50,7 +50,7 @@ const StyledHeader = styled.header<StyledHeaderProp>`
     display: none;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     padding-bottom: 1rem;
     height: ${({ isVisible }) => (isVisible ? "30%" : "60px")};
     display: flex;
@@ -91,7 +91,7 @@ const StyledHeader = styled.header<StyledHeaderProp>`
     height: 60px;
     padding-left: 20px;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       padding-left: 0;
     }
   }

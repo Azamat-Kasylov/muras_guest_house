@@ -119,7 +119,7 @@ const StyledForm = styled.form`
   .errorName {
     top: 39px;
     left: 20px;
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       top: 40px;
       left: 20px;
     }
@@ -128,7 +128,7 @@ const StyledForm = styled.form`
   .errorEmail {
     top: 39px;
     left: 200px;
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
       top: 100px;
       left: 20px;
     }
@@ -154,7 +154,7 @@ const StyledForm = styled.form`
     background-color: #ffbc4c;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -173,7 +173,7 @@ const StyledForm = styled.form`
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;

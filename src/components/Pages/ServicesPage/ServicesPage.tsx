@@ -15,7 +15,7 @@ const ServicesPage: React.FC = () => {
 
 const Section = styled.section`
   padding: 80px 50px 50px;
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     padding: 80px 0 50px;
   }
 

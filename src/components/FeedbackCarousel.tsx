@@ -32,7 +32,7 @@ const StyledGallery = styled.section`
     min-height: 100%;
     flex-direction: column;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 430px) {
     padding: 50px 2rem;
   }
 

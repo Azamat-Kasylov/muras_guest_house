@@ -23,7 +23,7 @@ const StyledIntro = styled.section`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     padding: 0 3rem;
   }
 
@@ -57,7 +57,7 @@ const StyledIntro = styled.section`
     text-align: center;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     .subtitle {
       font-size: 25px;
     }

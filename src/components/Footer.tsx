@@ -37,7 +37,7 @@ const StyledFooter = styled.footer`
     );
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     height: 75vh;
 
     &::after {
@@ -69,7 +69,7 @@ const FooterContent = styled.div`
   position: relative;
   z-index: 1;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     gap: 20px;

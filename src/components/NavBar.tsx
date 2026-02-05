@@ -23,7 +23,7 @@ const StyledNavBar = styled.ul`
   display: flex;
   gap: 50px;
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     padding: 10px 0;
     display: flex;
     flex-direction: column;

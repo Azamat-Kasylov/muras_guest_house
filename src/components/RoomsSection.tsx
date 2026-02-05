@@ -29,7 +29,7 @@ const StyledRooms = styled.section`
   background-color: #f8fafc;
   overflow: hidden;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     padding: 0 3rem 50px;
   }
 

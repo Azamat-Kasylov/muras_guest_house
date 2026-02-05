@@ -23,7 +23,7 @@ const Contacts = styled.div`
   p {
     margin: 0;
     margin-bottom: 5px;
-    @media (max-width: 500px) {
+    @media (max-width: 768px) {
       text-align: center;
     }
   }

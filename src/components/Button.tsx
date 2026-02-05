@@ -2,11 +2,7 @@ import styled from "styled-components";
 
 const Button: React.FC = () => {
   const handleClick = () => {
-    let obj1 = { name: "aza" };
-    let obj2 = obj1;
-    obj1.name = "sasha";
-
-    console.log(obj2);
+    console.log("soon");
   };
 
   return (
@@ -34,7 +30,7 @@ const StyledButton = styled.button`
     font-size: 16px;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;

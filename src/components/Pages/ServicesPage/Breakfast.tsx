@@ -33,7 +33,7 @@ const Section = styled.section`
   .brkfst-card {
     width: 100%;
     margin-top: 50px;
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       padding: 0 1rem;
     }
   }
