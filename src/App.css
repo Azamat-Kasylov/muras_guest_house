@@ -10,6 +10,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-size: 18px;
 }
 
 img {

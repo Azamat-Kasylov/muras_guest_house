@@ -34,8 +34,9 @@ const StyledYurt = styled.section`
   .room-card {
     width: 100%;
     margin-top: 50px;
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       padding: 0 1rem;
+      margin-top: 30px;
     }
   }
 

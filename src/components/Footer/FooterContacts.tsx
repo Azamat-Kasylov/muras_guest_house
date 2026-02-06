@@ -5,7 +5,7 @@ const FooterContacts: React.FC = () => {
     <Contacts id="contacts">
       <p>Сontacts:</p>
       <a className="phone" href="tel:+996773001996">
-        +(996) 773 00 19 96 <span>(mobile)</span>
+        +(996) 773 00 19 96 (mobile)
       </a>
       <a className="phone" href="tel:+996554067279">
         +(996) 554 06 72 79 (whatsapp)
@@ -29,19 +29,13 @@ const Contacts = styled.div`
   }
   a {
     display: inline-block;
-    text-decoration: none;
     padding: 5px 0;
     color: #fff7e5;
     position: relative;
-    border-bottom: 1px dashed #05050524;
     transition: transform 0.5s;
   }
   a:hover {
     transform: translateX(30px);
-  }
-
-  span {
-    letter-spacing: 2px;
   }
 `;
 
