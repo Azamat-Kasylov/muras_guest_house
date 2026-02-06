@@ -1,14 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import Breakfast from "./Breakfast";
 import { NavLink } from "react-router-dom";
+import ServicesGallery from "./ServicesGallery";
+import ServicesInfo from "./ServicesInfo";
+import { serviceImages, serviceInfo } from "../../../data";
 
 const ServicesPage: React.FC = () => {
   return (
     <Section className="rooms">
       <NavLink to="link" className="room-link"></NavLink>
       <h2 className="title">Our services</h2>
-      <Breakfast />
+      <ServicesInfo service={serviceInfo.breakfastInfo} />
+      <ServicesGallery images={serviceImages.breakfast} />
+      <ServicesInfo service={serviceInfo.lunchInfo} />
+      <ServicesGallery images={serviceImages.lunch} />
+      <ServicesInfo service={serviceInfo.dinnerInfo} />
+      <ServicesGallery images={serviceImages.dinner} />
     </Section>
   );
 };
@@ -21,7 +28,6 @@ const Section = styled.section`
 
   .title {
     padding: 0 1rem;
-    margin-bottom: 25px;
   }
 `;
 

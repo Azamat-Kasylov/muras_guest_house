@@ -2,14 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import RoomsInfo from "./RoomsInfo";
-import {
-  roomsYurt,
-  roomsYurtImages,
-  roomsStandardImages,
-  roomsStandard,
-  roomsComfortImages,
-  roomsComfort,
-} from "../../../data";
+import { roomsImages, roomsInfo } from "../../../data";
 import RoomsGallery from "./RoomsGallery";
 
 const RoomsPage: React.FC = () => {
@@ -17,12 +10,12 @@ const RoomsPage: React.FC = () => {
     <StyledRooms className="rooms">
       <NavLink to="link" className="room-link"></NavLink>
       <h2 className="title">Our rooms and Yurts</h2>
-      <RoomsGallery images={roomsYurtImages} />
-      <RoomsInfo rooms={roomsYurt} />
-      <RoomsGallery images={roomsStandardImages} />
-      <RoomsInfo rooms={roomsStandard} />
-      <RoomsGallery images={roomsComfortImages} />
-      <RoomsInfo rooms={roomsComfort} />
+      <RoomsInfo rooms={roomsInfo.yurtInfo} />
+      <RoomsGallery images={roomsImages.yurtImages} />
+      <RoomsInfo rooms={roomsInfo.standardRoomInfo} />
+      <RoomsGallery images={roomsImages.standardRoomImages} />
+      <RoomsInfo rooms={roomsInfo.comfortRoomInfo} />
+      <RoomsGallery images={roomsImages.comfortRoomImages} />
     </StyledRooms>
   );
 };
@@ -35,7 +28,6 @@ const StyledRooms = styled.section`
 
   .title {
     padding: 0 1rem;
-    margin-bottom: 25px;
   }
 `;
 

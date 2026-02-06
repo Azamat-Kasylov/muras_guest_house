@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import styled from "styled-components";
-import FormAreaHookForm from "./Form/FormAreaHookForm";
+import FormAreaHookForm from "../../Form/FormAreaHookForm";
 
 const Intro: React.FC = () => {
   return (

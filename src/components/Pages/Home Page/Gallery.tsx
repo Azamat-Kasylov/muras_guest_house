@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { GalleryData } from "../data";
+import { galleryData } from "../../../data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -118,9 +118,9 @@ function SimpleSlider() {
 
   return (
     <SliderCustom {...settings}>
-      {GalleryData.map((i) => (
-        <StyledImgWrapper key={i.imagePath}>
-          <img src={i.imagePath} />
+      {galleryData.map(({ imagePath, alt }, index) => (
+        <StyledImgWrapper key={index}>
+          <img src={imagePath} alt={alt} />
         </StyledImgWrapper>
       ))}
     </SliderCustom>

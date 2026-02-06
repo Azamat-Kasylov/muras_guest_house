@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from "styled-components";
-import { SocialsData } from "../data";
+import { socialsData } from "../../data";
 
 const FooterSocial: React.FC = () => {
   return (
     <Socials>
-      {SocialsData.map((i) => (
+      {socialsData.map((i) => (
         <a target="_blank" rel="noreferrer" href={i.href} key={i.href}>
-          <img src={i.iconPath} />
+          <img src={i.image.imagePath} />
         </a>
       ))}
     </Socials>

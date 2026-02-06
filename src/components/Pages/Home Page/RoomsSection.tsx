@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { roomsData } from "../data";
+import { roomsData } from "../../../data";
 import { NavLink } from "react-router-dom";
 
 const RoomsSection: React.FC = () => {
@@ -8,16 +8,21 @@ const RoomsSection: React.FC = () => {
     <StyledRooms id="rooms" className="rooms">
       <h2 className="section-title">Our rooms and Yurts</h2>
       <div className="rooms-grid">
-        {roomsData.map((room, index) => (
-          <NavLink to={room.link} key={index} className="room-card">
-            <img src={room.imagePath} alt={room.title} className="room-image" />
-            <div className="room-content">
-              <h3 className="room-title">{room.title}</h3>
-              <p className="room-description">{room.description}</p>
-              {/* <p className="room-price">{room.price}</p> */}
-            </div>
-          </NavLink>
-        ))}
+        {roomsData.map(
+          (
+            { link, info: { title, description }, image: { imagePath, alt } },
+            index,
+          ) => (
+            <NavLink to={link} key={index} className="room-card">
+              <img src={imagePath} alt={alt} className="room-image" />
+              <div className="room-content">
+                <h3 className="room-title">{title}</h3>
+                <p className="room-description">{description}</p>
+                {/* <p className="room-price">{room.price}</p> */}
+              </div>
+            </NavLink>
+          ),
+        )}
       </div>
     </StyledRooms>
   );

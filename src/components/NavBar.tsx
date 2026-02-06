@@ -1,5 +1,5 @@
 import NavBarItem from "./NavBarItem";
-import { NavBarData } from "../data";
+import { navBarData } from "../data";
 import styled from "styled-components";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 const NavBar: React.FC<Props> = ({ isVisible }) => {
   return (
     <StyledNavBar className={` ${!isVisible ? "hiddenNav" : ""}`}>
-      {NavBarData.map((i, index) => (
+      {navBarData.map((i, index) => (
         <NavBarItem link={i.link} title={i.title} key={index} />
       ))}
     </StyledNavBar>

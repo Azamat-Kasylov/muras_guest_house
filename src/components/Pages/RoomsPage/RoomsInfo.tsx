@@ -1,20 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-
-interface RoomItem {
-  title: string;
-  description: string;
-  price: string;
-}
+import { IInfo } from "../../../data";
 
 interface RoomsInfoProps {
-  rooms: RoomItem[];
+  rooms: IInfo[];
 }
 
 const RoomsInfo: React.FC<RoomsInfoProps> = ({ rooms }) => {
   return (
     <StyledYurt>
-      <div className="wrapper">
+      <div className="rooms-card-wrapper">
         {rooms.map((room, index) => (
           <div key={index} className="room-card">
             <h3 className="room-title">{room.title}</h3>
@@ -28,25 +23,25 @@ const RoomsInfo: React.FC<RoomsInfoProps> = ({ rooms }) => {
 };
 
 const StyledYurt = styled.section`
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 
-  .wrapper {
+  .rooms-card-wrapper {
+    max-width: max-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .room-card {
     width: 100%;
     margin-top: 50px;
-    @media (max-width: 1024px) {
+    @media (max-width: 900px) {
       padding: 0 1rem;
     }
   }
 
   .room-title {
     color: #000;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 
   .room-description {
@@ -55,8 +50,10 @@ const StyledYurt = styled.section`
   }
 
   .room-price {
+    padding: 5px 0;
     font-weight: 700;
-    color: blue;
+    background-color: #f6e7a7;
+    text-align: center;
   }
 `;
 

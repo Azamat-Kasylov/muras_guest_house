@@ -62,7 +62,7 @@ interface Props {
   images: IImage[];
   settings?: Partial<Settings>;
 }
-const RoomsGallery: React.FC<Props> = ({ images, settings }) => {
+const ServicesGallery: React.FC<Props> = ({ images, settings }) => {
   const sliderSettings = {
     ...defaultSettings,
     ...settings,
@@ -77,7 +77,7 @@ const RoomsGallery: React.FC<Props> = ({ images, settings }) => {
           <div key={index}>
             <img
               src={image.imagePath}
-              alt={image.alt || `gallery-image-${index}`}
+              alt={image.alt || `meal-image-${index}`}
             />
           </div>
         ))}
@@ -125,4 +125,4 @@ const StyledGallery = styled.div`
   }
 `;
 
-export default RoomsGallery;
+export default ServicesGallery;

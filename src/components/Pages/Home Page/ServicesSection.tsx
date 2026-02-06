@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ServicesData } from "../data";
+import { servicesData } from "../../../data";
 import { NavLink } from "react-router-dom";
 
 const ServicesSection: React.FC = () => {
@@ -8,20 +8,21 @@ const ServicesSection: React.FC = () => {
     <StyledServices id="services" className="services">
       <h2 className="section-title">Our services</h2>
       <div className="services-grid">
-        {ServicesData.map((services, index) => (
-          <NavLink to={services.link} key={index} className="services-card">
-            <img
-              src={services.imagePath}
-              alt={services.title}
-              className="services-image"
-            />
-            <div className="services-content">
-              <h3 className="services-title">{services.title}</h3>
-              <p className="services-description">{services.description}</p>
-              {/* <p className="services-price">{services.price}</p> */}
-            </div>
-          </NavLink>
-        ))}
+        {servicesData.map(
+          (
+            { image: { imagePath, alt }, info: { title, description }, link },
+            index,
+          ) => (
+            <NavLink to={link} key={index} className="services-card">
+              <img src={imagePath} alt={alt} className="services-image" />
+              <div className="services-content">
+                <h3 className="services-title">{title}</h3>
+                <p className="services-description">{description}</p>
+                {/* <p className="services-price">{services.price}</p> */}
+              </div>
+            </NavLink>
+          ),
+        )}
       </div>
     </StyledServices>
   );

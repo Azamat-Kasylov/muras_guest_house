@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GalleryData } from "../data";
+import { galleryData } from "../data";
 import { useState, useRef } from "react";
 
 const GalleryAutoCarousel: React.FC = () => {
@@ -21,12 +21,12 @@ const GalleryAutoCarousel: React.FC = () => {
     <StyledGallery id="gallerySection">
       <div className="container">
         <div className="gallery" onClick={HandleClick} ref={GalleryRef}>
-          {GalleryData.map((i) => (
+          {galleryData.map((i) => (
             <div className="gallery_item" key={i.imagePath}>
               <img className="gallery_image" src={i.imagePath} alt="" />
             </div>
           ))}
-          {GalleryData.map((i) => (
+          {galleryData.map((i) => (
             <div className="gallery_item" key={i.imagePath}>
               <img className="gallery_image" src={i.imagePath} alt="" />
             </div>

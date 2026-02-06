@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { FeedbackData } from "../data";
+import { feedbackData } from "../../../data";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,15 +51,6 @@ const StyledSliderWrapper = styled.div`
   max-width: 800px;
   min-width: 250px;
 
-  .slick-next:before,
-  .slick-next:after {
-    display: none;
-  }
-
-  .slick-dots {
-    bottom: -30px;
-  }
-
   .slick-dots li button:before {
     font-size: 15px;
   }
@@ -74,19 +65,22 @@ const SimpleSlider: React.FC = () => {
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
   };
 
   return (
     <SlickSlider {...settings}>
-      {FeedbackData.map((i) => (
-        <StyledImgWrapper key={i.imagePath}>
-          <div key={i.imagePath}>
-            <img src={i.imagePath} />
-            <p className="description">"{i.description}"</p>
-            <p className="guest">{i.guest}</p>
-          </div>
-        </StyledImgWrapper>
-      ))}
+      {feedbackData.map(
+        ({ image: { imagePath, alt }, description, guest }, index) => (
+          <StyledImgWrapper key={index}>
+            <div key={imagePath}>
+              <img src={imagePath} />
+              <p className="description">"{description}"</p>
+              <p className="guest">{guest}</p>
+            </div>
+          </StyledImgWrapper>
+        ),
+      )}
     </SlickSlider>
   );
 };

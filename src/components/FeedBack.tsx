@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { FeedbackData } from "../data";
+import { feedbackData } from "../data";
 
 const Feedback: React.FC = () => {
   return (
     <StyledFeedback>
       <FeedbackContent>
         <h2>Our guests</h2>
-        {FeedbackData.map((i) => (
-          <div key={i.imagePath}>
-            <img src={i.imagePath} alt={i.guest} />
+        {feedbackData.map((i) => (
+          <div key={i.image.imagePath}>
+            <img src={i.image.imagePath} alt={i.guest || i.image.alt} />
             <p>"{i.description}"</p>
             <p>{i.guest}</p>
           </div>
