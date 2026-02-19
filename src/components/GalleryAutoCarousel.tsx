@@ -22,13 +22,13 @@ const GalleryAutoCarousel: React.FC = () => {
       <div className="container">
         <div className="gallery" onClick={HandleClick} ref={GalleryRef}>
           {galleryData.map((i) => (
-            <div className="gallery_item" key={i.imagePath}>
-              <img className="gallery_image" src={i.imagePath} alt="" />
+            <div className="gallery_item" key={i.url}>
+              <img className="gallery_image" src={i.url} alt="" />
             </div>
           ))}
           {galleryData.map((i) => (
-            <div className="gallery_item" key={i.imagePath}>
-              <img className="gallery_image" src={i.imagePath} alt="" />
+            <div className="gallery_item" key={i.url}>
+              <img className="gallery_image" src={i.url} alt="" />
             </div>
           ))}
         </div>

@@ -3,7 +3,7 @@
 //---------------------------------------------------- Common Interfaces ---------------------------------------------
 
 export interface IImage {
-  imagePath: string;
+  url: string;
   alt: string;
 }
 
@@ -11,7 +11,6 @@ export interface IInfo {
   title: string;
   description: string;
   price: string;
-  menu?: string;
 }
 
 //---------------------------------------------------- Navbar data ---------------------------------------------------
@@ -45,7 +44,7 @@ export const roomsData: RoomsDataInterface[] = [
       price: "50$",
     },
     image: {
-      imagePath: "./yurt.jpg",
+      url: "./yurt.jpg",
       alt: "Yurt photo",
     },
     link: "/rooms",
@@ -58,7 +57,7 @@ export const roomsData: RoomsDataInterface[] = [
       price: "50$",
     },
     image: {
-      imagePath: "./bed1.jpg",
+      url: "./bed1.jpg",
       alt: "Standard room photo",
     },
 
@@ -72,7 +71,7 @@ export const roomsData: RoomsDataInterface[] = [
       price: "30$",
     },
     image: {
-      imagePath: "./bed1.jpg",
+      url: "./bed1.jpg",
       alt: "Comfort room photo",
     },
     link: "/rooms",
@@ -85,7 +84,7 @@ export const roomsData: RoomsDataInterface[] = [
       price: "10$",
     },
     image: {
-      imagePath: "./bed2.jpg",
+      url: "./bed2.jpg",
       alt: "Beds photo",
     },
     link: "/rooms",
@@ -94,33 +93,36 @@ export const roomsData: RoomsDataInterface[] = [
 
 // ---------------------------------------------------- Rooms images ------------------------------------------------------
 
-export interface RoomsImagesInterface {
-  yurtImages: IImage[];
-  standardRoomImages: IImage[];
-  comfortRoomImages: IImage[];
+export interface MediaInterface extends IImage {
+  type: string;
+}
+
+interface RoomsImagesInterface {
+  yurtImages: MediaInterface[];
+  standardRoomImages: MediaInterface[];
+  comfortRoomImages: MediaInterface[];
 }
 
 export const roomsImages: RoomsImagesInterface = {
   yurtImages: [
-    { imagePath: "./yurt.jpg", alt: "Yurt" },
-    { imagePath: "./yurt.jpg", alt: "Yurt" },
-    { imagePath: "./yurt.jpg", alt: "Yurt" },
-    { imagePath: "./yurt.jpg", alt: "Yurt" },
-    { imagePath: "./yurt.jpg", alt: "Yurt" },
+    { type: "video", url: "./yurt-video.mp4", alt: "Yurt building video" },
+    { type: "image", url: "./yurt-muras-2.jpeg", alt: "Yurt" },
+    { type: "image", url: "./yurt-muras.jpg", alt: "Yurt" },
+    { type: "image", url: "./yurt.jpg", alt: "Yurt" },
   ],
   standardRoomImages: [
-    { imagePath: "./bed2.jpg", alt: "Standart room" },
-    { imagePath: "./bed2.jpg", alt: "Standart room" },
-    { imagePath: "./bed2.jpg", alt: "Standart room" },
-    { imagePath: "./bed2.jpg", alt: "Standart room" },
-    { imagePath: "./bed2.jpg", alt: "Standart room" },
+    { type: "image", url: "./9_new-room-view.jpeg", alt: "Standart room" },
+    { type: "image", url: "./9_new-room-view.jpeg", alt: "Standart room" },
+    { type: "image", url: "./9_new-room-view.jpeg", alt: "Standart room" },
+    { type: "image", url: "./9_new-room-view.jpeg", alt: "Standart room" },
+    { type: "image", url: "./9_new-room-view.jpeg", alt: "Standart room" },
   ],
   comfortRoomImages: [
-    { imagePath: "./bed1.jpg", alt: "Comfort room" },
-    { imagePath: "./bed1.jpg", alt: "Comfort room" },
-    { imagePath: "./bed1.jpg", alt: "Comfort room" },
-    { imagePath: "./bed1.jpg", alt: "Comfort room" },
-    { imagePath: "./bed1.jpg", alt: "Comfort room" },
+    { type: "image", url: "./8_old-room-view.jpeg", alt: "Comfort room" },
+    { type: "image", url: "./8_old-room-view.jpeg", alt: "Comfort room" },
+    { type: "image", url: "./8_old-room-view.jpeg", alt: "Comfort room" },
+    { type: "image", url: "./8_old-room-view.jpeg", alt: "Comfort room" },
+    { type: "image", url: "./8_old-room-view.jpeg", alt: "Comfort room" },
   ],
 };
 
@@ -169,14 +171,14 @@ interface SocialsDataInterface {
 export const socialsData: SocialsDataInterface[] = [
   {
     image: {
-      imagePath: "./facebook.svg",
+      url: "./facebook.svg",
       alt: "Facebook",
     },
     href: "https://www.facebook.com/profile.php?id=100063488356149",
   },
   {
     image: {
-      imagePath: "./instagram.svg",
+      url: "./instagram.svg",
       alt: "Instagram",
     },
     href: "https://www.instagram.com/guest_house_muras_sarytash/",
@@ -200,7 +202,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "5$",
     },
     image: {
-      imagePath: "./breakfast.jpg",
+      url: "./breakfast.jpg",
       alt: "Breakfast",
     },
     link: "/services",
@@ -213,7 +215,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "8$",
     },
     image: {
-      imagePath: "./lunch.jpg",
+      url: "./lunch.jpg",
       alt: "Lunch",
     },
     link: "/services",
@@ -226,7 +228,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "10$",
     },
     image: {
-      imagePath: "./dinner.jpg",
+      url: "./dinner.jpg",
       alt: "Dinner",
     },
     link: "/services",
@@ -239,7 +241,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "5$",
     },
     image: {
-      imagePath: "./laundry.jpeg",
+      url: "./laundry.jpeg",
       alt: "Laundry",
     },
     link: "/services",
@@ -256,34 +258,38 @@ export interface ServiceImagesInterface {
 
 export const serviceImages: ServiceImagesInterface = {
   breakfast: [
-    { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
-    { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
-    { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
-    { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
-    { imagePath: "./breakfast.jpg", alt: "Breackfast photo" },
+    { url: "./breakfast.jpg", alt: "Breackfast photo" },
+    { url: "./breakfast-muras.jpg", alt: "Breackfast photo" },
+    { url: "./breakfast.jpg", alt: "Breackfast photo" },
+    { url: "./breakfast.jpg", alt: "Breackfast photo" },
+    { url: "./breakfast.jpg", alt: "Breackfast photo" },
   ],
   lunch: [
-    { imagePath: "./lunch.jpg", alt: "lunch photo" },
-    { imagePath: "./lunch.jpg", alt: "lunch photo" },
-    { imagePath: "./lunch.jpg", alt: "lunch photo" },
-    { imagePath: "./lunch.jpg", alt: "lunch photo" },
-    { imagePath: "./lunch.jpg", alt: "lunch photo" },
+    { url: "./6_guests-lunch.jpeg", alt: "lunch photo" },
+    { url: "./lunch.jpg", alt: "lunch photo" },
+    { url: "./lunch.jpg", alt: "lunch photo" },
+    { url: "./lunch.jpg", alt: "lunch photo" },
+    { url: "./lunch.jpg", alt: "lunch photo" },
   ],
   dinner: [
-    { imagePath: "./dinner.jpg", alt: "dinner photo" },
-    { imagePath: "./dinner.jpg", alt: "dinner photo" },
-    { imagePath: "./dinner.jpg", alt: "dinner photo" },
-    { imagePath: "./dinner.jpg", alt: "dinner photo" },
-    { imagePath: "./dinner.jpg", alt: "dinner photo" },
+    { url: "./dinner.jpg", alt: "dinner photo" },
+    { url: "./dinner.jpg", alt: "dinner photo" },
+    { url: "./dinner.jpg", alt: "dinner photo" },
+    { url: "./dinner.jpg", alt: "dinner photo" },
+    { url: "./dinner.jpg", alt: "dinner photo" },
   ],
 };
 
 //---------------------------------------------------- Services info ------------------------------------------------------
 
-export interface ServiceInfoInterface {
-  breakfastInfo: IInfo[];
-  lunchInfo: IInfo[];
-  dinnerInfo: IInfo[];
+export interface ServiceInterface extends IInfo {
+  menu: string;
+}
+
+interface ServiceInfoInterface {
+  breakfastInfo: ServiceInterface[];
+  lunchInfo: ServiceInterface[];
+  dinnerInfo: ServiceInterface[];
 }
 
 export const serviceInfo: ServiceInfoInterface = {
@@ -319,54 +325,65 @@ export const serviceInfo: ServiceInfoInterface = {
 //---------------------------------------------------- Gallery data ---------------------------------------------------
 
 export const galleryData: IImage[] = [
-  { imagePath: "./3_ainura.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./7_hotel-front-view.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./14_hotel-back-view.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./13_new-dinning-room.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./4_window-view.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./9_new-room-view.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./17_alay-valley.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./18_taldyk-road.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./19_pamir-mountains.jpeg", alt: "Muras Guest House" },
-  { imagePath: "./20_pamir-mountains.jpeg", alt: "Muras Guest House" },
+  { url: "./3_ainura.jpeg", alt: "Muras Guest House" },
+  { url: "./7_hotel-front-view.jpeg", alt: "Muras Guest House" },
+  { url: "./14_hotel-back-view.jpeg", alt: "Muras Guest House" },
+  { url: "./13_new-dinning-room.jpeg", alt: "Muras Guest House" },
+  { url: "./4_window-view.jpeg", alt: "Muras Guest House" },
+  { url: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
+  { url: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
+  { url: "./9_new-room-view.jpeg", alt: "Muras Guest House" },
+  { url: "./17_alay-valley.jpeg", alt: "Muras Guest House" },
+  { url: "./18_taldyk-road.jpeg", alt: "Muras Guest House" },
+  { url: "./19_pamir-mountains.jpeg", alt: "Muras Guest House" },
+  { url: "./20_pamir-mountains.jpeg", alt: "Muras Guest House" },
 ];
 
 //---------------------------------------------------- Feedback data ---------------------------------------------------
 
 interface FeedbackDataInterface {
   image: IImage;
-  description: string;
+  feedbackText: string;
   guest: string;
 }
 
 export const feedbackData: FeedbackDataInterface[] = [
   {
     image: {
-      imagePath: "./profile.jpg",
+      url: "./profile.jpg",
       alt: "Authors photo",
     },
-    description:
+    feedbackText:
       "Natalie and Michael Läßer are Bregenzerwald natives through and through. You can hear it in their dialect, and you'll definitely notice it when you talk about cheese. They'll make you feel at home in Sonne Mellau. With the first feel-good hotel in the Bregenzerwald, a dream has come true for them. We want to feel good, and we want you to feel good.",
     guest: "Natalie & Michael Läßer | Bregenzerwald (Germany)",
   },
   {
     image: {
-      imagePath: "./profile_female.jpg",
+      url: "./profile_female.jpg",
       alt: "Authors photo",
     },
-    description:
+    feedbackText:
       "Шикарный отель! Каждую командировку в Краснодар останавливаемся в этом отеле! Очень вежливый и гостеприимный персонал, комфортные, уютные, чистые номера с красивым видом из окна на город. Ресторан при отеле безумно вкусно готовит! Завтраки в отеле на любой вкус и предпочтение! Всё меню — просто гастрономическая сказка! В командировку приезжаем два раза в год с 2018 года и во многих отелях Краснодара останавливались. Смело могу заявить: это самый лучший и топовый отель Краснодара! Всем рекомендую!",
     guest: "Ирина Пчелкина | Питер (Россия)",
   },
   {
     image: {
-      imagePath: "./couple.jpg",
+      url: "./couple.jpg",
       alt: "Authors photo",
     },
-    description:
+    feedbackText:
       "We stayed with a child, the accommodation was very pleasing: the hotel is modern, freshly renovated, excellent air conditioning, which is important on hot days, the room is quiet and cozy - there is everything you need. In honor of the child's birthday, the hotel provided several delicious compliments, which further raised our spirits. The staff at the reception and in the restaurant are very friendly, the breakfast is varied and delicious. It is also worth noting the convenient location of the hotel, within walking distance there are three train stations and a metro. We wish the hotel team further prosperity, thank you!",
     guest: "Nick & Stella Brown | Washington (USA)",
   },
 ];
+
+// вопросы к HR:
+// * как составить резюме, чтобы меня заметили и на что обращают внимание работодатели/рекрутеры (будет ли какой-нибудь шаблон/пример)
+// * что конкретно писать в резюме про опыт работы, если опыта работы в IT еще нет
+// * как писать сопроводительные письма (будет ли какой-нибудь шаблон/пример)
+// * как составлять портфолио и на что обращают внимание работодатели/рекрутеры (будет ли какой-нибудь шаблон/пример)
+// * как мне преподнести себя как джуна без опыта, но которого можно брать на работу
+// * как обстоят дела в РФ с наймом иностранцев на работу в IT
+// * где и как искать работу в международных компаниях
+// * резюме для международного рынка
+// * как обходить ботов/роботов на платформах

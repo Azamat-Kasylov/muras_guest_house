@@ -10,11 +10,11 @@ const RoomsSection: React.FC = () => {
       <div className="rooms-grid">
         {roomsData.map(
           (
-            { link, info: { title, description }, image: { imagePath, alt } },
+            { link, info: { title, description }, image: { url, alt } },
             index,
           ) => (
             <NavLink to={link} key={index} className="room-card">
-              <img src={imagePath} alt={alt} className="room-image" />
+              <img src={url} alt={alt} className="room-image" />
               <div className="room-content">
                 <h3 className="room-title">{title}</h3>
                 <p className="room-description">{description}</p>

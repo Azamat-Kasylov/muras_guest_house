@@ -75,10 +75,7 @@ const ServicesGallery: React.FC<Props> = ({ images, settings }) => {
       <SliderCustom {...sliderSettings}>
         {images.map((image, index) => (
           <div key={index}>
-            <img
-              src={image.imagePath}
-              alt={image.alt || `meal-image-${index}`}
-            />
+            <img src={image.url} alt={image.alt || `meal-image-${index}`} />
           </div>
         ))}
       </SliderCustom>
@@ -87,7 +84,7 @@ const ServicesGallery: React.FC<Props> = ({ images, settings }) => {
 };
 
 const StyledGallery = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   margin-bottom: 50px;

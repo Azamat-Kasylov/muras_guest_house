@@ -118,9 +118,9 @@ function SimpleSlider() {
 
   return (
     <SliderCustom {...settings}>
-      {galleryData.map(({ imagePath, alt }, index) => (
+      {galleryData.map(({ url, alt }, index) => (
         <StyledImgWrapper key={index}>
-          <img src={imagePath} alt={alt} />
+          <img src={url} alt={alt} />
         </StyledImgWrapper>
       ))}
     </SliderCustom>

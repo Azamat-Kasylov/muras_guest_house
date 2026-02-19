@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { IImage } from "../../../data";
+import { MediaInterface } from "../../../data";
 
 const defaultSettings: Settings = {
   dots: true,
@@ -59,10 +59,10 @@ const defaultSettings: Settings = {
 };
 
 interface Props {
-  images: IImage[];
+  media: MediaInterface[];
   settings?: Partial<Settings>;
 }
-const RoomsGallery: React.FC<Props> = ({ images, settings }) => {
+const RoomsGallery: React.FC<Props> = ({ media, settings }) => {
   const sliderSettings = {
     ...defaultSettings,
     ...settings,
@@ -73,12 +73,15 @@ const RoomsGallery: React.FC<Props> = ({ images, settings }) => {
   return (
     <StyledGallery>
       <SliderCustom {...sliderSettings}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img
-              src={image.imagePath}
-              alt={image.alt || `gallery-image-${index}`}
-            />
+        {media.map((item, index) => (
+          <div className="media-wrapper" key={index}>
+            {item.type === "image" ? (
+              <img src={item.url} alt={item.alt || `gallery-image-${index}`} />
+            ) : (
+              <video autoPlay muted loop playsInline>
+                <source src={item.url} type="video/mp4" />
+              </video>
+            )}
           </div>
         ))}
       </SliderCustom>
@@ -87,7 +90,7 @@ const RoomsGallery: React.FC<Props> = ({ images, settings }) => {
 };
 
 const StyledGallery = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   margin-bottom: 50px;
@@ -117,7 +120,20 @@ const StyledGallery = styled.div`
     left: -35px;
   }
 
+  .media-wrapper {
+    width: 100%;
+    height: 375px;
+    overflow: hidden;
+  }
+
   img {
+    width: 100%;
+    padding: 0 5px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  video {
     width: 100%;
     padding: 0 5px;
     aspect-ratio: 4/3;

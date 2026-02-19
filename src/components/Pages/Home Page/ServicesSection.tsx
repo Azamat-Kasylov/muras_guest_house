@@ -10,11 +10,11 @@ const ServicesSection: React.FC = () => {
       <div className="services-grid">
         {servicesData.map(
           (
-            { image: { imagePath, alt }, info: { title, description }, link },
+            { image: { url, alt }, info: { title, description }, link },
             index,
           ) => (
             <NavLink to={link} key={index} className="services-card">
-              <img src={imagePath} alt={alt} className="services-image" />
+              <img src={url} alt={alt} className="services-image" />
               <div className="services-content">
                 <h3 className="services-title">{title}</h3>
                 <p className="services-description">{description}</p>

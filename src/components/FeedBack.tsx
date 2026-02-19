@@ -7,9 +7,9 @@ const Feedback: React.FC = () => {
       <FeedbackContent>
         <h2>Our guests</h2>
         {feedbackData.map((i) => (
-          <div key={i.image.imagePath}>
-            <img src={i.image.imagePath} alt={i.guest || i.image.alt} />
-            <p>"{i.description}"</p>
+          <div key={i.image.url}>
+            <img src={i.image.url} alt={i.guest || i.image.alt} />
+            <p>"{i.feedbackText}"</p>
             <p>{i.guest}</p>
           </div>
         ))}

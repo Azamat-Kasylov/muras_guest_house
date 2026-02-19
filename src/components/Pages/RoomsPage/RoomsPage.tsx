@@ -11,11 +11,11 @@ const RoomsPage: React.FC = () => {
       <NavLink to="link" className="room-link"></NavLink>
       <h2 className="title">Our rooms and Yurts</h2>
       <RoomsInfo rooms={roomsInfo.yurtInfo} />
-      <RoomsGallery images={roomsImages.yurtImages} />
+      <RoomsGallery media={roomsImages.yurtImages} />
       <RoomsInfo rooms={roomsInfo.standardRoomInfo} />
-      <RoomsGallery images={roomsImages.standardRoomImages} />
+      <RoomsGallery media={roomsImages.standardRoomImages} />
       <RoomsInfo rooms={roomsInfo.comfortRoomInfo} />
-      <RoomsGallery images={roomsImages.comfortRoomImages} />
+      <RoomsGallery media={roomsImages.comfortRoomImages} />
     </StyledRooms>
   );
 };

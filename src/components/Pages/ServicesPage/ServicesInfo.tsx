@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { IInfo } from "../../../data";
+import { ServiceInterface } from "../../../data";
 
 interface ServicesInfoProps {
-  service: IInfo[];
+  service: ServiceInterface[];
 }
 
 const ServicesInfo: React.FC<ServicesInfoProps> = ({ service }) => {

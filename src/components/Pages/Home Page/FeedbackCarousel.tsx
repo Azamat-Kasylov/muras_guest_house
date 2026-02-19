@@ -71,11 +71,11 @@ const SimpleSlider: React.FC = () => {
   return (
     <SlickSlider {...settings}>
       {feedbackData.map(
-        ({ image: { imagePath, alt }, description, guest }, index) => (
+        ({ image: { url, alt }, feedbackText, guest }, index) => (
           <StyledImgWrapper key={index}>
-            <div key={imagePath}>
-              <img src={imagePath} />
-              <p className="description">"{description}"</p>
+            <div key={url}>
+              <img src={url} />
+              <p className="description">"{feedbackText}"</p>
               <p className="guest">{guest}</p>
             </div>
           </StyledImgWrapper>
