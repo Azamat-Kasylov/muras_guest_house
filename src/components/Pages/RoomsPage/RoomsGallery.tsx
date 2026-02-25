@@ -122,7 +122,6 @@ const StyledGallery = styled.div`
 
   .media-wrapper {
     width: 100%;
-    height: 375px;
     overflow: hidden;
   }
 

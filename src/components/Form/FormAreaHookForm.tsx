@@ -88,7 +88,6 @@ const FormArea: React.FC = () => {
 const StyledForm = styled.form`
   max-width: 100%;
   position: relative;
-  top: 140px;
   display: flex;
   border-radius: 30px;
   overflow: hidden;
@@ -175,6 +174,17 @@ const StyledForm = styled.form`
 
   @media (max-width: 768px) {
     width: 100%;
+  }
+
+  @media (max-height: 450px) {
+    flex-direction: row;
+    top: 0;
+    width: 85%;
+    min-width: 85%;
+
+    .submit {
+      padding: 0;
+    }
   }
 `;
 const Row = styled.div`

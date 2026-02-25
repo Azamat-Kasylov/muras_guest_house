@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import FooterSocial from "./FooterSocial";
 import FooterContacts from "./FooterContacts";
+import Certificates from "./Certificates";
+import { certificateData } from "../../data";
 
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
+      <Certificates certificates={certificateData} />
       <FooterContent>
         <FooterContacts />
         <FooterSocial />
@@ -14,11 +17,14 @@ const Footer: React.FC = () => {
 };
 
 const StyledFooter = styled.footer`
-  height: 100vh;
+  min-height: 100vh;
+  padding: 1rem;
   background-image: url(./footer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 
   &::after {
@@ -27,34 +33,13 @@ const StyledFooter = styled.footer`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: #000000;
+    min-height: 100%;
     background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 1) 5%,
       rgba(0, 0, 0, 1) 10%,
       rgba(0, 0, 0, 0) 50%
     );
-  }
-
-  @media (max-width: 768px) {
-    height: 75vh;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000000;
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 1) 5%,
-        rgba(0, 0, 0, 1) 15%,
-        rgba(0, 0, 0, 0) 70%
-      );
-    }
   }
 `;
 
@@ -70,9 +55,9 @@ const FooterContent = styled.div`
   z-index: 1;
 
   @media (max-width: 768px) {
-    display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 30px 0;
   }
 `;
 

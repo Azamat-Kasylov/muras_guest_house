@@ -74,7 +74,7 @@ const ServicesGallery: React.FC<Props> = ({ images, settings }) => {
     <StyledGallery>
       <SliderCustom {...sliderSettings}>
         {images.map((image, index) => (
-          <div key={index}>
+          <div className="media-wrapper" key={index}>
             <img src={image.url} alt={image.alt || `meal-image-${index}`} />
           </div>
         ))}
@@ -112,6 +112,11 @@ const StyledGallery = styled.div`
 
   .slick-prev {
     left: -35px;
+  }
+
+  .media-wrapper {
+    width: 100%;
+    overflow: hidden;
   }
 
   img {

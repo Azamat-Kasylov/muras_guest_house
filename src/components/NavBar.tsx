@@ -2,13 +2,9 @@ import NavBarItem from "./NavBarItem";
 import { navBarData } from "../data";
 import styled from "styled-components";
 
-interface Props {
-  isVisible: boolean;
-}
-
-const NavBar: React.FC<Props> = ({ isVisible }) => {
+const NavBar: React.FC = () => {
   return (
-    <StyledNavBar className={` ${!isVisible ? "hiddenNav" : ""}`}>
+    <StyledNavBar>
       {navBarData.map((i, index) => (
         <NavBarItem link={i.link} title={i.title} key={index} />
       ))}

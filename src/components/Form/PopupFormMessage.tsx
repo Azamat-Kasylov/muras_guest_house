@@ -42,6 +42,10 @@ const PopupMessage = styled.div`
   border-radius: 10px;
   font-size: 24px;
   text-align: center;
+
+  @media (max-height: 450px) {
+    bottom: 20px;
+  }
 `;
 
 const Button = styled.button`

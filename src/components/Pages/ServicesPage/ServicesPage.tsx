@@ -22,11 +22,12 @@ const ServicesPage: React.FC = () => {
 
 const Section = styled.section`
   padding: 80px 50px 50px;
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     padding: 80px 0 50px;
   }
 
   .services-title {
+    font-size: clamp(36px, 5vw, 50px);
     padding: 0 1rem;
   }
 `;

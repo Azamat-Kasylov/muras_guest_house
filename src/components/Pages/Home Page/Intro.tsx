@@ -5,10 +5,11 @@ import FormAreaHookForm from "../../Form/FormAreaHookForm";
 const Intro: React.FC = () => {
   return (
     <StyledIntro id="intro">
-      <img src="./alay2.jpg" alt="intro image" />
-      <p className="suptitle">GUEST HOUSE</p>
-      <p className="title">MURAS</p>
-      <p className="subtitle">Welcome to Alay valley</p>
+      <div className="intro-content">
+        <p className="suptitle">GUEST HOUSE</p>
+        <p className="title">MURAS</p>
+        <p className="subtitle">Welcome to Alay valley</p>
+      </div>
       <FormAreaHookForm />
     </StyledIntro>
   );
@@ -16,23 +17,17 @@ const Intro: React.FC = () => {
 
 const StyledIntro = styled.section`
   margin: 0;
-  padding: 0 50px;
+  padding: 60px 50px 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  background-image: url(./alay2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  @media (max-width: 768px) {
-    padding: 0 3rem;
-  }
-
-  img {
-    object-fit: cover;
-    position: fixed;
-    z-index: -1;
-    height: 100vh;
-    filter: brightness(80%);
+  .intro-content {
   }
 
   .suptitle,
@@ -43,7 +38,7 @@ const StyledIntro = styled.section`
 
   .suptitle {
     font-size: 30px;
-    letter-spacing: 20px;
+    letter-spacing: 21px;
   }
 
   .title {
@@ -68,8 +63,12 @@ const StyledIntro = styled.section`
 
     .suptitle {
       font-size: 18px;
-      letter-spacing: 11px;
+      letter-spacing: 12px;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 2rem 0;
   }
 `;
 

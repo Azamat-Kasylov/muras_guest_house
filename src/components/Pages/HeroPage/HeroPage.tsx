@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const HeroPage: React.FC = () => {
   return (
-    <StyledHero id="aboutUs">
+    <Section id="aboutUs">
       <HeroWrapper>
         <h1 className="title">Muras Guest House</h1>
         <ContentWrapper>
@@ -23,11 +23,11 @@ const HeroPage: React.FC = () => {
           </TextContent>
         </ContentWrapper>
       </HeroWrapper>
-    </StyledHero>
+    </Section>
   );
 };
 
-const StyledHero = styled.section`
+const Section = styled.section`
   min-height: 100%;
   padding-top: 40px;
 `;

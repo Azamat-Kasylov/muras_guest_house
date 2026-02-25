@@ -377,6 +377,28 @@ export const feedbackData: FeedbackDataInterface[] = [
   },
 ];
 
+//---------------------------------------------------- Certificate data ---------------------------------------------------
+
+export interface CertificateInterface extends IImage {
+  className: string;
+}
+
+export const certificateData: CertificateInterface[] = [
+  { url: "./booking.jpg", alt: "booking certificate", className: "small" },
+  { url: "./booking-2.jpg", alt: "booking certificate", className: "small" },
+  { url: "./certificate.jpg", alt: "booking certificate", className: "big" },
+  {
+    url: "./certificate-2.jpg",
+    alt: "booking certificate",
+    className: "small",
+  },
+  {
+    url: "./certificate-3.jpg",
+    alt: "booking certificate",
+    className: "small",
+  },
+];
+
 // вопросы к HR:
 // * как составить резюме, чтобы меня заметили и на что обращают внимание работодатели/рекрутеры (будет ли какой-нибудь шаблон/пример)
 // * что конкретно писать в резюме про опыт работы, если опыта работы в IT еще нет
