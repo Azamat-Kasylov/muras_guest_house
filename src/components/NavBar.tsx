@@ -2,11 +2,20 @@ import NavBarItem from "./NavBarItem";
 import { navBarData } from "../data";
 import styled from "styled-components";
 
-const NavBar: React.FC = () => {
+interface Props {
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavBar: React.FC<Props> = ({ setIsVisible }) => {
   return (
     <StyledNavBar>
       {navBarData.map((i, index) => (
-        <NavBarItem link={i.link} title={i.title} key={index} />
+        <NavBarItem
+          link={i.link}
+          title={i.title}
+          key={index}
+          setIsVisible={setIsVisible}
+        />
       ))}
     </StyledNavBar>
   );

@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <img src="./logo.PNG" alt="muras logo" />
       </a>
       <Music />
-      <NavBar />
+      <NavBar setIsVisible={setIsVisible} />
       <Button />
       <button onClick={handleClick} className="burgerHidden">
         {isVisible ? (

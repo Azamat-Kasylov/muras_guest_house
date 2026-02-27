@@ -2,9 +2,17 @@ import styled from "styled-components";
 import { NavBarDataInterface } from "../data";
 import { NavLink } from "react-router-dom";
 
-const NavBarItem: React.FC<NavBarDataInterface> = ({ title, link }) => {
+interface Props extends NavBarDataInterface {
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavBarItem: React.FC<Props> = ({ title, link, setIsVisible }) => {
+  const handleClick = () => {
+    setIsVisible(false);
+  };
+
   return (
-    <StyledNavBarItem className="nav-item">
+    <StyledNavBarItem className="nav-item" onClick={handleClick}>
       <NavLink to={link}>{title}</NavLink>
     </StyledNavBarItem>
   );

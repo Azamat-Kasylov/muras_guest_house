@@ -24,7 +24,16 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
           key={index}
           src={item.url}
           alt={item.alt}
-          className={`${index === activeIndex ? "active" : ""} ${item.className}`}
+          className={item.className}
+          onClick={() => handleClick(index)}
+        />
+      ))}
+      {certificates.map((item, index) => (
+        <img
+          key={index}
+          src={item.url}
+          alt={item.alt}
+          className={`${index === activeIndex ? "active" : "hidden"}`}
           onClick={() => handleClick(index)}
         />
       ))}
@@ -66,6 +75,28 @@ const StyledDiv = styled.div`
     max-width: 100%;
   }
 
+  .hidden {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    max-width: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    filter: none;
+
+    @media (max-width: 768px) {
+      max-width: calc(100% - 2rem);
+      max-height: 70vh;
+    }
+    @media (max-height: 450px) {
+      max-width: calc(100% - 2rem);
+      max-height: 70vh;
+    }
+  }
+
   .active {
     position: absolute;
     top: 50%;
@@ -73,16 +104,18 @@ const StyledDiv = styled.div`
     transform: translate(-50%, -50%);
     z-index: 100;
     max-width: 600px;
+    background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     filter: none;
+    visibility: visible;
 
     @media (max-width: 768px) {
       max-width: calc(100% - 2rem);
-      max-height: 80vh;
+      max-height: 70vh;
     }
     @media (max-height: 450px) {
       max-width: calc(100% - 2rem);
-      max-height: 80vh;
+      max-height: 70vh;
     }
   }
 
