@@ -33,9 +33,14 @@ const Contacts = styled.div`
     color: #fff7e5;
     position: relative;
     transition: transform 0.5s;
-  }
-  a:hover {
-    transform: translateX(30px);
+
+    &:hover {
+      transform: translateX(30px);
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
   }
 `;
 

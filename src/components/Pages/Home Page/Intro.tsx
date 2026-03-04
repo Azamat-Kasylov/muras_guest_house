@@ -5,70 +5,94 @@ import FormAreaHookForm from "../../Form/FormAreaHookForm";
 const Intro: React.FC = () => {
   return (
     <StyledIntro id="intro">
-      <div className="intro-content">
-        <p className="suptitle">GUEST HOUSE</p>
-        <p className="title">MURAS</p>
-        <p className="subtitle">Welcome to Alay valley</p>
+      <div className="container">
+        <div className="intro_flex">
+          <p className="suptitle">Muras Guest House</p>
+          <p className="title">Mountain serenity in Kyrgyzstan's Alay Valley</p>
+          <p className="intro_text">
+            Wake up to snow-capped peaks, crystal-clear air, and warm Kyrgyz
+            hospitality at our family-run mountain retreat.
+          </p>
+        </div>
+        <FormAreaHookForm />
       </div>
-      <FormAreaHookForm />
     </StyledIntro>
   );
 };
 
 const StyledIntro = styled.section`
   margin: 0;
-  padding: 60px 50px 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  background-image: url(./alay2.jpg);
+  background-image:
+    linear-gradient(rgba(0, 0, 27, 0.4), rgba(0, 0, 0, 0.4)), url(./alay2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
-  .intro-content {
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .intro_flex {
+    max-width: 700px;
+    animation: intro_flex 2s;
+  }
+
+  @keyframes intro_flex {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px); /* Начинаем выше, чем нужно */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Заканчиваем на исходной позиции */
+    }
   }
 
   .suptitle,
   .title,
-  .subtitle {
-    color: #f8fafc;
+  .intro_text {
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 2px;
   }
 
   .suptitle {
-    font-size: 30px;
-    letter-spacing: 21px;
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
   .title {
-    font-size: 120px;
-    line-height: 0.8em;
+    font-size: 60px;
+    line-height: 1.2em;
+    margin-bottom: 18px;
   }
 
-  .subtitle {
+  .intro_text {
     margin: 0;
-    font-size: 43px;
-    text-align: center;
-  }
-
-  @media (max-width: 1024px) {
-    .subtitle {
-      font-size: 25px;
-    }
-
-    .title {
-      font-size: 70px;
-    }
-
-    .suptitle {
-      font-size: 18px;
-      letter-spacing: 12px;
-    }
+    font-size: 16px;
+    line-height: 1.5em;
   }
 
   @media (max-width: 768px) {
-    padding: 60px 2rem 0;
+    .suptitle {
+      font-size: 20px;
+    }
+
+    .title {
+      font-size: 30px;
+    }
+
+    .intro_text {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-height: 430px) {
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
 `;
 

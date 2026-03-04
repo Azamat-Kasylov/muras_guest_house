@@ -4,21 +4,22 @@ import styled from "styled-components";
 const HeroPage: React.FC = () => {
   return (
     <Section id="aboutUs">
-      <HeroWrapper>
+      <HeroWrapper className="container">
         <h1 className="title">Muras Guest House</h1>
         <ContentWrapper>
           <StaticImg src="./3_ainura.jpeg" alt="Owner" />
           <TextContent>
-            <p>
-              The Muras Guest House in Sary-Tash is a place for connoisseurs,
-              those seeking relaxation, and active holidaymakers – one does not
-              exclude the other.
+            <p className="hero_text">
+              Nestled at the gateway to the Pamir and Tien Shan ranges, Muras
+              Guest House offers modern comfort with an authentic Kyrgyz spirit.
+              Our rooms overlook sweeping valleys, glacier-fed rivers, and
+              towering peaks that change colors with the light.
             </p>
-            <p>
-              Unforgettable moments to be shared together or enjoyed on your
-              own. It's a place for special encounters and good conversations.
-              An open atmosphere, style wherever you look, and enjoyment for all
-              the senses. Your happy place.
+            <p className="hero_text">
+              Whether you are trekking, touring, or simply unwinding, our team
+              is here to help you experience the best of local nature, culture,
+              and cuisine. Enjoy homemade meals, guided excursions, and quiet
+              evenings under the stars.
             </p>
           </TextContent>
         </ContentWrapper>
@@ -28,26 +29,20 @@ const HeroPage: React.FC = () => {
 };
 
 const Section = styled.section`
-  min-height: 100%;
-  padding-top: 40px;
+  padding-top: 60px;
+  margin-bottom: 50px;
 `;
 
 const HeroWrapper = styled.div`
-  min-height: 100%;
-  padding: 50px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fff;
 
-  @media (max-width: 768px) {
-    padding: 50px 3rem;
-  }
-
   .title {
     margin: 0;
-    margin-bottom: 30px;
+    margin: 30px 0;
     font-size: clamp(30px, 3vw + 10px, 50px);
     font-weight: normal;
     text-align: center;
@@ -68,9 +63,9 @@ const ContentWrapper = styled.div`
 `;
 
 const TextContent = styled.div`
-  p {
+  .hero_text {
     margin-bottom: 20px;
-    color: #555;
+    color: #6b7280;
   }
   font-size: 24px;
 

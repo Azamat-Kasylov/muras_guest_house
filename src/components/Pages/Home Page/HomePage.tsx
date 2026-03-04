@@ -3,7 +3,7 @@ import Intro from "./Intro";
 import Hero from "./Hero";
 import RoomsSection from "./RoomsSection";
 import ServicesSection from "./ServicesSection";
-import FeedbackCarousel from "./FeedbackCarousel";
+import FeedbackSection from "./FeedbackSection";
 import Gallery from "./Gallery";
 
 const HomePage = () => {
@@ -14,7 +14,7 @@ const HomePage = () => {
       <RoomsSection />
       <Gallery />
       <ServicesSection />
-      <FeedbackCarousel />
+      <FeedbackSection />
     </div>
   );
 };

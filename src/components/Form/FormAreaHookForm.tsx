@@ -28,57 +28,63 @@ const FormArea: React.FC = () => {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <label className="name" htmlFor="userName">
-          <input
-            type="text"
-            id="userName"
-            placeholder="Name"
-            {...register("name", {
-              required: "This field is required",
-            })}
-          />
-          {nameError && (
-            <ErrorMessage className="errorName">{nameError}</ErrorMessage>
-          )}
-        </label>
-        <label className="email" htmlFor="userEmail">
-          <input
-            type="text"
-            id="userEmail"
-            placeholder="Email"
-            {...register("email", {
-              required: "This field is required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email adress",
-              },
-            })}
-          />
-          {emailError && (
-            <ErrorMessage className="errorEmail">{emailError}</ErrorMessage>
-          )}
-        </label>
-        <Row>
-          <label htmlFor="dateIn">
-            <input type="date" id="dateIn" {...register("date")} />
-          </label>
-          <label className="guests" htmlFor="guestsCount">
+        <p className="form_text">Plan your stay</p>
+        <div className="form_content">
+          <label className="name" htmlFor="userName">
             <input
-              type="number"
-              id="guestsCount"
-              placeholder="Guests"
-              {...register("guests")}
+              type="text"
+              id="userName"
+              placeholder="Name"
+              {...register("name", {
+                required: "This field is required",
+              })}
             />
+            {nameError && (
+              <ErrorMessage className="errorName">{nameError}</ErrorMessage>
+            )}
           </label>
-        </Row>
-        <label className="submit" htmlFor="formSubmit">
-          <input
-            className="submit"
-            type="submit"
-            id="formSubmit"
-            value="Book"
-          />
-        </label>
+          <label className="email" htmlFor="userEmail">
+            <input
+              type="text"
+              id="userEmail"
+              placeholder="Email"
+              {...register("email", {
+                required: "This field is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Invalid email adress",
+                },
+              })}
+            />
+            {emailError && (
+              <ErrorMessage className="errorEmail">{emailError}</ErrorMessage>
+            )}
+          </label>
+          <div className="row">
+            <div className="row_flex">
+              <input
+                className="check-in"
+                type="date"
+                id="dateIn"
+                {...register("date")}
+              />
+              <input
+                type="number"
+                id="guestsCount"
+                placeholder="Guests"
+                {...register("guests")}
+              />
+            </div>
+            <label htmlFor="formSubmit">
+              <input
+                className="submit"
+                type="submit"
+                id="formSubmit"
+                value="Book"
+              />
+            </label>
+          </div>
+        </div>
       </StyledForm>
       {isSubmitSuccessful && <PopupFormMessage onButtonClick={reset} />}
     </>
@@ -86,108 +92,88 @@ const FormArea: React.FC = () => {
 };
 
 const StyledForm = styled.form`
-  max-width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  border: 1px solid #7a8798;
+  background-color: #0f172a;
+  padding: 15px;
   position: relative;
-  display: flex;
-  border-radius: 30px;
-  overflow: hidden;
+
+  .form_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form_text {
+    font-size: 16px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    color: #6b7280;
+  }
 
   label {
-    display: inline-flex;
-    align-items: center;
-    height: 60px;
-    background-color: #f8fafc;
-    border-left: 1px solid #d2d2d2;
-    overflow: hidden;
+    width: 100%;
+    min-width: 115px;
   }
 
   input {
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: none;
-    background-color: #f8fafc;
-    border: 0;
+    min-width: 115px;
     width: 100%;
-    height: 100%;
-    outline: none;
-    border-radius: 0;
+    padding: 13px;
+    color: #6b7280;
+    background-color: #0f172a;
+    border: 1px solid #7a8798;
+    border-radius: 10px;
   }
 
   .errorName {
-    top: 39px;
-    left: 20px;
-    @media (max-width: 1024px) {
-      top: 40px;
-      left: 20px;
-    }
+    top: 60px;
+    left: 160px;
   }
 
   .errorEmail {
-    top: 39px;
-    left: 200px;
-    @media (max-width: 1024px) {
-      top: 100px;
-      left: 20px;
-    }
-  }
-
-  .name input {
-    border: none;
+    top: 113px;
+    left: 160px;
   }
 
   .submit {
-    padding: 0 40px;
-    font-size: 16px;
-    font-weight: normal;
-    background-color: #bddde4;
-    color: #000;
-    border: none;
+    width: 100%;
+    color: #fff;
+    background-color: #256a46;
+    border: 1px solid #256a46;
     transition: background-color 0.3s;
-    justify-content: center;
   }
 
   .submit:hover {
     cursor: pointer;
-    background-color: #ffbc4c;
+    background-color: #eea435;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 430px) {
+    .errorName,
+    .errorEmail {
+      left: 140px;
+    }
+  }
+
+  .row {
     display: flex;
-    flex-direction: column;
-    width: 70%;
-    min-width: 70%;
-    border-radius: 1rem;
-    label {
-      border-radius: 0;
-      width: 100%;
-      border-bottom: 1px solid #d2d2d2;
+    gap: 10px;
+
+    .row_flex {
+      display: flex;
+      gap: 10px;
     }
-    input {
-      border-radius: 0;
-    }
-    label.guests {
-      border-left: 1px solid #d2d2d2;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
     }
   }
 
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-
-  @media (max-height: 450px) {
-    flex-direction: row;
-    top: 0;
-    width: 85%;
-    min-width: 85%;
-
-    .submit {
-      padding: 0;
-    }
+  @media (max-height: 430px) {
+    margin-bottom: 50px;
   }
 `;
-const Row = styled.div`
-  display: flex;
-`;
+
 export default FormArea;

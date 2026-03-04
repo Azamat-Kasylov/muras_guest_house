@@ -6,39 +6,37 @@ import { NavLink } from "react-router-dom";
 const ServicesSection: React.FC = () => {
   return (
     <StyledServices id="services" className="services">
-      <h2 className="section-title">Our services</h2>
-      <div className="services-grid">
-        {servicesData.map(
-          (
-            { image: { url, alt }, info: { title, description }, link },
-            index,
-          ) => (
-            <NavLink to={link} key={index} className="services-card">
-              <img src={url} alt={alt} className="services-image" />
-              <div className="services-content">
-                <h3 className="services-title">{title}</h3>
-                <p className="services-description">{description}</p>
-                {/* <p className="services-price">{services.price}</p> */}
-              </div>
-            </NavLink>
-          ),
-        )}
+      <div className="container">
+        <h2 className="section-title">Our services</h2>
+        <div className="services-grid">
+          {servicesData.map(
+            (
+              { image: { url, alt }, info: { title, description }, link },
+              index,
+            ) => (
+              <NavLink to={link} key={index} className="services-card">
+                <img src={url} alt={alt} className="services-image" />
+                <div className="services-content">
+                  <h3 className="services-title">{title}</h3>
+                  <p className="services-description">{description}</p>
+                  {/* <p className="services-price">{services.price}</p> */}
+                </div>
+              </NavLink>
+            ),
+          )}
+        </div>
       </div>
     </StyledServices>
   );
 };
 
 const StyledServices = styled.section`
-  padding: 0 50px 50px;
-  background-color: #f8fafc;
-
-  @media (max-width: 768px) {
-    padding: 0 3rem 50px;
-  }
+  padding: 50px 0;
+  background-color: #f0eee8;
 
   .section-title {
-    font-size: 36px;
     text-align: center;
+    margin-bottom: 30px;
   }
 
   .services-grid {
@@ -69,13 +67,13 @@ const StyledServices = styled.section`
   }
 
   .services-title {
-    font-size: 20px;
-    margin: 0 0 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 
   .services-description {
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color: #6b7280;
     margin-bottom: 10px;
   }
 

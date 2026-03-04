@@ -7,24 +7,25 @@ import { certificateData } from "../../data";
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
-      <Certificates certificates={certificateData} />
-      <FooterContent>
-        <FooterContacts />
-        <FooterSocial />
-      </FooterContent>
+      <div className="container">
+        <Certificates certificates={certificateData} />
+        <FooterContent>
+          <FooterContacts />
+          <FooterSocial />
+        </FooterContent>
+      </div>
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
-  min-height: 100vh;
-  padding: 1rem;
+  min-height: calc(100vh - 60px);
+  padding-top: 50px;
   background-image: url(./footer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
 
   &::after {
@@ -41,12 +42,17 @@ const StyledFooter = styled.footer`
       rgba(0, 0, 0, 0) 50%
     );
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 `;
 
 const FooterContent = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 30px 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;

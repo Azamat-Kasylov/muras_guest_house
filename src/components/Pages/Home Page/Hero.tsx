@@ -4,76 +4,103 @@ import styled from "styled-components";
 const Hero: React.FC = () => {
   return (
     <StyledHero id="aboutUs">
-      <HeroWrapper>
-        <ContentWrapper>
-          <StaticImg src="./3_ainura.jpeg" alt="Owner" />
+      <ContentWrapper className="container">
+        <h2 className="hero_title">About Muras</h2>
+        <p className="hero_suptitle">
+          A cozy basecamp for exploring the wild beauty of the Alay Valley.
+        </p>
+        <div className="hero_flex">
+          <StaticImg src="./14_hotel-back-view.jpeg" alt="Owner" />
           <TextContent>
-            <p>
-              The Muras Guest House in Sary-Tash is a place for connoisseurs,
-              those seeking relaxation, and active holidaymakers – one does not
-              exclude the other.
+            <p className="hero_text">
+              Nestled at the gateway to the Pamir and Tien Shan ranges, Muras
+              Guest House offers modern comfort with an authentic Kyrgyz spirit.
+              Our rooms overlook sweeping valleys, glacier-fed rivers, and
+              towering peaks that change colors with the light.
             </p>
-            <p>
-              Unforgettable moments to be shared together or enjoyed on your
-              own. It's a place for special encounters and good conversations.
-              An open atmosphere, style wherever you look, and enjoyment for all
-              the senses. Your happy place.
+            <p className="hero_text">
+              Whether you are trekking, touring, or simply unwinding, our team
+              is here to help you experience the best of local nature, culture,
+              and cuisine. Enjoy homemade meals, guided excursions, and quiet
+              evenings under the stars.
             </p>
+            <div className="specials_flex">
+              <p className="specials">Panoramic mountain views</p>
+              <p className="specials">Family-run with local guides</p>
+              <p className="specials">Perfect base for trekking & tours</p>
+            </div>
           </TextContent>
-        </ContentWrapper>
-      </HeroWrapper>
+        </div>
+      </ContentWrapper>
     </StyledHero>
   );
 };
 
 const StyledHero = styled.section`
-  min-height: 100%;
-`;
-
-const HeroWrapper = styled.div`
-  min-height: 100%;
-  padding: 50px 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-
-  @media (max-width: 768px) {
-    padding: 50px 3rem;
-  }
+  padding: 50px 0;
+  background-color: #f5f3ee;
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
-  align-self: center;
-  justify-content: space-between;
-  gap: 50px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
+  .hero_flex {
     display: flex;
-    align-items: center;
+    align-self: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .hero_suptitle,
+  .hero_text {
+    margin-bottom: 20px;
+    color: #6b7280;
+    font-size: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  .hero_title {
+    margin-bottom: 10px;
+  }
+
+  .hero_suptitle {
+    margin-bottom: 50px;
   }
 `;
 
 const TextContent = styled.div`
-  p {
-    margin-bottom: 20px;
-    color: #555;
+  .specials_flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-  font-size: 24px;
 
-  @media (max-width: 768px) {
-    font-size: 18px;
+  .specials {
+    padding: 5px 10px;
+    margin: 0;
+    color: #fef3c7;
+    background-color: #b97328;
+    font-size: 16px;
+    border-radius: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 `;
 
 const StaticImg = styled.img`
-  position: relative;
+  max-width: 50%;
   width: 100%;
-  max-width: 40%;
-  align-self: start;
+  height: 100%;
+  filter: contrast(110%) brightness(100%) saturate(130%);
 
   @media (max-width: 768px) {
     max-width: 100%;

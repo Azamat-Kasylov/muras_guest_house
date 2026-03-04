@@ -47,7 +47,7 @@ const defaultSettings: Settings = {
         className: "center",
         centerMode: true,
         infinite: true,
-        centerPadding: "40px",
+        centerPadding: "25px",
         slidesToShow: 1,
         speed: 400,
         dots: false,
@@ -76,9 +76,13 @@ const RoomsGallery: React.FC<Props> = ({ media, settings }) => {
         {media.map((item, index) => (
           <div className="media-wrapper" key={index}>
             {item.type === "image" ? (
-              <img src={item.url} alt={item.alt || `gallery-image-${index}`} />
+              <img
+                src={item.url}
+                alt={item.alt || `gallery-image-${index}`}
+                className="rooms_image"
+              />
             ) : (
-              <video autoPlay muted loop playsInline>
+              <video autoPlay muted loop playsInline className="rooms_video">
                 <source src={item.url} type="video/mp4" />
               </video>
             )}
@@ -91,12 +95,16 @@ const RoomsGallery: React.FC<Props> = ({ media, settings }) => {
 
 const StyledGallery = styled.div`
   max-width: 1000px;
-  width: 100%;
+  padding: 0 40px;
   margin: 0 auto;
   margin-bottom: 50px;
 
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+
   .slick-arrow {
-    background-color: #d8e1ec;
+    background-color: #b8c8dc;
     width: 40px;
     height: 100%;
     opacity: 0.4;
@@ -125,14 +133,14 @@ const StyledGallery = styled.div`
     overflow: hidden;
   }
 
-  img {
+  .rooms_image {
     width: 100%;
     padding: 0 5px;
     aspect-ratio: 4/3;
     object-fit: cover;
   }
 
-  video {
+  .rooms_video {
     width: 100%;
     padding: 0 5px;
     aspect-ratio: 4/3;

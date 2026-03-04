@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { NavBarDataInterface } from "../data";
+import { NavBarDataInterface } from "../../data";
 import { NavLink } from "react-router-dom";
 
 interface Props extends NavBarDataInterface {
-  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsVisible: (v: boolean) => void;
 }
 
 const NavBarItem: React.FC<Props> = ({ title, link, setIsVisible }) => {
@@ -12,7 +12,7 @@ const NavBarItem: React.FC<Props> = ({ title, link, setIsVisible }) => {
   };
 
   return (
-    <StyledNavBarItem className="nav-item" onClick={handleClick}>
+    <StyledNavBarItem className="nav_item" onClick={handleClick}>
       <NavLink to={link}>{title}</NavLink>
     </StyledNavBarItem>
   );
@@ -27,11 +27,11 @@ const StyledNavBarItem = styled.li`
     transition: color 0.3s;
   }
   a:hover {
-    color: #f6e7a7;
+    color: #eea435;
   }
 
   .active {
-    color: #f6e7a7;
+    color: #eea435;
   }
 `;
 

@@ -5,44 +5,47 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 
-const Gallery: React.FC = () => {
+const FeedbackSection: React.FC = () => {
   return (
-    <StyledGallery id="feedback">
-      <div className="title_wrapper">
-        <h2>Our guests</h2>
+    <StyledSection id="feedback">
+      <div className="container">
+        <div className="title_wrapper">
+          <h2 className="feedback_title">Our guests</h2>
+        </div>
+        <StyledSliderWrapper className="slider-container">
+          <SimpleSlider />
+        </StyledSliderWrapper>
       </div>
-      <StyledSliderWrapper className="slider-container">
-        <SimpleSlider />
-      </StyledSliderWrapper>
-    </StyledGallery>
+    </StyledSection>
   );
 };
 
-const StyledGallery = styled.section`
-  min-height: 100vh;
-  padding: 50px 50px;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  overflow: hidden;
+const StyledSection = styled.section`
+  padding: 50px 0;
+  background-color: #f5f3ee;
 
-  @media (max-width: 768px) {
-    min-height: 100%;
-    flex-direction: column;
-  }
-  @media (max-width: 430px) {
-    padding: 50px 2rem;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .title_wrapper {
     width: 100%;
     min-width: 225px;
-  }
 
-  h2 {
-    padding: 0;
+    .feedback_title {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
 `;
 
@@ -106,8 +109,15 @@ const StyledImgWrapper = styled.div`
     }
   }
 
+  .guest,
+  .description {
+    font-size: 16px;
+    color: #6b7280;
+  }
+
   .guest {
     line-height: 1.7;
+    padding-bottom: 15px;
   }
 
   .description {
@@ -116,4 +126,4 @@ const StyledImgWrapper = styled.div`
   }
 `;
 
-export default Gallery;
+export default FeedbackSection;

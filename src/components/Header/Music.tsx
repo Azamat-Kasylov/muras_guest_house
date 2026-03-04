@@ -33,31 +33,15 @@ const Music: React.FC = () => {
 
 const StyledMusic = styled.div`
   width: 80px;
-  height: 40px;
   overflow: hidden;
 
   @media (max-width: 1024px) {
-    width: 80px;
-    height: 50px;
+    max-width: 60px;
+    padding-top: 10px;
   }
 
-  .audio_btn-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    text-align: center;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    @media (max-width: 1024px) {
-      width: 60px;
-      height: 40px;
-      position: absolute;
-      left: 25px;
-      top: 10px;
-    }
+  .audio_btn-image:hover {
+    cursor: pointer;
   }
 
   .audio_btn-image.colorful {

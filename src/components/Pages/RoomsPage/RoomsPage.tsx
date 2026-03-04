@@ -8,27 +8,26 @@ import RoomsGallery from "./RoomsGallery";
 const RoomsPage: React.FC = () => {
   return (
     <StyledRooms className="rooms">
-      <NavLink to="link" className="room-link"></NavLink>
-      <h2 className="title">Our rooms and Yurts</h2>
-      <RoomsInfo rooms={roomsInfo.yurtInfo} />
-      <RoomsGallery media={roomsImages.yurtImages} />
-      <RoomsInfo rooms={roomsInfo.standardRoomInfo} />
-      <RoomsGallery media={roomsImages.standardRoomImages} />
-      <RoomsInfo rooms={roomsInfo.comfortRoomInfo} />
-      <RoomsGallery media={roomsImages.comfortRoomImages} />
+      <div className="container">
+        <NavLink to="link" className="room-link"></NavLink>
+        <RoomsInfo rooms={roomsInfo.yurtInfo} />
+        <RoomsGallery media={roomsImages.yurtImages} />
+        <RoomsInfo rooms={roomsInfo.standardRoomInfo} />
+        <RoomsGallery media={roomsImages.standardRoomImages} />
+        <RoomsInfo rooms={roomsInfo.comfortRoomInfo} />
+        <RoomsGallery media={roomsImages.comfortRoomImages} />
+      </div>
     </StyledRooms>
   );
 };
 
 const StyledRooms = styled.section`
-  padding: 80px 50px 50px;
-  @media (max-width: 768px) {
-    padding: 80px 0 50px;
-  }
+  padding-top: 60px;
 
-  .title {
-    font-size: clamp(36px, 5vw, 50px);
-    padding: 0 1rem;
+  .container {
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
 `;
 

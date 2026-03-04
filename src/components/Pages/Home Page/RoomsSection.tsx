@@ -6,23 +6,34 @@ import { NavLink } from "react-router-dom";
 const RoomsSection: React.FC = () => {
   return (
     <StyledRooms id="rooms" className="rooms">
-      <h2 className="section-title">Our rooms and Yurts</h2>
-      <div className="rooms-grid">
-        {roomsData.map(
-          (
-            { link, info: { title, description }, image: { url, alt } },
-            index,
-          ) => (
-            <NavLink to={link} key={index} className="room-card">
-              <img src={url} alt={alt} className="room-image" />
-              <div className="room-content">
-                <h3 className="room-title">{title}</h3>
-                <p className="room-description">{description}</p>
-                {/* <p className="room-price">{room.price}</p> */}
-              </div>
-            </NavLink>
-          ),
-        )}
+      <div className="container">
+        <h2 className="section-title">Room Types</h2>
+        <p className="section-suptitle">
+          Choose the stay that suits your journey.
+        </p>
+        <div className="rooms-grid">
+          {roomsData.map(
+            (
+              {
+                link,
+                info: { title, description, price },
+                image: { url, alt },
+              },
+              index,
+            ) => (
+              <NavLink to={link} key={index} className="room-card">
+                <img src={url} alt={alt} className="room-image" />
+                <div className="room-content">
+                  <div className="title_flex">
+                    <h3 className="room-title">{title}</h3>
+                    <p className="room-price">{price}</p>
+                  </div>
+                  <p className="room-description">{description}</p>
+                </div>
+              </NavLink>
+            ),
+          )}
+        </div>
       </div>
     </StyledRooms>
   );
@@ -30,17 +41,17 @@ const RoomsSection: React.FC = () => {
 
 const StyledRooms = styled.section`
   min-height: 100%;
-  padding: 0 50px 50px;
-  background-color: #f8fafc;
+  padding: 50px 0;
+  background-color: #f0eee8;
   overflow: hidden;
 
-  @media (max-width: 768px) {
-    padding: 0 3rem 50px;
+  .section-title {
+    margin-bottom: 10px;
   }
 
-  .section-title {
-    font-size: 36px;
-    text-align: center;
+  .section-suptitle {
+    color: #6b7280;
+    margin-bottom: 40px;
   }
 
   .rooms-grid {
@@ -65,27 +76,34 @@ const StyledRooms = styled.section`
     width: 100%;
     aspect-ratio: 16/11;
     object-fit: cover;
+    filter: contrast(110%) brightness(100%) saturate(130%);
   }
 
   .room-content {
     padding: 15px;
-  }
 
-  .room-title {
-    color: #000;
-    font-size: 20px;
-    margin: 0 0 10px;
-  }
+    .title_flex {
+      display: flex;
+      justify-content: space-between;
+    }
 
-  .room-description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-  }
+    .room-title {
+      color: #000;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
 
-  .room-price {
-    font-weight: bold;
-    color: #0077cc;
+    .room-description {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .room-price {
+      font-size: 16px;
+      color: #6b7280;
+    }
   }
 `;
 

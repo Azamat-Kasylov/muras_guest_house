@@ -40,24 +40,24 @@ export const roomsData: RoomsDataInterface[] = [
     info: {
       title: "Yurt",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "50$",
+        "Experience the magic of the nomadic tradition in our luxury Yurt. Combining ancient design with modern comfort, this unique circular space offers a cozy retreat.",
+      price: "From 50$ / night",
     },
     image: {
-      url: "./yurt.jpg",
+      url: "./yurt-muras-2.jpeg",
       alt: "Yurt photo",
     },
     link: "/rooms",
   },
   {
     info: {
-      title: "Room Standard",
+      title: "Standard room",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "50$",
+        "Your personal retreat. Simple, stylish, and incredibly comfortable. Perfect for solo travelers or couples who value comfort and charm.",
+      price: "From 40$ / night",
     },
     image: {
-      url: "./bed1.jpg",
+      url: "./9_new-room-view.jpeg",
       alt: "Standard room photo",
     },
 
@@ -65,26 +65,13 @@ export const roomsData: RoomsDataInterface[] = [
   },
   {
     info: {
-      title: "Room Comfort",
+      title: "Dorm Bed",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "30$",
+        "Your cozy hideaway. A comfy bed, authentic atmosphere, and a power socket — everything you need to recharge for your next adventure.",
+      price: "From 10$ / night",
     },
     image: {
-      url: "./bed1.jpg",
-      alt: "Comfort room photo",
-    },
-    link: "/rooms",
-  },
-  {
-    info: {
-      title: "Bed",
-      description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "10$",
-    },
-    image: {
-      url: "./bed2.jpg",
+      url: "./8_old-room-view.jpeg",
       alt: "Beds photo",
     },
     link: "/rooms",
@@ -140,14 +127,14 @@ export const roomsInfo: RoomsInfoInterface = {
       price: "50$",
       title: "Yurt",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Experience the magic of the nomadic tradition in our luxury Yurt. Combining ancient design with modern comfort, this unique circular space offers a cozy retreat.",
     },
   ],
   standardRoomInfo: [
     {
       title: "Standard room",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Your personal retreat. Simple, stylish, and incredibly comfortable. Perfect for solo travelers or couples who value comfort and charm.",
       price: "50$",
     },
   ],
@@ -155,7 +142,7 @@ export const roomsInfo: RoomsInfoInterface = {
     {
       title: "Comfort room",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Your cozy hideaway. A comfy bed, authentic atmosphere, and a power socket — everything you need to recharge for your next adventure.",
       price: "30$",
     },
   ],

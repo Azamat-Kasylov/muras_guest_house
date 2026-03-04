@@ -8,7 +8,7 @@ import styled from "styled-components";
 const Gallery: React.FC = () => {
   return (
     <Section id="gallery">
-      <Wrapper className="slider-container">
+      <Wrapper className="container">
         <SimpleSlider />
       </Wrapper>
     </Section>
@@ -16,26 +16,29 @@ const Gallery: React.FC = () => {
 };
 
 const Section = styled.section`
-  padding: 100px 60px;
-  background-color: #fff;
+  padding: 50px 0;
+  background-color: #f5f3ee;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1024px) {
-    padding: 100px 0;
-  }
-  @media (max-width: 768px) {
-    padding: 100px 0;
+  .container {
+    padding: 0 40px;
+
+    @media (max-width: 1024px) {
+      padding: 0 1rem;
+    }
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
 `;
 
 const Wrapper = styled.div`
   max-width: 1200px;
-  width: 100%;
 
   .slick-arrow {
-    background-color: #d8e1ec;
+    background-color: #b8c8dc;
     width: 40px;
     height: 100%;
     opacity: 0.4;
@@ -75,8 +78,8 @@ function SimpleSlider() {
           className: "center",
           centerMode: true,
           infinite: true,
-          centerPadding: "40px",
-          slidesToShow: 2,
+          centerPadding: "120px",
+          slidesToShow: 1,
           touchThreshold: 20,
           speed: 300,
           dots: true,
@@ -103,7 +106,7 @@ function SimpleSlider() {
           className: "center",
           centerMode: true,
           infinite: true,
-          centerPadding: "40px",
+          centerPadding: "25px",
           slidesToShow: 1,
           touchThreshold: 20,
           speed: 300,
@@ -136,6 +139,7 @@ const StyledImgWrapper = styled.div`
     height: 100%;
     padding: 0 5px;
     object-fit: cover;
+    filter: contrast(100%) brightness(100%) saturate(120%);
   }
 `;
 
