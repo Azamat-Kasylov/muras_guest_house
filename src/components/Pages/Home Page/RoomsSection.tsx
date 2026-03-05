@@ -57,7 +57,7 @@ const StyledRooms = styled.section`
   .rooms-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 40px;
   }
 
   .room-card {

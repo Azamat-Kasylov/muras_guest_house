@@ -72,7 +72,7 @@ const RoomsGallery: React.FC<Props> = ({ media, settings }) => {
 
   return (
     <StyledGallery>
-      <SliderCustom {...sliderSettings}>
+      <SliderCustom {...sliderSettings} className="slider">
         {media.map((item, index) => (
           <div className="media-wrapper" key={index}>
             {item.type === "image" ? (

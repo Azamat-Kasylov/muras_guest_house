@@ -10,6 +10,20 @@ const Footer: React.FC = () => {
       <div className="container">
         <Certificates certificates={certificateData} />
         <FooterContent>
+          <div className="footer_copy">
+            <div className="copy_img-wrapper">
+              <img
+                src="./logo_muras.jpeg"
+                alt="Muras logo"
+                className="copy_logo"
+              />
+              <p className="copy_title">Muras Guest House</p>
+            </div>
+            <p className="copy_suptitle">
+              Alay Valley, Osh Region, Kyrgyzstan Cozy mountain hotel and
+              gateway to the high passes.
+            </p>
+          </div>
           <FooterContacts />
           <FooterSocial />
         </FooterContent>
@@ -20,7 +34,8 @@ const Footer: React.FC = () => {
 
 const StyledFooter = styled.footer`
   min-height: calc(100vh - 60px);
-  padding-top: 50px;
+  padding-top: 70px;
+  padding-bottom: 50px;
   background-image: url(./footer.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,10 +51,10 @@ const StyledFooter = styled.footer`
     width: 100%;
     min-height: 100%;
     background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 1) 5%,
-      rgba(0, 0, 0, 1) 10%,
-      rgba(0, 0, 0, 0) 50%
+      35deg,
+      rgba(6, 10, 18, 0.91) 20%,
+      rgba(6, 10, 18, 0.7) 50%,
+      rgba(6, 10, 18, 0.91) 90%
     );
   }
 
@@ -52,13 +67,45 @@ const StyledFooter = styled.footer`
 
 const FooterContent = styled.div`
   width: 100%;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-self: flex-end;
   position: relative;
   z-index: 1;
+
+  .footer_copy {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+    .copy_img-wrapper {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      align-items: center;
+
+      .copy_logo {
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
+
+    .copy_title,
+    .copy_suptitle {
+      color: #fff;
+    }
+
+    .copy_title {
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;

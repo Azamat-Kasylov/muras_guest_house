@@ -59,36 +59,14 @@ const SimpleSlider: React.FC<Props> = ({ initialSlide }) => {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
     touchThreshold: 20,
     initialSlide: initialSlide,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          infinite: true,
-          slidesToShow: 1,
-          touchThreshold: 20,
-          speed: 300,
-          dots: true,
-          arrows: true,
-        },
-      },
-      {
         breakpoint: 768,
-        settings: {
-          infinite: true,
-          slidesToShow: 1,
-          touchThreshold: 20,
-          speed: 300,
-          dots: true,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 430,
         settings: {
           infinite: true,
           slidesToShow: 1,

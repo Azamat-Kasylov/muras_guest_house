@@ -17,20 +17,21 @@ const FooterContacts: React.FC = () => {
 const Contacts = styled.div`
   display: flex;
   flex-direction: column;
-  & {
-    color: #fff7e5;
-  }
+  margin-bottom: 20px;
+
   p {
     margin: 0;
     margin-bottom: 5px;
+    color: #fff;
     @media (max-width: 768px) {
       text-align: center;
     }
   }
+
   a {
     display: inline-block;
     padding: 5px 0;
-    color: #fff7e5;
+    color: #fff;
     position: relative;
     transition: transform 0.5s;
 

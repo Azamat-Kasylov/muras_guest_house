@@ -78,6 +78,23 @@ export const roomsData: RoomsDataInterface[] = [
   },
 ];
 
+//---------------------------------------------------- Gallery data ---------------------------------------------------
+
+export const galleryData: IImage[] = [
+  { url: "./3_ainura.jpeg", alt: "Muras Guest House" },
+  { url: "./7_hotel-front-view.jpeg", alt: "Muras Guest House" },
+  { url: "./14_hotel-back-view.jpeg", alt: "Muras Guest House" },
+  { url: "./13_new-dinning-room.jpeg", alt: "Muras Guest House" },
+  { url: "./4_window-view.jpeg", alt: "Muras Guest House" },
+  { url: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
+  { url: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
+  { url: "./9_new-room-view.jpeg", alt: "Muras Guest House" },
+  { url: "./17_alay-valley.jpeg", alt: "Muras Guest House" },
+  { url: "./18_taldyk-road.jpeg", alt: "Muras Guest House" },
+  { url: "./19_pamir-mountains.jpeg", alt: "Muras Guest House" },
+  { url: "./20_pamir-mountains.jpeg", alt: "Muras Guest House" },
+];
+
 // ---------------------------------------------------- Rooms images ------------------------------------------------------
 
 export interface MediaInterface extends IImage {
@@ -124,7 +141,7 @@ export interface RoomsInfoInterface {
 export const roomsInfo: RoomsInfoInterface = {
   yurtInfo: [
     {
-      price: "50$",
+      price: "From 20$ / night",
       title: "Yurt",
       description:
         "Experience the magic of the nomadic tradition in our luxury Yurt. Combining ancient design with modern comfort, this unique circular space offers a cozy retreat.",
@@ -135,15 +152,15 @@ export const roomsInfo: RoomsInfoInterface = {
       title: "Standard room",
       description:
         "Your personal retreat. Simple, stylish, and incredibly comfortable. Perfect for solo travelers or couples who value comfort and charm.",
-      price: "50$",
+      price: "From 50$ / night",
     },
   ],
   comfortRoomInfo: [
     {
-      title: "Comfort room",
+      title: "Dorm bed",
       description:
         "Your cozy hideaway. A comfy bed, authentic atmosphere, and a power socket — everything you need to recharge for your next adventure.",
-      price: "30$",
+      price: "From 20$ / night",
     },
   ],
 };
@@ -215,7 +232,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "10$",
     },
     image: {
-      url: "./guide.jpeg",
+      url: "./horse-guide.jpg",
       alt: "Dinner",
     },
     link: "/services",
@@ -285,7 +302,7 @@ export const serviceInfo: ServiceInfoInterface = {
       title: "Breackfast",
       description:
         "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "5$",
+      price: "From 5$",
       menu: "Fried eggs, omelette, porridge, pancakes, bread, butter, gem, tea, coffee",
     },
   ],
@@ -294,7 +311,7 @@ export const serviceInfo: ServiceInfoInterface = {
       title: "Lunch",
       description:
         "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "5$",
+      price: "From 7$",
       menu: "Plov, lagman, dymdama, salad, fruits, bread, tea",
     },
   ],
@@ -303,28 +320,11 @@ export const serviceInfo: ServiceInfoInterface = {
       title: "Dinner",
       description:
         "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "5$",
+      price: "From 10$",
       menu: "Rice, potato, tomato, something else, salad, bread, tea",
     },
   ],
 };
-
-//---------------------------------------------------- Gallery data ---------------------------------------------------
-
-export const galleryData: IImage[] = [
-  { url: "./3_ainura.jpeg", alt: "Muras Guest House" },
-  { url: "./7_hotel-front-view.jpeg", alt: "Muras Guest House" },
-  { url: "./14_hotel-back-view.jpeg", alt: "Muras Guest House" },
-  { url: "./13_new-dinning-room.jpeg", alt: "Muras Guest House" },
-  { url: "./4_window-view.jpeg", alt: "Muras Guest House" },
-  { url: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
-  { url: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
-  { url: "./9_new-room-view.jpeg", alt: "Muras Guest House" },
-  { url: "./17_alay-valley.jpeg", alt: "Muras Guest House" },
-  { url: "./18_taldyk-road.jpeg", alt: "Muras Guest House" },
-  { url: "./19_pamir-mountains.jpeg", alt: "Muras Guest House" },
-  { url: "./20_pamir-mountains.jpeg", alt: "Muras Guest House" },
-];
 
 //---------------------------------------------------- Feedback data ---------------------------------------------------
 

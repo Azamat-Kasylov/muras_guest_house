@@ -42,11 +42,13 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
 };
 
 const StyledDiv = styled.div`
+  margin-bottom: 50px;
   max-width: 350px;
   display: flex;
   flex-wrap: wrap;
   align-self: center;
   gap: 20px;
+  position: relative;
   z-index: 10;
 
   @media (max-width: 430px) {
@@ -56,7 +58,7 @@ const StyledDiv = styled.div`
   img {
     border: solid 4px #fff;
     object-fit: cover;
-    filter: grayscale(100%) sepia(10%) contrast(80%);
+    filter: grayscale(120%) sepia(20%) contrast(70%);
 
     &:hover {
       cursor: pointer;
@@ -85,7 +87,7 @@ const StyledDiv = styled.div`
     filter: none;
 
     @media (max-width: 768px) {
-      max-width: calc(100% - 2rem);
+      max-width: calc(100%);
       max-height: 60vh;
     }
     @media (max-height: 450px) {

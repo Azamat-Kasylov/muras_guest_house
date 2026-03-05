@@ -26,7 +26,7 @@ const StyledIntro = styled.section`
   margin: 0;
   min-height: 100vh;
   background-image:
-    linear-gradient(rgba(0, 0, 27, 0.4), rgba(0, 0, 0, 0.4)), url(./alay2.jpg);
+    linear-gradient(rgba(0, 0, 27, 0.5), rgba(0, 0, 0, 0.5)), url(./alay2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 

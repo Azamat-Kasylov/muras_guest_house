@@ -27,9 +27,9 @@ const Socials = styled.div`
     justify-content: center;
     width: 46px;
     height: 46px;
-    border: 1px dashed #ffffff69;
+    border: 1px dashed #ffffff64;
     border-radius: 23px;
-    transition: border 0.5s;
+    transition: border 0.3s;
   }
   a:hover {
     border: 1px dashed #fff;
