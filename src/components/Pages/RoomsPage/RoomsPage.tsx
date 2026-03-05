@@ -23,6 +23,7 @@ const RoomsPage: React.FC = () => {
 
 const StyledRooms = styled.section`
   padding-top: 60px;
+  background-color: #f5f3ee;
 
   .container {
     @media (max-width: 768px) {

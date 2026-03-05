@@ -111,7 +111,6 @@ const StyledImgWrapper = styled.div`
 
   .guest,
   .description {
-    font-size: 16px;
     color: #6b7280;
   }
 

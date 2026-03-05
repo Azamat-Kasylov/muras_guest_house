@@ -4,7 +4,8 @@ import Hero from "./Hero";
 import RoomsSection from "./RoomsSection";
 import ServicesSection from "./ServicesSection";
 import FeedbackSection from "./FeedbackSection";
-import Gallery from "./Gallery";
+// import Gallery from "./Gallery";
+import GalleryStatic from "./GallerySection";
 
 const HomePage = () => {
   return (
@@ -12,7 +13,8 @@ const HomePage = () => {
       <Intro />
       <Hero />
       <RoomsSection />
-      <Gallery />
+      {/* <Gallery /> */}
+      <GalleryStatic />
       <ServicesSection />
       <FeedbackSection />
     </div>

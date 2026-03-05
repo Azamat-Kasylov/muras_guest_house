@@ -25,7 +25,6 @@ const StyledHeader = styled.header<StyledHeaderProp>`
   width: 100%;
   height: 60px;
   position: fixed;
-  /* background-color: rgba(0, 163, 165, 1); */
   background-color: #f0eee8;
   box-shadow: 0 4px 16px 0 #0000001f;
   z-index: 999;

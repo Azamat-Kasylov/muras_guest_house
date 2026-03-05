@@ -183,39 +183,39 @@ export interface ServicesDataInterface {
 export const servicesData: ServicesDataInterface[] = [
   {
     info: {
-      title: "Breakfast",
+      title: "Meals",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Homemade breakfasts and dinners featuring local ingredients and Kyrgyz specialties. Vegetarian options available.",
       price: "5$",
     },
     image: {
-      url: "./breakfast.jpg",
+      url: "./breakfast-muras.jpg",
       alt: "Breakfast",
     },
     link: "/services",
   },
   {
     info: {
-      title: "Lunch",
+      title: "Transportation",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Airport and city transfers, daily shuttles, and custom routes for treks and day trips in the Alai region.",
       price: "8$",
     },
     image: {
-      url: "./lunch.jpg",
+      url: "./transfer.jpeg",
       alt: "Lunch",
     },
     link: "/services",
   },
   {
     info: {
-      title: "Dinner",
+      title: "Guided Tours",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Local guides for hiking, horseback riding, cultural tours, and high-pass adventures tailored to your level.",
       price: "10$",
     },
     image: {
-      url: "./dinner.jpg",
+      url: "./guide.jpeg",
       alt: "Dinner",
     },
     link: "/services",
@@ -224,7 +224,7 @@ export const servicesData: ServicesDataInterface[] = [
     info: {
       title: "Laundry",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Reliable same-day laundry service so you can travel lighter and stay longer in the mountains.",
       price: "5$",
     },
     image: {

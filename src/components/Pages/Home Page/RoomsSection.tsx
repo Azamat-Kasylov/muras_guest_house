@@ -57,7 +57,7 @@ const StyledRooms = styled.section`
   .rooms-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    gap: 30px;
   }
 
   .room-card {
@@ -91,17 +91,15 @@ const StyledRooms = styled.section`
       color: #000;
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .room-description {
-      font-size: 16px;
       color: #6b7280;
       margin-bottom: 10px;
     }
 
     .room-price {
-      font-size: 16px;
       color: #6b7280;
     }
   }

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { galleryData } from "../../../data";
+import { galleryData } from "../data";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -106,7 +106,6 @@ const StyledForm = styled.form`
   }
 
   .form_text {
-    font-size: 16px;
     padding-left: 5px;
     margin-bottom: 10px;
     color: #6b7280;

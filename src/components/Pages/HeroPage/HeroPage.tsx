@@ -5,7 +5,10 @@ const HeroPage: React.FC = () => {
   return (
     <Section id="aboutUs">
       <HeroWrapper className="container">
-        <h1 className="title">Muras Guest House</h1>
+        <h2 className="title">Muras Guest House</h2>
+        <p className="suptitle">
+          A cozy basecamp for exploring the wild beauty of the Alay Valley.
+        </p>
         <ContentWrapper>
           <StaticImg src="./3_ainura.jpeg" alt="Owner" />
           <TextContent>
@@ -30,22 +33,19 @@ const HeroPage: React.FC = () => {
 
 const Section = styled.section`
   padding-top: 60px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+  background-color: #f5f3ee;
 `;
 
 const HeroWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-
   .title {
-    margin: 0;
-    margin: 30px 0;
-    font-size: clamp(30px, 3vw + 10px, 50px);
-    font-weight: normal;
-    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .suptitle {
+    color: #6b7280;
+    margin-bottom: 50px;
   }
 `;
 
@@ -67,7 +67,6 @@ const TextContent = styled.div`
     margin-bottom: 20px;
     color: #6b7280;
   }
-  font-size: 24px;
 
   @media (max-width: 768px) {
     font-size: 18px;
@@ -77,7 +76,7 @@ const TextContent = styled.div`
 const StaticImg = styled.img`
   position: relative;
   width: 100%;
-  max-width: 40%;
+  max-width: 50%;
   align-self: start;
 
   @media (max-width: 768px) {

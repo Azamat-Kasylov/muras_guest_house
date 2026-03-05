@@ -8,6 +8,9 @@ const ServicesSection: React.FC = () => {
     <StyledServices id="services" className="services">
       <div className="container">
         <h2 className="section-title">Our services</h2>
+        <p className="section-suptitle">
+          Everything you need for a comfortable, worry-free stay
+        </p>
         <div className="services-grid">
           {servicesData.map(
             (
@@ -19,7 +22,6 @@ const ServicesSection: React.FC = () => {
                 <div className="services-content">
                   <h3 className="services-title">{title}</h3>
                   <p className="services-description">{description}</p>
-                  {/* <p className="services-price">{services.price}</p> */}
                 </div>
               </NavLink>
             ),
@@ -35,14 +37,18 @@ const StyledServices = styled.section`
   background-color: #f0eee8;
 
   .section-title {
-    text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+  }
+
+  .section-suptitle {
+    color: #6b7280;
+    margin-bottom: 50px;
   }
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
   }
 
   .services-card {
@@ -68,18 +74,13 @@ const StyledServices = styled.section`
 
   .services-title {
     font-size: 18px;
-    margin-bottom: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
   }
 
   .services-description {
-    font-size: 16px;
     color: #6b7280;
     margin-bottom: 10px;
-  }
-
-  .services-price {
-    font-weight: 700;
-    color: #0077cc;
   }
 `;
 

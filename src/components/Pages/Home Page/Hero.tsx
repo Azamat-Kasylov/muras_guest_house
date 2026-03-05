@@ -59,7 +59,6 @@ const ContentWrapper = styled.div`
   .hero_text {
     margin-bottom: 20px;
     color: #6b7280;
-    font-size: 20px;
 
     @media (max-width: 768px) {
       font-size: 18px;
@@ -87,7 +86,6 @@ const TextContent = styled.div`
     margin: 0;
     color: #fef3c7;
     background-color: #b97328;
-    font-size: 16px;
     border-radius: 20px;
 
     @media (max-width: 768px) {

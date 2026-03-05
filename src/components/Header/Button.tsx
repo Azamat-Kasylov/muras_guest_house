@@ -27,7 +27,6 @@ const StyledButton = styled.button`
   a {
     text-decoration: none;
     color: #000;
-    font-size: 16px;
   }
 
   @media (max-width: 1024px) {

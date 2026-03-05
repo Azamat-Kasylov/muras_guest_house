@@ -185,7 +185,6 @@ const StyledForm = styled.form`
 
   .submit {
     padding: 0 40px;
-    font-size: 16px;
     font-weight: normal;
     background-color: #bddde4;
     color: #000;

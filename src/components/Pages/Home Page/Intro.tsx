@@ -7,8 +7,10 @@ const Intro: React.FC = () => {
     <StyledIntro id="intro">
       <div className="container">
         <div className="intro_flex">
-          <p className="suptitle">Muras Guest House</p>
-          <p className="title">Mountain serenity in Kyrgyzstan's Alay Valley</p>
+          <p className="title">Muras Guest House</p>
+          <p className="suptitle">
+            Mountain serenity in Kyrgyzstan's Alay Valley
+          </p>
           <p className="intro_text">
             Wake up to snow-capped peaks, crystal-clear air, and warm Kyrgyz
             hospitality at our family-run mountain retreat.
@@ -59,12 +61,12 @@ const StyledIntro = styled.section`
     letter-spacing: 2px;
   }
 
-  .suptitle {
+  .title {
     font-size: 24px;
     margin-bottom: 20px;
   }
 
-  .title {
+  .suptitle {
     font-size: 60px;
     line-height: 1.2em;
     margin-bottom: 18px;
@@ -72,16 +74,15 @@ const StyledIntro = styled.section`
 
   .intro_text {
     margin: 0;
-    font-size: 16px;
     line-height: 1.5em;
   }
 
   @media (max-width: 768px) {
-    .suptitle {
+    .title {
       font-size: 20px;
     }
 
-    .title {
+    .suptitle {
       font-size: 30px;
     }
 
@@ -90,9 +91,11 @@ const StyledIntro = styled.section`
     }
   }
 
-  @media (max-height: 430px) {
-    margin-top: 100px;
-    margin-bottom: 50px;
+  @media (max-height: 600px) {
+    padding-top: 100px;
+    .intro_text {
+      margin-bottom: 40px;
+    }
   }
 `;
 

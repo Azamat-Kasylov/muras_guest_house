@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { CertificateInterface } from "../../data";
 import { useState } from "react";
+import PopupBackground from "../PopupBackground";
 
 interface CertificateProps {
   certificates: CertificateInterface[];
@@ -11,10 +12,6 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
-  };
-
-  const popupHadleClick = () => {
-    setActiveIndex(null);
   };
 
   return (
@@ -38,7 +35,7 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
         />
       ))}
       {activeIndex === null ? null : (
-        <div className="popup" onClick={popupHadleClick}></div>
+        <PopupBackground isOpen={activeIndex} setIsOpen={setActiveIndex} />
       )}
     </StyledDiv>
   );
@@ -99,16 +96,6 @@ const StyledDiv = styled.div`
 
   .active {
     visibility: visible;
-  }
-
-  .popup {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 99;
   }
 `;
 

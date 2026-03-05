@@ -37,10 +37,6 @@ const Contacts = styled.div`
     &:hover {
       transform: translateX(30px);
     }
-
-    @media (max-width: 768px) {
-      font-size: 16px;
-    }
   }
 `;
 
