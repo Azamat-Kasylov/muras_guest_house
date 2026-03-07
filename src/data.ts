@@ -44,7 +44,7 @@ export const roomsData: RoomsDataInterface[] = [
       price: "From 50$ / night",
     },
     image: {
-      url: "./yurt-muras-2.jpeg",
+      url: "./yurt_front-soft.jpg",
       alt: "Yurt photo",
     },
     link: "/rooms",
@@ -57,7 +57,7 @@ export const roomsData: RoomsDataInterface[] = [
       price: "From 40$ / night",
     },
     image: {
-      url: "./9_new-room-view.jpeg",
+      url: "./standard_room-soft.png",
       alt: "Standard room photo",
     },
 
@@ -71,7 +71,7 @@ export const roomsData: RoomsDataInterface[] = [
       price: "From 10$ / night",
     },
     image: {
-      url: "./8_old-room-view.jpeg",
+      url: "./dorm_bed-soft.jpg",
       alt: "Beds photo",
     },
     link: "/rooms",

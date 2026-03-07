@@ -34,7 +34,7 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
           onClick={() => handleClick(index)}
         />
       ))}
-      {activeIndex === null ? null : (
+      {activeIndex !== null && (
         <PopupBackground isOpen={activeIndex} setIsOpen={setActiveIndex} />
       )}
     </StyledDiv>

@@ -140,12 +140,15 @@ const StyledForm = styled.form`
     width: 100%;
     color: #fff;
     background-color: #256a46;
-    border: 1px solid #256a46;
-    transition: background-color 0.3s;
+    border: 2px solid #256a46;
+    transition:
+      background-color 0.3s,
+      border-color 0.3s;
   }
 
   .submit:hover {
     cursor: pointer;
+    border-color: #eea435;
     background-color: #eea435;
   }
 

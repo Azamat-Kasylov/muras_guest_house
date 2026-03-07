@@ -18,7 +18,7 @@ const GalleryStatic = () => {
       <div className="gallery_container container">
         <h2 className="gallery_title">Gallery</h2>
         <p className="gallery_suptitle">
-          A glimpse of life at Muras Guest House and the Alai Valley.
+          A glimpse of life at Muras Guest House and the Alay Valley.
         </p>
         <div className="gallery_grid">
           {galleryData.slice(0, 5).map(({ url, alt }, index) => (

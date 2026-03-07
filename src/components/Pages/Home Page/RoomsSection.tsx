@@ -21,7 +21,7 @@ const RoomsSection: React.FC = () => {
               },
               index,
             ) => (
-              <NavLink to={link} key={index} className="room-card">
+              <div key={index} className="room-card">
                 <img src={url} alt={alt} className="room-image" />
                 <div className="room-content">
                   <div className="title_flex">
@@ -29,8 +29,11 @@ const RoomsSection: React.FC = () => {
                     <p className="room-price">{price}</p>
                   </div>
                   <p className="room-description">{description}</p>
+                  <NavLink to={link} className="room_details">
+                    view details
+                  </NavLink>
                 </div>
-              </NavLink>
+              </div>
             ),
           )}
         </div>
@@ -40,10 +43,8 @@ const RoomsSection: React.FC = () => {
 };
 
 const StyledRooms = styled.section`
-  min-height: 100%;
   padding: 50px 0;
   background-color: #f0eee8;
-  overflow: hidden;
 
   .section-title {
     margin-bottom: 10px;
@@ -56,51 +57,64 @@ const StyledRooms = styled.section`
 
   .rooms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
   }
 
   .room-card {
     overflow: hidden;
     background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: transform 0.2s ease;
-    text-decoration: none;
-  }
-
-  .room-card:hover {
-    transform: translateY(-5px);
+    border-radius: 10px;
+    border: 1px solid #e2ded2;
   }
 
   .room-image {
     width: 100%;
     aspect-ratio: 16/11;
     object-fit: cover;
-    filter: contrast(110%) brightness(100%) saturate(130%);
   }
 
   .room-content {
     padding: 15px;
+    background-color: #fff;
 
     .title_flex {
+      margin-bottom: 15px;
       display: flex;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .room-title {
       color: #000;
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 15px;
+    }
+
+    .room-description,
+    .room-price {
+      color: #6b7280;
     }
 
     .room-description {
-      color: #6b7280;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .room-price {
-      color: #6b7280;
+      text-align: end;
+    }
+
+    .room_details {
+      font-size: 14px;
+      width: fit-content;
+      padding: 5px 15px;
+      color: #fef3c7;
+      background-color: #b97328;
+      border-radius: 50px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 `;

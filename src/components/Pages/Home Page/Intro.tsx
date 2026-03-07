@@ -7,7 +7,14 @@ const Intro: React.FC = () => {
     <StyledIntro id="intro">
       <div className="container">
         <div className="intro_flex">
-          <p className="title">Muras Guest House</p>
+          <div className="intro_logo-wrapp">
+            <img
+              src="./logo_muras.jpeg"
+              alt="Muras logo"
+              className="intro_logo"
+            />
+            <p className="title">Muras Guest House</p>
+          </div>
           <p className="suptitle">
             Mountain serenity in Kyrgyzstan's Alay Valley
           </p>
@@ -39,7 +46,19 @@ const StyledIntro = styled.section`
 
   .intro_flex {
     max-width: 700px;
-    animation: intro_flex 2s;
+    animation: intro_flex 1.5s;
+
+    .intro_logo-wrapp {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+
+      .intro_logo {
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
   }
 
   @keyframes intro_flex {
@@ -63,7 +82,6 @@ const StyledIntro = styled.section`
 
   .title {
     font-size: 24px;
-    margin-bottom: 20px;
   }
 
   .suptitle {

@@ -17,13 +17,16 @@ const ServicesSection: React.FC = () => {
               { image: { url, alt }, info: { title, description }, link },
               index,
             ) => (
-              <NavLink to={link} key={index} className="services-card">
+              <div key={index} className="services-card">
                 <img src={url} alt={alt} className="services-image" />
                 <div className="services-content">
                   <h3 className="services-title">{title}</h3>
                   <p className="services-description">{description}</p>
+                  <NavLink to={link} className="services_details">
+                    view details
+                  </NavLink>
                 </div>
-              </NavLink>
+              </div>
             ),
           )}
         </div>
@@ -42,24 +45,22 @@ const StyledServices = styled.section`
 
   .section-suptitle {
     color: #6b7280;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
   }
 
   .services-card {
+    margin: 0 auto;
+    max-width: 400px;
     overflow: hidden;
     background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: transform 0.2s ease;
-  }
-
-  .services-card:hover {
-    transform: translateY(-5px);
+    border-radius: 10px;
+    border: 1px solid #e2ded2;
   }
 
   .services-image {
@@ -80,7 +81,20 @@ const StyledServices = styled.section`
 
   .services-description {
     color: #6b7280;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .services_details {
+    font-size: 14px;
+    width: fit-content;
+    padding: 5px 15px;
+    color: #fef3c7;
+    background-color: #b97328;
+    border-radius: 50px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 

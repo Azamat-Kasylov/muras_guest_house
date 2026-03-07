@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
           A cozy basecamp for exploring the wild beauty of the Alay Valley.
         </p>
         <div className="hero_flex">
-          <StaticImg src="./14_hotel-back-view.jpeg" alt="Owner" />
+          <StaticImg src="./14_hotel-back-view.jpeg" alt="Muras Guest House" />
           <TextContent>
             <p className="hero_text">
               Nestled at the gateway to the Pamir and Tien Shan ranges, Muras
