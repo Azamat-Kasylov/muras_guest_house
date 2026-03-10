@@ -4,7 +4,6 @@ import Hero from "./Hero";
 import RoomsSection from "./RoomsSection";
 import ServicesSection from "./ServicesSection";
 import FeedbackSection from "./FeedbackSection";
-// import Gallery from "./Gallery";
 import GalleryStatic from "./GallerySection";
 
 const HomePage = () => {
@@ -13,7 +12,6 @@ const HomePage = () => {
       <Intro />
       <Hero />
       <RoomsSection />
-      {/* <Gallery /> */}
       <GalleryStatic />
       <ServicesSection />
       <FeedbackSection />

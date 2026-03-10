@@ -18,7 +18,7 @@ const ServicesSection: React.FC = () => {
               index,
             ) => (
               <div key={index} className="services-card">
-                <img src={url} alt={alt} className="services-image" />
+                {/* <img src={url} alt={alt} className="services-image" /> */}
                 <div className="services-content">
                   <h3 className="services-title">{title}</h3>
                   <p className="services-description">{description}</p>
@@ -50,7 +50,7 @@ const StyledServices = styled.section`
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
   }
 
