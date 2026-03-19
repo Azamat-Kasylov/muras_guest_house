@@ -9,7 +9,11 @@ const RoomsPage: React.FC = () => {
   return (
     <StyledRooms className="rooms">
       <div className="container">
-        <NavLink to="link" className="room-link"></NavLink>
+        <NavLink
+          to="link"
+          className="room-link"
+          aria-label="rooms page"
+        ></NavLink>
         <RoomsInfo rooms={roomsInfo.yurtInfo} />
         <RoomsGallery media={roomsImages.yurtImages} />
         <RoomsInfo rooms={roomsInfo.standardRoomInfo} />

@@ -4,7 +4,9 @@ import Hero from "./Hero";
 import RoomsSection from "./RoomsSection";
 import ServicesSection from "./ServicesSection";
 import FeedbackSection from "./FeedbackSection";
-import GalleryStatic from "./GallerySection";
+import GallerySection from "./GallerySection";
+
+// const GallerySection = lazy(() => import("./GallerySection"));
 
 const HomePage = () => {
   return (
@@ -12,7 +14,7 @@ const HomePage = () => {
       <Intro />
       <Hero />
       <RoomsSection />
-      <GalleryStatic />
+      <GallerySection />
       <ServicesSection />
       <FeedbackSection />
     </div>

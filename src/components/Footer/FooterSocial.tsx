@@ -7,7 +7,7 @@ const FooterSocial: React.FC = () => {
     <Socials>
       {socialsData.map((i) => (
         <a target="_blank" rel="noreferrer" href={i.href} key={i.href}>
-          <img src={i.image.url} />
+          <img src={i.image.url} alt={i.image.alt} />
         </a>
       ))}
     </Socials>

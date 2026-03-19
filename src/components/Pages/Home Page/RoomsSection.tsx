@@ -22,7 +22,12 @@ const RoomsSection: React.FC = () => {
               index,
             ) => (
               <div key={index} className="room-card">
-                <img src={url} alt={alt} className="room-image" />
+                <img
+                  src={url}
+                  alt={alt}
+                  className="room-image"
+                  loading="lazy"
+                />
                 <div className="room-content">
                   <div className="title_flex">
                     <h3 className="room-title">{title}</h3>
@@ -51,7 +56,7 @@ const StyledRooms = styled.section`
   }
 
   .section-suptitle {
-    color: #6b7280;
+    color: #434851;
     margin-bottom: 40px;
   }
 
@@ -93,7 +98,7 @@ const StyledRooms = styled.section`
 
     .room-description,
     .room-price {
-      color: #6b7280;
+      color: #434851;
     }
 
     .room-description {
@@ -108,8 +113,8 @@ const StyledRooms = styled.section`
       font-size: 14px;
       width: fit-content;
       padding: 5px 15px;
-      color: #fef3c7;
-      background-color: #b97328;
+      color: #fff;
+      background-color: #a0682e;
       border-radius: 50px;
 
       &:hover {

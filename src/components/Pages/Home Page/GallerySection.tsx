@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import styled from "styled-components";
-import GalleryPopup from "../../GalleryPopup";
 import { galleryData } from "../../../data";
 import PopupBackground from "../../PopupBackground";
+// import GalleryPopup from "../../GalleryPopup";
 
-const GalleryStatic = () => {
+const GalleryPopup = lazy(() => import("../../GalleryPopup"));
+
+const GallerySection = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [initialSlide, setInitialSlide] = useState<number>(0);
 
@@ -28,12 +30,15 @@ const GalleryStatic = () => {
               className="pics"
               key={index}
               onClick={() => handleClick(index)}
+              loading="lazy"
             />
           ))}
           {isActive && (
             <>
               <PopupBackground isOpen={isActive} setIsOpen={setIsActive} />
-              <GalleryPopup initialSlide={initialSlide} />
+              <Suspense>
+                <GalleryPopup initialSlide={initialSlide} />
+              </Suspense>
             </>
           )}
         </div>
@@ -52,7 +57,7 @@ const StyledSection = styled.section`
   }
 
   .gallery_suptitle {
-    color: #6b7280;
+    color: #434851;
     margin-bottom: 30px;
   }
 
@@ -73,6 +78,10 @@ const StyledSection = styled.section`
       aspect-ratio: 16/11;
       object-fit: cover;
       filter: contrast(100%) brightness(100%) saturate(120%);
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -90,4 +99,4 @@ const StyledSection = styled.section`
   }
 `;
 
-export default GalleryStatic;
+export default GallerySection;

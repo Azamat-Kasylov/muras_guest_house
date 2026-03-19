@@ -9,7 +9,11 @@ const ServicesPage: React.FC = () => {
   return (
     <Section className="services">
       <div className="container">
-        <NavLink to="link" className="services-link"></NavLink>
+        <NavLink
+          to="link"
+          className="services-link"
+          aria-label="services page"
+        ></NavLink>
         <ServicesInfo service={serviceInfo.breakfastInfo} />
         <ServicesGallery images={serviceImages.breakfast} />
         <ServicesInfo service={serviceInfo.lunchInfo} />

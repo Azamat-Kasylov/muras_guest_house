@@ -45,7 +45,7 @@ const StyledYurt = styled.div`
   }
 
   .room-description {
-    color: #6b7280;
+    color: #626976;
     padding-bottom: 10px;
     text-align: center;
   }
@@ -53,8 +53,8 @@ const StyledYurt = styled.div`
   .room-price {
     padding: 5px 20px;
     font-weight: 400;
-    color: #fef3c7;
-    background-color: #b97328;
+    color: #fff;
+    background-color: #a0682e;
     border-radius: 5px;
   }
 `;

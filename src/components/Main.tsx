@@ -7,7 +7,7 @@ import RoomsPage from "./Pages/RoomsPage/RoomsPage";
 
 const Main: React.FC = () => {
   return (
-    <div>
+    <main>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/main" element={<HomePage />} />
@@ -15,7 +15,7 @@ const Main: React.FC = () => {
         <Route path="/rooms" element={<RoomsPage />} />
         <Route path="/services" element={<ServicesPage />} />
       </Routes>
-    </div>
+    </main>
   );
 };
 

@@ -44,7 +44,7 @@ const StyledServices = styled.section`
   }
 
   .section-suptitle {
-    color: #6b7280;
+    color: #434851;
     margin-bottom: 40px;
   }
 
@@ -80,7 +80,7 @@ const StyledServices = styled.section`
   }
 
   .services-description {
-    color: #6b7280;
+    color: #434851;
     margin-bottom: 20px;
   }
 
@@ -88,8 +88,8 @@ const StyledServices = styled.section`
     font-size: 14px;
     width: fit-content;
     padding: 5px 15px;
-    color: #fef3c7;
-    background-color: #b97328;
+    color: #fff;
+    background-color: #a0682e;
     border-radius: 50px;
 
     &:hover {

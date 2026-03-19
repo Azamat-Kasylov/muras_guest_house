@@ -43,7 +43,7 @@ const StyledYurt = styled.div`
 
   .service-description,
   .service-menu {
-    color: #6b7280;
+    color: #626976;
     padding-bottom: 10px;
   }
 

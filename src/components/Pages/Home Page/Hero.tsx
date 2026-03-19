@@ -10,7 +10,11 @@ const Hero: React.FC = () => {
           A cozy basecamp for exploring the wild beauty of the Alay Valley.
         </p>
         <div className="hero_flex">
-          <StaticImg src="./14_hotel-back-view.jpeg" alt="Muras Guest House" />
+          <StaticImg
+            src="./14_hotel-back-view.jpeg"
+            alt="Muras Guest House"
+            loading="lazy"
+          />
           <TextContent>
             <p className="hero_text">
               Nestled at the gateway to the Pamir and Tien Shan ranges, Muras
@@ -58,7 +62,7 @@ const ContentWrapper = styled.div`
   .hero_suptitle,
   .hero_text {
     margin-bottom: 20px;
-    color: #6b7280;
+    color: #626976;
 
     @media (max-width: 768px) {
       font-size: 18px;
@@ -84,12 +88,12 @@ const TextContent = styled.div`
   .specials {
     padding: 5px 10px;
     margin: 0;
-    color: #fef3c7;
-    background-color: #b97328;
+    color: #fff;
+    background-color: #a0682e;
     border-radius: 20px;
 
     @media (max-width: 768px) {
-      font-size: 12px;
+      font-size: 13px;
     }
   }
 `;

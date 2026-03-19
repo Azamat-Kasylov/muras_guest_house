@@ -23,6 +23,7 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
           alt={item.alt}
           className={item.className}
           onClick={() => handleClick(index)}
+          loading="lazy"
         />
       ))}
       {certificates.map((item, index) => (
@@ -32,6 +33,7 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
           alt={item.alt}
           className={`popupHiddenImage ${index === activeIndex ? "active" : ""}`}
           onClick={() => handleClick(index)}
+          loading="lazy"
         />
       ))}
       {activeIndex !== null && (
@@ -42,7 +44,7 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
 };
 
 const StyledDiv = styled.div`
-  margin-bottom: 50px;
+  margin: 50px 0;
   max-width: 350px;
   display: flex;
   flex-wrap: wrap;

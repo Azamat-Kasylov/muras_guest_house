@@ -77,7 +77,7 @@ const SimpleSlider: React.FC = () => {
         ({ image: { url, alt }, feedbackText, guest }, index) => (
           <StyledImgWrapper key={index}>
             <div key={url}>
-              <img src={url} />
+              <img src={url} alt={alt} loading="lazy" />
               <p className="description">"{feedbackText}"</p>
               <p className="guest">{guest}</p>
             </div>
@@ -111,7 +111,7 @@ const StyledImgWrapper = styled.div`
 
   .guest,
   .description {
-    color: #6b7280;
+    color: #434851;
   }
 
   .guest {

@@ -62,18 +62,22 @@ const FormArea: React.FC = () => {
           </label>
           <div className="row">
             <div className="row_flex">
+              <label htmlFor="dateIn" className="date_label"></label>
               <input
                 className="check-in"
                 type="date"
                 id="dateIn"
+                aria-label="Check-in date"
                 {...register("date")}
               />
-              <input
-                type="number"
-                id="guestsCount"
-                placeholder="Guests"
-                {...register("guests")}
-              />
+              <label htmlFor="guestsCount">
+                <input
+                  type="number"
+                  id="guestsCount"
+                  placeholder="Guests"
+                  {...register("guests")}
+                />
+              </label>
             </div>
             <label htmlFor="formSubmit">
               <input
@@ -99,6 +103,10 @@ const StyledForm = styled.form`
   padding: 15px;
   position: relative;
 
+  .date_label {
+    display: none;
+  }
+
   .form_content {
     display: flex;
     flex-direction: column;
@@ -108,22 +116,31 @@ const StyledForm = styled.form`
   .form_text {
     padding-left: 5px;
     margin-bottom: 10px;
-    color: #6b7280;
+    color: #babfc8;
   }
 
   label {
     width: 100%;
-    min-width: 115px;
   }
 
   input {
     min-width: 115px;
+    min-height: 48px;
     width: 100%;
     padding: 13px;
-    color: #6b7280;
+    font-size: 16px;
+    color: #babfc8;
     background-color: #0f172a;
     border: 1px solid #7a8798;
     border-radius: 10px;
+
+    &::placeholder {
+      color: #babfc8;
+    }
+
+    @media (max-width: 768px) {
+      min-width: 0;
+    }
   }
 
   .errorName {
@@ -132,7 +149,7 @@ const StyledForm = styled.form`
   }
 
   .errorEmail {
-    top: 113px;
+    top: 120px;
     left: 160px;
   }
 
@@ -165,7 +182,12 @@ const StyledForm = styled.form`
 
     .row_flex {
       display: flex;
+      flex: 1;
       gap: 10px;
+
+      .check-in {
+        padding: 0 13px;
+      }
     }
 
     @media (max-width: 768px) {

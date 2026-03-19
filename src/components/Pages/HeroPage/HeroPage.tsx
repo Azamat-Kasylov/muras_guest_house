@@ -10,7 +10,10 @@ const HeroPage: React.FC = () => {
           A cozy basecamp for exploring the wild beauty of the Alay Valley.
         </p>
         <ContentWrapper>
-          <StaticImg src="./3_ainura.jpeg" alt="Owner" />
+          <picture>
+            <source srcSet="./3_ainura.webp" type="image/webp" />
+            <img src="./3_ainura.jpeg" alt="Owner" className="hero_img" />
+          </picture>
           <TextContent>
             <p className="hero_text">
               Nestled at the gateway to the Pamir and Tien Shan ranges, Muras
@@ -44,7 +47,7 @@ const HeroWrapper = styled.div`
   }
 
   .suptitle {
-    color: #6b7280;
+    color: #626976;
     margin-bottom: 50px;
   }
 `;
@@ -63,24 +66,15 @@ const ContentWrapper = styled.div`
 `;
 
 const TextContent = styled.div`
+  width: 100%;
+
   .hero_text {
     margin-bottom: 20px;
-    color: #6b7280;
+    color: #626976;
   }
 
   @media (max-width: 768px) {
     font-size: 18px;
-  }
-`;
-
-const StaticImg = styled.img`
-  position: relative;
-  width: 100%;
-  max-width: 50%;
-  align-self: start;
-
-  @media (max-width: 768px) {
-    max-width: 100%;
   }
 `;
 

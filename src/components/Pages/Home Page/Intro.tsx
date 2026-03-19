@@ -1,18 +1,32 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import styled from "styled-components";
-import FormAreaHookForm from "../../Form/FormAreaHookForm";
+// import FormAreaHookForm from "../../Form/FormAreaHookForm";
+import { lazy, Suspense } from "react";
+
+const FormAreaHookForm = lazy(() => import("../../Form/FormAreaHookForm"));
 
 const Intro: React.FC = () => {
   return (
     <StyledIntro id="intro">
+      <picture>
+        <source srcSet="./alay2.webp" type="image/webp" />
+        <img
+          src="./alay2.jpg"
+          alt="intro background-image"
+          className="intro_img"
+        />
+      </picture>
       <div className="container">
         <div className="intro_flex">
           <div className="intro_logo-wrapp">
-            <img
-              src="./logo_muras.jpeg"
-              alt="Muras logo"
-              className="intro_logo"
-            />
+            <picture>
+              <source srcSet="./logo_muras.webp" type="image/webp" />
+              <img
+                src="./logo_muras.jpg"
+                alt="Muras logo"
+                className="intro_logo"
+              />
+            </picture>
             <p className="title">Muras Guest House</p>
           </div>
           <p className="suptitle">
@@ -23,7 +37,9 @@ const Intro: React.FC = () => {
             hospitality at our family-run mountain retreat.
           </p>
         </div>
-        <FormAreaHookForm />
+        <Suspense>
+          <FormAreaHookForm />
+        </Suspense>
       </div>
     </StyledIntro>
   );
@@ -32,10 +48,14 @@ const Intro: React.FC = () => {
 const StyledIntro = styled.section`
   margin: 0;
   min-height: 100vh;
-  background-image:
-    linear-gradient(rgba(0, 0, 27, 0.5), rgba(0, 0, 0, 0.5)), url(./alay2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  .intro_img {
+    min-height: 100vh;
+    object-fit: cover;
+    filter: brightness(50%);
+    position: fixed;
+    z-index: -999;
+  }
 
   .container {
     min-height: 100vh;
@@ -47,6 +67,7 @@ const StyledIntro = styled.section`
   .intro_flex {
     max-width: 700px;
     animation: intro_flex 1.5s;
+    will-change: transform, opacity;
 
     .intro_logo-wrapp {
       display: flex;

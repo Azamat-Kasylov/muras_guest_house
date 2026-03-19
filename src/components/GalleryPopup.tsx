@@ -85,7 +85,7 @@ const SimpleSlider: React.FC<Props> = ({ initialSlide }) => {
     <SliderCustom {...settings}>
       {galleryData.map(({ url, alt }, index) => (
         <StyledImgWrapper key={index}>
-          <img src={url} alt={alt} />
+          <img src={url} alt={alt} loading="lazy" />
         </StyledImgWrapper>
       ))}
     </SliderCustom>

@@ -7,13 +7,22 @@ import { certificateData } from "../../data";
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
+      <picture>
+        <source srcSet="./footer.webp" type="image/webp" />
+        <img
+          src="./footer.jpg"
+          alt="footer background-image"
+          className="footer_img"
+          loading="lazy"
+        />
+      </picture>
       <div className="container">
         <Certificates certificates={certificateData} />
         <FooterContent>
           <div className="footer_copy">
             <div className="copy_img-wrapper">
               <img
-                src="./logo_muras.jpeg"
+                src="./logo_muras.webp "
                 alt="Muras logo"
                 className="copy_logo"
               />
@@ -33,29 +42,18 @@ const Footer: React.FC = () => {
 };
 
 const StyledFooter = styled.footer`
-  min-height: calc(100vh - 60px);
-  padding-top: 70px;
+  min-height: 100vh;
   padding-bottom: 50px;
-  background-image: url(./footer.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   position: relative;
 
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  .footer_img {
     width: 100%;
-    min-height: 100%;
-    background: linear-gradient(
-      35deg,
-      rgba(6, 10, 18, 0.91) 20%,
-      rgba(6, 10, 18, 0.7) 50%,
-      rgba(6, 10, 18, 0.91) 90%
-    );
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    filter: brightness(30%);
   }
 
   .container {
