@@ -38,19 +38,20 @@ const StyledNavBar = styled.div`
   .nav_list {
     margin: 0;
     padding: 0;
-    height: 60px;
+    height: 50px;
     display: flex;
     align-items: center;
     gap: 60px;
+  }
 
-    .nav_item {
-      list-style: none;
-    }
+  .nav_item {
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
   }
 
   .header-logo {
     max-width: 100%;
-    max-height: 60px;
+    max-height: 50px;
   }
 
   a {

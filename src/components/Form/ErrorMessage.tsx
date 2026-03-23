@@ -15,8 +15,10 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
 };
 
 const StyledErrorMessage = styled.p`
+  width: 100%;
   color: red;
   font-size: 13px;
+  text-align: center;
   position: absolute;
 `;
 

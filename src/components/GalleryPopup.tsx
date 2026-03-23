@@ -20,7 +20,7 @@ const GalleryPopup: React.FC<Props> = ({ initialSlide }) => {
 };
 
 const Section = styled.section`
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   padding: 0 80px;
   position: absolute;

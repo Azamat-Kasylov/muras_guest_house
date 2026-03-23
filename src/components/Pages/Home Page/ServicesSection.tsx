@@ -8,27 +8,17 @@ const ServicesSection: React.FC = () => {
     <StyledServices id="services" className="services">
       <div className="container">
         <h2 className="section-title">Our services</h2>
-        <p className="section-suptitle">
-          Everything you need for a comfortable, worry-free stay
-        </p>
+        <p className="section-suptitle">What we offer</p>
         <div className="services-grid">
-          {servicesData.map(
-            (
-              { image: { url, alt }, info: { title, description }, link },
-              index,
-            ) => (
-              <div key={index} className="services-card">
-                {/* <img src={url} alt={alt} className="services-image" /> */}
-                <div className="services-content">
-                  <h3 className="services-title">{title}</h3>
-                  <p className="services-description">{description}</p>
-                  <NavLink to={link} className="services_details">
-                    view details
-                  </NavLink>
-                </div>
-              </div>
-            ),
-          )}
+          {servicesData.map(({ info: { title, description }, link }, index) => (
+            <div key={index} className="services-card">
+              <h3 className="services-title">{title}</h3>
+              <p className="services-description">{description}</p>
+              <NavLink to={link} className="services_details">
+                view details
+              </NavLink>
+            </div>
+          ))}
         </div>
       </div>
     </StyledServices>
@@ -36,64 +26,78 @@ const ServicesSection: React.FC = () => {
 };
 
 const StyledServices = styled.section`
-  padding: 50px 0;
-  background-color: #f0eee8;
+  padding: 100px 0;
+  background-color: #fff;
+  transition: all 0.5s;
 
   .section-title {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .section-suptitle {
-    color: #434851;
-    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #7e7367;
+    margin-bottom: 50px;
   }
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .services-card {
-    margin: 0 auto;
-    max-width: 400px;
-    overflow: hidden;
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid #e2ded2;
-  }
-
-  .services-image {
-    width: 100%;
-    aspect-ratio: 16/11;
-    object-fit: cover;
-  }
-
-  .services-content {
-    padding: 15px;
+    padding: 25px 10px;
+    border-top: 1px solid #e2ded2;
   }
 
   .services-title {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 26px;
+    font-weight: 400;
     margin-bottom: 15px;
   }
 
   .services-description {
-    color: #434851;
-    margin-bottom: 20px;
+    color: #7e7367;
+    margin-bottom: 30px;
+    line-height: 1.7;
   }
 
   .services_details {
-    font-size: 14px;
-    width: fit-content;
-    padding: 5px 15px;
-    color: #fff;
-    background-color: #a0682e;
-    border-radius: 50px;
+    padding-bottom: 5px;
+    color: #7e7367;
 
     &:hover {
-      text-decoration: underline;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  h2,
+  h3,
+  p,
+  a {
+    transition: all 0.5s;
+  }
+
+  &:has(.services-grid:hover) {
+    background-color: #3b332b;
+
+    h2,
+    h3,
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
   }
 `;

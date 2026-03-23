@@ -21,31 +21,19 @@ const FeedbackSection: React.FC = () => {
 };
 
 const StyledSection = styled.section`
-  padding: 50px 0;
-  background-color: #f5f3ee;
+  padding: 100px 0;
+  background-color: #fff;
 
   .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
   }
 
-  .title_wrapper {
-    width: 100%;
-    min-width: 225px;
-
-    .feedback_title {
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      text-align: center;
-    }
+  .feedback_title {
+    text-align: center;
+    margin-bottom: 50px;
   }
 `;
 
@@ -73,45 +61,29 @@ const SimpleSlider: React.FC = () => {
 
   return (
     <SlickSlider {...settings}>
-      {feedbackData.map(
-        ({ image: { url, alt }, feedbackText, guest }, index) => (
-          <StyledImgWrapper key={index}>
-            <div key={url}>
-              <img src={url} alt={alt} loading="lazy" />
-              <p className="description">"{feedbackText}"</p>
-              <p className="guest">{guest}</p>
-            </div>
-          </StyledImgWrapper>
-        ),
-      )}
+      {feedbackData.map(({ feedbackText, guest }, index) => (
+        <StyledImgWrapper key={index}>
+          <div key={index} className="feedback_content">
+            <p className="description">"{feedbackText}"</p>
+            <p className="guest">{guest}</p>
+          </div>
+        </StyledImgWrapper>
+      ))}
     </SlickSlider>
   );
 };
 
 const StyledImgWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 0 10px;
   transition: transform 0.3s;
 
-  @media (max-width: 768px) {
+  .feedback_content {
     text-align: center;
-  }
-
-  img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 90px;
-
-    @media (max-width: 768px) {
-      margin: 0 auto;
-    }
   }
 
   .guest,
   .description {
-    color: #434851;
+    color: #7e7367;
+    line-height: 1.7;
   }
 
   .guest {

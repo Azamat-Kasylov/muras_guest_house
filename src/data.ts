@@ -33,28 +33,30 @@ export interface RoomsDataInterface {
   info: IInfo;
   image: IImage;
   link: string;
+  forWhom: string;
 }
 
 export const roomsData: RoomsDataInterface[] = [
   {
     info: {
-      title: "Yurt",
+      title: "Kyrgyz yurt",
       description:
-        "Experience the magic of the nomadic tradition in our luxury Yurt. Combining ancient design with modern comfort, this unique circular space offers a cozy retreat.",
-      price: "From 50$ / night",
+        "Experience the magic of the nomadic tradition in our luxury Yurt.",
+      price: "from 50$ / night",
     },
     image: {
       url: "./yurt_front-soft.jpg",
       alt: "Yurt photo",
     },
     link: "/rooms",
+    forWhom: "Nomadic experience",
   },
   {
     info: {
       title: "Standard room",
       description:
-        "Your personal retreat. Simple, stylish, and incredibly comfortable. Perfect for solo travelers or couples who value comfort and charm.",
-      price: "From 40$ / night",
+        "Your personal retreat. Simple, stylish, and incredibly comfortable.",
+      price: "from 40$ / night",
     },
     image: {
       url: "./standard_room-soft.png",
@@ -62,29 +64,30 @@ export const roomsData: RoomsDataInterface[] = [
     },
 
     link: "/rooms",
+    forWhom: "Best for couples",
   },
   {
     info: {
       title: "Dorm Bed",
-      description:
-        "Your cozy hideaway. A comfy bed, authentic atmosphere, and a power socket — everything you need to recharge for your next adventure.",
-      price: "From 10$ / night",
+      description: "Your cozy hideaway to recharge for your next adventure.",
+      price: "from 10$ / night",
     },
     image: {
       url: "./dorm_bed-soft.jpg",
       alt: "Beds photo",
     },
     link: "/rooms",
+    forWhom: "Solo travelers",
   },
 ];
 
 //---------------------------------------------------- Gallery data ---------------------------------------------------
 
 export const galleryData: IImage[] = [
-  { url: "./3_ainura.jpeg", alt: "Muras Guest House" },
+  { url: "./3_ainura.jpg", alt: "Muras Guest House" },
   { url: "./7_hotel-front-view.jpeg", alt: "Muras Guest House" },
-  { url: "./14_hotel-back-view.jpeg", alt: "Muras Guest House" },
   { url: "./13_new-dinning-room.jpeg", alt: "Muras Guest House" },
+  { url: "./14_hotel-back-view.jpeg", alt: "Muras Guest House" },
   { url: "./4_window-view.jpeg", alt: "Muras Guest House" },
   { url: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
   { url: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
@@ -170,6 +173,7 @@ export const roomsInfo: RoomsInfoInterface = {
 interface SocialsDataInterface {
   image: IImage;
   href: string;
+  social: string;
 }
 
 export const socialsData: SocialsDataInterface[] = [
@@ -179,6 +183,7 @@ export const socialsData: SocialsDataInterface[] = [
       alt: "Facebook",
     },
     href: "https://www.facebook.com/profile.php?id=100063488356149",
+    social: "Facebook",
   },
   {
     image: {
@@ -186,6 +191,7 @@ export const socialsData: SocialsDataInterface[] = [
       alt: "Instagram",
     },
     href: "https://www.instagram.com/guest_house_muras_sarytash/",
+    social: "Instagram",
   },
 ];
 
@@ -202,7 +208,7 @@ export const servicesData: ServicesDataInterface[] = [
     info: {
       title: "Meals",
       description:
-        "Homemade breakfasts and dinners featuring local ingredients and Kyrgyz specialties. Vegetarian options available.",
+        "Traditional Kyrgyz dishes made with fresh local ingredients, served in our warm dining hall.",
       price: "5$",
     },
     image: {
@@ -215,7 +221,7 @@ export const servicesData: ServicesDataInterface[] = [
     info: {
       title: "Transportation",
       description:
-        "Airport and city transfers, daily shuttles, and custom routes for treks and day trips in the Alai region.",
+        "Airport transfers and excursions to nearby landmarks, including Lenin Peak base camp.",
       price: "8$",
     },
     image: {
@@ -242,6 +248,32 @@ export const servicesData: ServicesDataInterface[] = [
       title: "Laundry",
       description:
         "Reliable same-day laundry service so you can travel lighter and stay longer in the mountains.",
+      price: "5$",
+    },
+    image: {
+      url: "./laundry.jpeg",
+      alt: "Laundry",
+    },
+    link: "/services",
+  },
+  {
+    info: {
+      title: "Connectivity",
+      description:
+        "Stay connected with complimentary Wi-Fi throughout the hotel and common areas.",
+      price: "5$",
+    },
+    image: {
+      url: "./laundry.jpeg",
+      alt: "Laundry",
+    },
+    link: "/services",
+  },
+  {
+    info: {
+      title: "Glamping",
+      description:
+        "Experience the great outdoors in total comfort with our hotel camping experience.",
       price: "5$",
     },
     image: {
@@ -371,14 +403,23 @@ export interface CertificateInterface extends IImage {
 }
 
 export const certificateData: CertificateInterface[] = [
-  { url: "./booking.jpg", alt: "booking certificate", className: "small" },
-  { url: "./booking-2.jpg", alt: "booking certificate", className: "small" },
-  { url: "./certificate.jpg", alt: "booking certificate", className: "big" },
   {
-    url: "./certificate-2.jpg",
+    url: "./booking-2_300.jpg",
     alt: "booking certificate",
     className: "small",
   },
+  { url: "./certificate.jpg", alt: "booking certificate", className: "small" },
+
+  {
+    url: "./certificate-3_300.jpg",
+    alt: "booking certificate",
+    className: "small",
+  },
+];
+
+export const bigCertificateData: CertificateInterface[] = [
+  { url: "./booking-2.jpg", alt: "booking certificate", className: "small" },
+  { url: "./certificate.jpg", alt: "booking certificate", className: "small" },
   {
     url: "./certificate-3.jpg",
     alt: "booking certificate",

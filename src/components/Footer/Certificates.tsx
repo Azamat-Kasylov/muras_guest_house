@@ -1,13 +1,9 @@
 import styled from "styled-components";
-import { CertificateInterface } from "../../data";
+import { certificateData, bigCertificateData } from "../../data";
 import { useState } from "react";
 import PopupBackground from "../PopupBackground";
 
-interface CertificateProps {
-  certificates: CertificateInterface[];
-}
-
-const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
+const Certificates: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
 
   const handleClick = (index: number) => {
@@ -16,7 +12,7 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
 
   return (
     <StyledDiv>
-      {certificates.map((item, index) => (
+      {certificateData.map((item, index) => (
         <img
           key={index}
           src={item.url}
@@ -26,7 +22,7 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
           loading="lazy"
         />
       ))}
-      {certificates.map((item, index) => (
+      {bigCertificateData.map((item, index) => (
         <img
           key={index}
           src={item.url}
@@ -44,21 +40,12 @@ const Certificates: React.FC<CertificateProps> = ({ certificates }) => {
 };
 
 const StyledDiv = styled.div`
-  margin: 50px 0;
-  max-width: 350px;
   display: flex;
-  flex-wrap: wrap;
   align-self: center;
   gap: 20px;
-  position: relative;
   z-index: 10;
 
-  @media (max-width: 430px) {
-    margin-bottom: 50px;
-  }
-
   img {
-    border: solid 4px #fff;
     object-fit: cover;
     filter: grayscale(120%) sepia(20%) contrast(70%);
 
@@ -68,30 +55,22 @@ const StyledDiv = styled.div`
   }
 
   .small {
-    max-width: calc(50% - 10px);
-  }
-
-  .big {
-    max-width: 100%;
+    width: 4rem;
   }
 
   .popupHiddenImage {
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    max-width: 70vw;
+    max-width: 80vw;
     max-height: 70vh;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     filter: none;
 
-    @media (max-width: 768px) {
-      max-width: calc(100%);
-      max-height: 60vh;
-    }
     @media (max-height: 450px) {
       max-width: calc(100% - 2rem);
       max-height: 60vh;
@@ -100,6 +79,10 @@ const StyledDiv = styled.div`
 
   .active {
     visibility: visible;
+  }
+
+  @media (max-width: 768px) {
+    align-self: flex-start;
   }
 `;
 

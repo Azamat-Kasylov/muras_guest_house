@@ -19,21 +19,20 @@ const Header = () => {
 
 const StyledHeader = styled.header<{ $isVisible: boolean }>`
   width: 100%;
-  height: 60px;
+  height: 50px;
   position: fixed;
-  background-color: #f0eee8;
+  background-color: #fff;
   box-shadow: 0 4px 16px 0 #00000023;
   z-index: 999;
 
   .container {
-    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
 
   @media (max-width: 1024px) {
-    height: ${({ $isVisible }) => ($isVisible ? "230px" : "60px")};
+    height: ${({ $isVisible }) => ($isVisible ? "230px" : "50px")};
     will-change: height;
     display: flex;
     align-items: start;

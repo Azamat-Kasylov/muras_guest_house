@@ -12,7 +12,7 @@ const HeroPage: React.FC = () => {
         <ContentWrapper>
           <picture>
             <source srcSet="./3_ainura.webp" type="image/webp" />
-            <img src="./3_ainura.jpeg" alt="Owner" className="hero_img" />
+            <img src="./3_ainura.jpg" alt="Owner" className="hero_img" />
           </picture>
           <TextContent>
             <p className="hero_text">

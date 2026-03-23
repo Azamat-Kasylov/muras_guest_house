@@ -16,11 +16,11 @@ const GallerySection = () => {
   };
 
   return (
-    <StyledSection>
+    <StyledSection id="gallery">
       <div className="gallery_container container">
         <h2 className="gallery_title">Gallery</h2>
         <p className="gallery_suptitle">
-          A glimpse of life at Muras Guest House and the Alay Valley.
+          A glimpse of life at Muras Guest House and the Alay Valley
         </p>
         <div className="gallery_grid">
           {galleryData.slice(0, 5).map(({ url, alt }, index) => (
@@ -48,36 +48,53 @@ const GallerySection = () => {
 };
 
 const StyledSection = styled.section`
-  padding: 50px 0;
+  padding: 100px 0;
   position: relative;
-  background-color: #f5f3ee;
+  background-color: #fff;
 
   .gallery_title {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .gallery_suptitle {
-    color: #434851;
-    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #7e7367;
+    margin-bottom: 50px;
   }
 
   .gallery_grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-rows: repeat(2, 250px);
+    gap: 20px;
 
     .pics:first-child {
       grid-column-start: 1;
       grid-column-end: 3;
       grid-row-start: 1;
+      grid-row-end: 2;
+    }
+
+    .pics:nth-child(2) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+    .pics:nth-child(3) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
       grid-row-end: 3;
     }
 
     .pics {
+      width: 100%;
       height: 100%;
-      aspect-ratio: 16/11;
       object-fit: cover;
       filter: contrast(100%) brightness(100%) saturate(120%);
+      border-radius: 30px;
 
       &:hover {
         cursor: pointer;
@@ -88,12 +105,33 @@ const StyledSection = styled.section`
   @media (max-width: 768px) {
     .gallery_grid {
       grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
       row-gap: 10px;
       column-gap: 7px;
+
+      .pics {
+        aspect-ratio: 9/6;
+        border-radius: 0;
+      }
 
       .pics:first-child {
         grid-column-start: 1;
         grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 2;
+      }
+
+      .pics:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+      .pics:nth-child(3) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
       }
     }
   }

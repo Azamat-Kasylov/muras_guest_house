@@ -1,46 +1,28 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import styled from "styled-components";
-// import FormAreaHookForm from "../../Form/FormAreaHookForm";
-import { lazy, Suspense } from "react";
-
-const FormAreaHookForm = lazy(() => import("../../Form/FormAreaHookForm"));
+import FormAreaHookForm from "../../Form/FormAreaHookForm";
 
 const Intro: React.FC = () => {
   return (
     <StyledIntro id="intro">
       <picture>
-        <source srcSet="./alay2.webp" type="image/webp" />
+        <source srcSet="./alay_valley.webp" type="image/webp" />
         <img
-          src="./alay2.jpg"
+          src="./alay_valley.jpg"
           alt="intro background-image"
           className="intro_img"
         />
       </picture>
       <div className="container">
         <div className="intro_flex">
-          <div className="intro_logo-wrapp">
-            <picture>
-              <source srcSet="./logo_muras.webp" type="image/webp" />
-              <img
-                src="./logo_muras.jpg"
-                alt="Muras logo"
-                className="intro_logo"
-              />
-            </picture>
-            <p className="title">Muras Guest House</p>
-          </div>
-          <p className="suptitle">
-            Mountain serenity in Kyrgyzstan's Alay Valley
-          </p>
+          <img src="./muras.png" alt="Muras" className="intro_title" />
           <p className="intro_text">
             Wake up to snow-capped peaks, crystal-clear air, and warm Kyrgyz
             hospitality at our family-run mountain retreat.
           </p>
         </div>
-        <Suspense>
-          <FormAreaHookForm />
-        </Suspense>
       </div>
+      <FormAreaHookForm />
     </StyledIntro>
   );
 };
@@ -52,37 +34,29 @@ const StyledIntro = styled.section`
   .intro_img {
     min-height: 100vh;
     object-fit: cover;
-    filter: brightness(50%);
+    filter: brightness(70%);
     position: fixed;
     z-index: -999;
   }
 
   .container {
-    min-height: 100vh;
+    min-height: calc(100vh - 90px);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: end;
   }
 
   .intro_flex {
-    max-width: 700px;
-    animation: intro_flex 1.5s;
-    will-change: transform, opacity;
-
-    .intro_logo-wrapp {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
-
-      .intro_logo {
-        width: 40px;
-        border-radius: 50%;
-      }
-    }
+    max-width: 550px;
+    margin-bottom: 50px;
   }
 
-  @keyframes intro_flex {
+  .intro_title {
+    animation: intro_title 2s;
+    will-change: transform, opacity;
+  }
+
+  @keyframes intro_title {
     0% {
       opacity: 0;
       transform: translateY(-100px); /* Начинаем выше, чем нужно */
@@ -93,47 +67,41 @@ const StyledIntro = styled.section`
     }
   }
 
-  .suptitle,
-  .title,
+  .intro_title {
+    max-width: 60%;
+    margin-bottom: 10px;
+  }
+
   .intro_text {
+    font-size: 20px;
     font-weight: 300;
     color: #ffffff;
     letter-spacing: 2px;
-  }
-
-  .title {
-    font-size: 24px;
-  }
-
-  .suptitle {
-    font-size: 60px;
-    line-height: 1.2em;
-    margin-bottom: 18px;
-  }
-
-  .intro_text {
-    margin: 0;
+    font-style: italic;
     line-height: 1.5em;
+    font-family: "Cormorant Garamond", serif;
+    animation: intro_text 2s;
+    will-change: transform, opacity;
+  }
+
+  @keyframes intro_text {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   @media (max-width: 768px) {
-    .title {
-      font-size: 20px;
+    .container {
+      min-height: calc(100vh - 250px);
     }
 
-    .suptitle {
-      font-size: 30px;
-    }
-
-    .intro_text {
-      font-size: 14px;
-    }
-  }
-
-  @media (max-height: 600px) {
-    padding-top: 100px;
-    .intro_text {
-      margin-bottom: 40px;
+    .intro_flex {
+      margin-bottom: 30px;
     }
   }
 `;

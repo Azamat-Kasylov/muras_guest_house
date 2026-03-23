@@ -26,97 +26,91 @@ const FormArea: React.FC = () => {
   };
 
   return (
-    <>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <p className="form_text">Plan your stay</p>
-        <div className="form_content">
-          <label className="name" htmlFor="userName">
-            <input
-              type="text"
-              id="userName"
-              placeholder="Name"
-              {...register("name", {
-                required: "This field is required",
-              })}
-            />
-            {nameError && (
-              <ErrorMessage className="errorName">{nameError}</ErrorMessage>
-            )}
-          </label>
-          <label className="email" htmlFor="userEmail">
-            <input
-              type="text"
-              id="userEmail"
-              placeholder="Email"
-              {...register("email", {
-                required: "This field is required",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email adress",
-                },
-              })}
-            />
-            {emailError && (
-              <ErrorMessage className="errorEmail">{emailError}</ErrorMessage>
-            )}
-          </label>
-          <div className="row">
-            <div className="row_flex">
-              <label htmlFor="dateIn" className="date_label"></label>
-              <input
-                className="check-in"
-                type="date"
-                id="dateIn"
-                aria-label="Check-in date"
-                {...register("date")}
-              />
-              <label htmlFor="guestsCount">
-                <input
-                  type="number"
-                  id="guestsCount"
-                  placeholder="Guests"
-                  {...register("guests")}
-                />
-              </label>
-            </div>
-            <label htmlFor="formSubmit">
-              <input
-                className="submit"
-                type="submit"
-                id="formSubmit"
-                value="Book"
-              />
-            </label>
-          </div>
+    <StyledForm className="form_wrapper">
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <label className="name_label" htmlFor="userName">
+          <input
+            className="name"
+            type="text"
+            id="userName"
+            placeholder="Name"
+            {...register("name", {
+              required: "This field is required",
+            })}
+          />
+          {nameError && (
+            <ErrorMessage className="errorName">{nameError}</ErrorMessage>
+          )}
+        </label>
+        <label className="email_label" htmlFor="userEmail">
+          <input
+            className="email"
+            type="text"
+            id="userEmail"
+            placeholder="Email"
+            {...register("email", {
+              required: "This field is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "Invalid email adress",
+              },
+            })}
+          />
+          {emailError && (
+            <ErrorMessage className="errorEmail">{emailError}</ErrorMessage>
+          )}
+        </label>
+        <div className="row">
+          <label htmlFor="dateIn" className="date_label"></label>
+          <input
+            className="check-in"
+            type="date"
+            id="dateIn"
+            aria-label="Check-in date"
+            {...register("date")}
+          />
+          <label htmlFor="guestsCount"></label>
+          <input
+            className="guests"
+            type="number"
+            id="guestsCount"
+            placeholder="Guests"
+            {...register("guests")}
+          />
         </div>
-      </StyledForm>
+        <label htmlFor="formSubmit">
+          <input
+            className="submit"
+            type="submit"
+            id="formSubmit"
+            value="Book"
+          />
+        </label>
+      </form>
       {isSubmitSuccessful && <PopupFormMessage onButtonClick={reset} />}
-    </>
+    </StyledForm>
   );
 };
 
-const StyledForm = styled.form`
-  max-width: 450px;
-  border-radius: 10px;
-  border: 1px solid #7a8798;
-  background-color: #0f172a;
-  padding: 15px;
-  position: relative;
+const StyledForm = styled.div`
+  .form {
+    width: 100%;
+    height: 90px;
+    background-color: #f8f6f2;
+    padding: 0 6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 15px;
+  }
 
-  .date_label {
+  .name_label,
+  .email_label {
+    position: relative;
+  }
+
+  .row label {
     display: none;
-  }
-
-  .form_content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .form_text {
-    padding-left: 5px;
-    margin-bottom: 10px;
-    color: #babfc8;
   }
 
   label {
@@ -124,79 +118,60 @@ const StyledForm = styled.form`
   }
 
   input {
-    min-width: 115px;
-    min-height: 48px;
-    width: 100%;
-    padding: 13px;
     font-size: 16px;
-    color: #babfc8;
-    background-color: #0f172a;
-    border: 1px solid #7a8798;
-    border-radius: 10px;
+    min-height: 44px;
+    width: 100%;
+    color: #757575;
+    background-color: #f8f6f2;
+    border: none;
+    border-bottom: 1px solid #bfbdb6;
 
-    &::placeholder {
-      color: #babfc8;
-    }
-
-    @media (max-width: 768px) {
-      min-width: 0;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: #a6623f;
     }
   }
 
-  .errorName {
-    top: 60px;
-    left: 160px;
-  }
-
+  .errorName,
   .errorEmail {
-    top: 120px;
-    left: 160px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
   }
 
   .submit {
     width: 100%;
     color: #fff;
-    background-color: #256a46;
-    border: 2px solid #256a46;
+    background-color: #a6623f;
+    border: none;
     transition:
       background-color 0.3s,
       border-color 0.3s;
   }
 
-  .submit:hover {
-    cursor: pointer;
-    border-color: #eea435;
-    background-color: #eea435;
-  }
-
-  @media (max-width: 430px) {
-    .errorName,
-    .errorEmail {
-      left: 140px;
-    }
-  }
-
   .row {
     display: flex;
-    gap: 10px;
+    gap: 15px;
+  }
 
-    .row_flex {
-      display: flex;
-      flex: 1;
-      gap: 10px;
-
-      .check-in {
-        padding: 0 13px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
+  @media (max-width: 1024px) {
+    .form {
+      padding: 0 1rem;
     }
   }
 
-  @media (max-height: 430px) {
-    margin-bottom: 50px;
+  @media (max-width: 768px) {
+    .form {
+      height: 250px;
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
+      padding-bottom: 12px;
+    }
+
+    .name {
+      margin-top: 12px;
+    }
   }
 `;
 

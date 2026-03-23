@@ -28,6 +28,7 @@ const PopupWrapper = styled.div`
 `;
 
 const PopupMessage = styled.div`
+  font-family: "Montserrat", sans-serif;
   padding: 40px 20px;
   width: calc(100% - 32px);
   position: absolute;
@@ -52,8 +53,9 @@ const Button = styled.button`
   padding: 10px 40px;
   display: block;
   margin: 1rem auto 0;
-  background-color: #f6e7a7;
-  color: #000;
+  font-size: 16px;
+  color: #fff;
+  background-color: #a6623f;
   border: none;
   border-radius: 10px;
   transition: background-color 0.3s;

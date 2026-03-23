@@ -32,7 +32,7 @@ const StyledDiv = styled.div`
   @media (max-width: 1024px) {
     display: block;
     width: 30px;
-    padding-top: 14px;
+    padding-top: 10px;
 
     &:hover {
       cursor: pointer;
