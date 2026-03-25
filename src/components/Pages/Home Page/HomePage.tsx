@@ -6,8 +6,6 @@ import ServicesSection from "./ServicesSection";
 import FeedbackSection from "./FeedbackSection";
 import GallerySection from "./GallerySection";
 
-// const GallerySection = lazy(() => import("./GallerySection"));
-
 const HomePage = () => {
   return (
     <div>

@@ -42,6 +42,7 @@ const StyledYurt = styled.div`
   }
 
   .service-img {
+    height: 24px;
     margin-bottom: 1rem;
   }
 

@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
 const Button: React.FC = () => {
-  const handleClick = () => {
-    console.log("soon");
-  };
-
   return (
-    <StyledButton className="button" onClick={handleClick}>
+    <StyledButton className="button">
       <a href="#intro">Book now</a>
     </StyledButton>
   );

@@ -27,9 +27,7 @@ const FormArea: React.FC = () => {
   const nameError = errors["name"]?.message;
   const emailError = errors["email"]?.message;
 
-  const onSubmit: SubmitHandler<IForm> = (data) => {
-    console.log(data);
-  };
+  const onSubmit: SubmitHandler<IForm> = (data) => {};
 
   return (
     <StyledForm className="form_wrapper">

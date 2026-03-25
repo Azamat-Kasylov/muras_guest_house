@@ -368,8 +368,7 @@ export const serviceInfo: ServiceInfoInterface = {
   laundryInfo: [
     {
       title: "Laundry",
-      description:
-        "Keep your travel wardrobe fresh with our same-day laundry and ironing service.",
+      description: "Keep your travel wardrobe fresh with our same-day laundry.",
       price: "From 5$",
       image: {
         url: "laundry.svg",

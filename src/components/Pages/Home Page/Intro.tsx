@@ -6,7 +6,26 @@ const Intro: React.FC = () => {
   return (
     <StyledIntro id="intro">
       <picture>
-        <source srcSet="./alay_valley.webp" type="image/webp" />
+        <source
+          media="(min-width: 768px)"
+          srcSet="./alay_valley.webp"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="./alay_valley.jpg"
+          type="image/jpg"
+        />
+        <source
+          media="(max-width: 768px)"
+          srcSet="./alay_valley_768.jpg"
+          type="image/jpg"
+        />
+        <source
+          media="(max-width: 768px)"
+          srcSet="./alay_valley_768.webp"
+          type="image/webp"
+        />
         <img
           src="./alay_valley.jpg"
           alt="intro background-image"
@@ -32,6 +51,7 @@ const StyledIntro = styled.section`
   min-height: 100vh;
 
   .intro_img {
+    width: 100%;
     min-height: 100vh;
     object-fit: cover;
     filter: brightness(70%);
