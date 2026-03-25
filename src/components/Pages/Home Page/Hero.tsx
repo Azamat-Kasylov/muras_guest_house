@@ -22,6 +22,18 @@ const Hero: React.FC = () => {
             cuisine. Enjoy homemade meals, guided excursions, and quiet evenings
             under the stars.
           </p>
+          <div className="location">
+            <div className="altitude">
+              <p className="loc_val">
+                3000<span>m</span>
+              </p>
+              <p className="loc_alt">Altitude</p>
+            </div>
+            <div className="view">
+              <p className="view_val">360</p>
+              <p className="view_desc">Mountain views</p>
+            </div>
+          </div>
         </div>
         <img
           className="hero_img"
@@ -37,6 +49,41 @@ const Hero: React.FC = () => {
 const StyledHero = styled.section`
   padding: 100px 0;
   background-color: #fff;
+
+  span {
+    font-size: 20px;
+  }
+
+  .location {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .loc_val,
+  .view_val {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  .loc_alt,
+  .view_desc {
+    color: #7e7367;
+  }
+
+  .view_val {
+    position: relative;
+  }
+
+  .view_val::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    top: 7px;
+    left: 40px;
+    background-image: url(./circle.svg);
+  }
 
   .container {
     padding: 0;

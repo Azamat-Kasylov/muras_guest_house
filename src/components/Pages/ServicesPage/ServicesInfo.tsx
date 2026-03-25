@@ -4,55 +4,75 @@ import { ServiceInterface } from "../../../data";
 
 interface ServicesInfoProps {
   service: ServiceInterface[];
+  className: string;
 }
 
-const ServicesInfo: React.FC<ServicesInfoProps> = ({ service }) => {
+const ServicesInfo: React.FC<ServicesInfoProps> = ({ service, className }) => {
   return (
     <StyledYurt>
-      {service.map(({ title, description, menu, price }, index) => (
-        <div key={index} className="service-card">
-          <h3 className="service-title">{title}</h3>
-          <p className="service-menu">{`Menu: ${menu}`}</p>
-          <p className="service-description">{description}</p>
-          <p className="service-price">{price}</p>
-        </div>
-      ))}
+      {service.map(
+        ({ title, description, menu, price, image: { url, alt } }, index) => (
+          <div key={index} className="service-card">
+            <img src={url} alt={alt} className="service-img" />
+            <h3 className="service-title">{title}</h3>
+            <p className="service-description">{description}</p>
+            <p className={`service-menu ${className}`}>{`Menu: ${menu}`}</p>
+            <p className="service-price">{price}</p>
+          </div>
+        ),
+      )}
     </StyledYurt>
   );
 };
 
 const StyledYurt = styled.div`
-  margin-top: 30px;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  flex: 1;
 
-  @media (max-width: 768px) {
-    padding: 0 1rem;
+  .hidden {
+    display: none;
   }
 
   .service-card {
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
+  .service-img {
+    margin-bottom: 1rem;
+  }
+
   .service-title {
-    font-weight: 500;
-    color: #000;
-    padding-bottom: 10px;
+    margin-bottom: 1.5rem;
   }
 
   .service-description,
   .service-menu {
-    color: #626976;
-    padding-bottom: 10px;
+    color: #7e7367;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
 
   .service-price {
-    padding: 5px 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 24px;
     font-weight: 400;
-    color: #fef3c7;
-    background-color: #b97328;
+    color: #000;
     border-radius: 5px;
+  }
+
+  @media (max-width: 1024px) {
+    .service-card {
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
   }
 `;
 

@@ -42,6 +42,20 @@ const StyledSliderWrapper = styled.div`
   max-width: 800px;
   min-width: 250px;
 
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px;
+    color: #7e7367;
+  }
+
+  .slick-next {
+    right: -50px;
+  }
+
+  .slick-prev {
+    left: -55px;
+  }
+
   .slick-dots li button:before {
     font-size: 15px;
   }
@@ -56,7 +70,15 @@ const SimpleSlider: React.FC = () => {
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (

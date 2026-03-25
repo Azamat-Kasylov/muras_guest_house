@@ -11,12 +11,18 @@ interface IForm {
 }
 
 const FormArea: React.FC = () => {
+  const today = new Date().toISOString().split("T")[0];
+
   const {
     register,
     formState: { isSubmitSuccessful, errors },
     handleSubmit,
     reset,
-  } = useForm<IForm>();
+  } = useForm<IForm>({
+    defaultValues: {
+      date: today,
+    },
+  });
 
   const nameError = errors["name"]?.message;
   const emailError = errors["email"]?.message;

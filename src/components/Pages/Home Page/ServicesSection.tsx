@@ -10,15 +10,21 @@ const ServicesSection: React.FC = () => {
         <h2 className="section-title">Our services</h2>
         <p className="section-suptitle">What we offer</p>
         <div className="services-grid">
-          {servicesData.map(({ info: { title, description }, link }, index) => (
-            <div key={index} className="services-card">
-              <h3 className="services-title">{title}</h3>
-              <p className="services-description">{description}</p>
-              <NavLink to={link} className="services_details">
-                view details
-              </NavLink>
-            </div>
-          ))}
+          {servicesData.map(
+            (
+              { image: { url, alt }, info: { title, description }, link },
+              index,
+            ) => (
+              <div key={index} className="services-card">
+                <img src={url} alt={alt} className="img" />
+                <h3 className="services-title">{title}</h3>
+                <p className="services-description">{description}</p>
+                <NavLink to={link} className="services_details">
+                  view details
+                </NavLink>
+              </div>
+            ),
+          )}
         </div>
       </div>
     </StyledServices>
@@ -63,7 +69,6 @@ const StyledServices = styled.section`
   }
 
   .services_details {
-    padding-bottom: 5px;
     color: #7e7367;
 
     &:hover {
@@ -71,10 +76,15 @@ const StyledServices = styled.section`
     }
   }
 
+  .img {
+    margin-bottom: 1rem;
+  }
+
   h2,
   h3,
   p,
-  a {
+  a,
+  .img {
     transition: all 0.5s;
   }
 
@@ -86,6 +96,10 @@ const StyledServices = styled.section`
     p,
     a {
       color: #fff;
+    }
+
+    .img {
+      filter: brightness(0) invert(1);
     }
   }
 

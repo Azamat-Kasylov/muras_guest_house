@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="footer_copy">
           <h2 className="footer_title">Muras</h2>
           <p className="footer_suptitle">
-            Alay Valley, Osh Region, Kyrgyzstan Cozy mountain hotel and gateway
+            Alay Valley, Osh Region, Kyrgyzstan. Cozy mountain hotel and gateway
             to the high passes.
           </p>
           <FooterContacts />
@@ -50,6 +50,7 @@ const StyledFooter = styled.footer`
   }
 
   @media (max-width: 768px) {
+    padding-bottom: 3rem;
     .container {
       grid-template-columns: 1fr;
     }

@@ -9,50 +9,14 @@ const defaultSettings: Settings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 2,
+  slidesToShow: 1,
   slidesToScroll: 1,
   touchThreshold: 20,
   responsive: [
     {
-      breakpoint: 1024,
-      settings: {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "130px",
-        slidesToShow: 1,
-        speed: 400,
-        dots: true,
-        arrows: false,
-        touchThreshold: 20,
-      },
-    },
-    {
       breakpoint: 768,
       settings: {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "80px",
-        slidesToShow: 1,
-        speed: 400,
-        dots: true,
         arrows: false,
-        touchThreshold: 20,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "25px",
-        slidesToShow: 1,
-        speed: 400,
-        dots: false,
-        arrows: false,
-        touchThreshold: 20,
       },
     },
   ],
@@ -94,43 +58,26 @@ const RoomsGallery: React.FC<Props> = ({ media, settings }) => {
 };
 
 const StyledGallery = styled.div`
-  max-width: 1000px;
+  max-width: 50%;
   padding: 0 40px;
   margin: 0 auto;
-  margin-bottom: 50px;
 
-  @media (max-width: 1024px) {
-    padding: 0;
-  }
-
-  .slick-arrow {
-    background-color: #b8c8dc;
-    width: 40px;
-    height: 100%;
-    opacity: 0.4;
-    transition: opacity 0.3s;
-    z-index: 1;
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px;
+    color: #7e7367;
   }
 
   .slick-arrow:hover {
     opacity: 0.6;
   }
 
-  .slick-arrow::before {
-    opacity: 1;
-  }
-
   .slick-next {
-    right: -35px;
+    right: -25px;
   }
 
   .slick-prev {
     left: -35px;
-  }
-
-  .media-wrapper {
-    width: 100%;
-    overflow: hidden;
   }
 
   .rooms_image {
@@ -145,6 +92,18 @@ const StyledGallery = styled.div`
     padding: 0 5px;
     aspect-ratio: 4/3;
     object-fit: cover;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 70%;
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    .rooms_image {
+      padding: 0 2px;
+    }
   }
 `;
 

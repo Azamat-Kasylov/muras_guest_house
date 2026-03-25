@@ -2,11 +2,104 @@ import React from "react";
 import styled from "styled-components";
 import { roomsData } from "../../../data";
 import { NavLink } from "react-router-dom";
+import { useEffect, useRef, useCallback } from "react";
 
 const RoomsSection: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Функция для добавления обработчиков клика на карточки
+  const addClickHandlers = useCallback(() => {
+    const cards = document.querySelectorAll('[data-hoverable="true"]');
+
+    cards.forEach((card) => {
+      // Удаляем старый обработчик, если есть, чтобы не дублировать
+      const oldHandler = (card as any).__clickHandler;
+      if (oldHandler) {
+        card.removeEventListener("click", oldHandler);
+      }
+
+      // Создаем новый обработчик
+      const clickHandler = (e: Event) => {
+        // Предотвращаем срабатывание, если клик был по ссылке NavLink
+        const target = e.target as HTMLElement;
+        if (target.closest(".next")) {
+          return;
+        }
+
+        e.preventDefault();
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+      };
+
+      // Сохраняем обработчик для возможности удаления
+      (card as any).__clickHandler = clickHandler;
+      card.addEventListener("click", clickHandler);
+    });
+  }, []);
+
+  // Функция для проверки позиции карточек
+  const handleScroll = useCallback(() => {
+    const cards = document.querySelectorAll('[data-hoverable="true"]');
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const centerPoint = windowHeight / 2;
+
+      // Проверяем, находится ли середина карточки в центре экрана
+      const cardCenter = rect.top + rect.height / 2;
+      const cardHeight = rect.height / 2;
+      const threshold = cardHeight;
+      const isInCenter = Math.abs(cardCenter - centerPoint) < threshold;
+
+      if (isInCenter) {
+        card.classList.add("hover");
+      } else {
+        card.classList.remove("hover");
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    // Добавляем обработчики клика один раз
+    addClickHandlers();
+
+    // Оптимизированный обработчик скролла с троттлингом
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+
+    // Вызываем сразу для инициализации
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+
+      // Очищаем обработчики клика
+      const cards = document.querySelectorAll('[data-hoverable="true"]');
+      cards.forEach((card) => {
+        const handler = (card as any).__clickHandler;
+        if (handler) {
+          card.removeEventListener("click", handler);
+          delete (card as any).__clickHandler;
+        }
+      });
+    };
+  }, [addClickHandlers, handleScroll]);
+
   return (
     <StyledRooms id="rooms" className="rooms">
-      <div className="container">
+      <div className="container" ref={containerRef}>
         <h2 className="section-title">Room Types</h2>
         <p className="section-suptitle">
           Choose the stay that suits your journey
@@ -21,7 +114,7 @@ const RoomsSection: React.FC = () => {
             },
             index,
           ) => (
-            <div key={index} className="room-card">
+            <div key={index} className="room-card" data-hoverable="true">
               <h3 className="room-title">{title}</h3>
               <div className="flex-col">
                 <div className="flex_row">
@@ -84,21 +177,27 @@ const StyledRooms = styled.section`
     position: relative;
     transition: all 0.5s;
 
-    &:hover {
-      background-color: #7e7367;
+    will-change: background-color;
+  }
 
-      .room-description {
-        display: block;
-        transition: all 0.5s;
-      }
+  .room-card.hover {
+    background-color: #7e7367;
+    align-items: center;
 
-      .room-title,
-      .room-description,
-      .room-price,
-      .forWhom,
-      span {
-        color: #fff;
-      }
+    .room-description {
+      display: block;
+    }
+
+    .room-title,
+    .room-description,
+    .room-price,
+    .forWhom,
+    span {
+      color: #fff;
+    }
+
+    .next svg path {
+      fill: #fff; /* Меняем цвет иконки при hover */
     }
   }
 
@@ -150,21 +249,19 @@ const StyledRooms = styled.section`
     display: flex;
     align-items: center;
     width: 25px;
-    border-radius: 50%;
-    background-color: #fff;
   }
 
   @media (max-width: 1024px) {
     .room-card {
       display: flex;
       padding: 3rem 1rem;
+    }
 
-      &:hover {
-        align-items: start;
+    .hover {
+      align-items: start;
 
-        .next {
-          align-self: center;
-        }
+      .next {
+        align-self: center;
       }
     }
 

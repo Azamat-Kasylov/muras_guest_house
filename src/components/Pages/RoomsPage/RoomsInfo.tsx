@@ -21,41 +21,43 @@ const RoomsInfo: React.FC<RoomsInfoProps> = ({ rooms }) => {
 };
 
 const StyledYurt = styled.div`
-  margin-top: 30px;
-  margin-bottom: 50px;
   display: flex;
   justify-content: center;
 
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
-
   .room-card {
-    max-width: 700px;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .room-title {
-    font-weight: 500;
-    color: #000;
-    padding-bottom: 10px;
-    font-size: 24px;
+    margin-bottom: 1.5rem;
   }
 
   .room-description {
-    color: #626976;
-    padding-bottom: 10px;
+    color: #7e7367;
+    margin-bottom: 1.5rem;
     text-align: center;
   }
 
   .room-price {
-    padding: 5px 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 24px;
     font-weight: 400;
-    color: #fff;
-    background-color: #a0682e;
+    color: #000;
     border-radius: 5px;
+  }
+
+  @media (max-width: 1024px) {
+    .room-card {
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
   }
 `;
 

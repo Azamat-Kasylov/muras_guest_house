@@ -145,7 +145,7 @@ export const roomsInfo: RoomsInfoInterface = {
   yurtInfo: [
     {
       price: "From 20$ / night",
-      title: "Yurt",
+      title: "Kyzgyz Yurt",
       description:
         "Experience the magic of the nomadic tradition in our luxury Yurt. Combining ancient design with modern comfort, this unique circular space offers a cozy retreat.",
     },
@@ -212,7 +212,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "5$",
     },
     image: {
-      url: "./breakfast-muras.jpg",
+      url: "./meals.svg",
       alt: "Breakfast",
     },
     link: "/services",
@@ -225,7 +225,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "8$",
     },
     image: {
-      url: "./transfer.jpeg",
+      url: "./transport.svg",
       alt: "Lunch",
     },
     link: "/services",
@@ -238,7 +238,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "10$",
     },
     image: {
-      url: "./horse-guide.jpg",
+      url: "./guides.svg",
       alt: "Dinner",
     },
     link: "/services",
@@ -251,7 +251,7 @@ export const servicesData: ServicesDataInterface[] = [
       price: "5$",
     },
     image: {
-      url: "./laundry.jpeg",
+      url: "./laundry.svg",
       alt: "Laundry",
     },
     link: "/services",
@@ -264,8 +264,8 @@ export const servicesData: ServicesDataInterface[] = [
       price: "5$",
     },
     image: {
-      url: "./laundry.jpeg",
-      alt: "Laundry",
+      url: "./wifi.svg",
+      alt: "Wifi connection",
     },
     link: "/services",
   },
@@ -277,8 +277,8 @@ export const servicesData: ServicesDataInterface[] = [
       price: "5$",
     },
     image: {
-      url: "./laundry.jpeg",
-      alt: "Laundry",
+      url: "./camping.svg",
+      alt: "Camping",
     },
     link: "/services",
   },
@@ -287,73 +287,94 @@ export const servicesData: ServicesDataInterface[] = [
 //---------------------------------------------------- Services images ----------------------------------------------------
 
 export interface ServiceImagesInterface {
-  breakfast: IImage[];
-  lunch: IImage[];
-  dinner: IImage[];
+  meals: IImage[];
 }
 
 export const serviceImages: ServiceImagesInterface = {
-  breakfast: [
+  meals: [
     { url: "./breakfast.jpg", alt: "Breackfast photo" },
     { url: "./breakfast-muras.jpg", alt: "Breackfast photo" },
-    { url: "./breakfast.jpg", alt: "Breackfast photo" },
-    { url: "./breakfast.jpg", alt: "Breackfast photo" },
-    { url: "./breakfast.jpg", alt: "Breackfast photo" },
-  ],
-  lunch: [
     { url: "./6_guests-lunch.jpeg", alt: "lunch photo" },
-    { url: "./lunch.jpg", alt: "lunch photo" },
-    { url: "./lunch.jpg", alt: "lunch photo" },
-    { url: "./lunch.jpg", alt: "lunch photo" },
-    { url: "./lunch.jpg", alt: "lunch photo" },
-  ],
-  dinner: [
-    { url: "./dinner.jpg", alt: "dinner photo" },
-    { url: "./dinner.jpg", alt: "dinner photo" },
-    { url: "./dinner.jpg", alt: "dinner photo" },
-    { url: "./dinner.jpg", alt: "dinner photo" },
-    { url: "./dinner.jpg", alt: "dinner photo" },
+    { url: "./breakfast.jpg", alt: "Breackfast photo" },
+    { url: "./breakfast.jpg", alt: "Breackfast photo" },
   ],
 };
 
 //---------------------------------------------------- Services info ------------------------------------------------------
 
 export interface ServiceInterface extends IInfo {
-  menu: string;
+  menu?: string;
+  image: IImage;
 }
 
 interface ServiceInfoInterface {
-  breakfastInfo: ServiceInterface[];
-  lunchInfo: ServiceInterface[];
-  dinnerInfo: ServiceInterface[];
+  mealsInfo: ServiceInterface[];
+  transferInfo: ServiceInterface[];
+  toursInfo: ServiceInterface[];
+  laundryInfo: ServiceInterface[];
+  campingInfo: ServiceInterface[];
 }
 
 export const serviceInfo: ServiceInfoInterface = {
-  breakfastInfo: [
+  mealsInfo: [
     {
-      title: "Breackfast",
+      title: "Meals",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Traditional Kyrgyz dishes made with fresh local ingredients, served in our warm dining hall.",
       price: "From 5$",
-      menu: "Fried eggs, omelette, porridge, pancakes, bread, butter, gem, tea, coffee",
+      menu: "Plov, Beshbarmak, Lagman, Fried eggs, bread, butter, gem, tea, coffee and much more.",
+      image: {
+        url: "meals.svg",
+        alt: "meals",
+      },
     },
   ],
-  lunchInfo: [
+  transferInfo: [
     {
-      title: "Lunch",
+      title: "Transportation",
       description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
-      price: "From 7$",
-      menu: "Plov, lagman, dymdama, salad, fruits, bread, tea",
-    },
-  ],
-  dinnerInfo: [
-    {
-      title: "Dinner",
-      description:
-        "Enjoy the privacy and comfort of a villa with private pool and all the services of a hotel.",
+        "Airport and city transfers, excursions to nearby landmarks, including Lenin Peak base camp.",
       price: "From 10$",
-      menu: "Rice, potato, tomato, something else, salad, bread, tea",
+      image: {
+        url: "transport.svg",
+        alt: "meals",
+      },
+    },
+  ],
+  toursInfo: [
+    {
+      title: "Guided Tours",
+      description:
+        "Explore the Osh city and Alai Range with experienced local guides.",
+      price: "From 50$",
+      image: {
+        url: "guides.svg",
+        alt: "meals",
+      },
+    },
+  ],
+  campingInfo: [
+    {
+      title: "Glamping",
+      description:
+        "Experience the great outdoors in total comfort with our hotel camping experience.",
+      price: "From 10$",
+      image: {
+        url: "camping.svg",
+        alt: "meals",
+      },
+    },
+  ],
+  laundryInfo: [
+    {
+      title: "Laundry",
+      description:
+        "Keep your travel wardrobe fresh with our same-day laundry and ironing service.",
+      price: "From 5$",
+      image: {
+        url: "laundry.svg",
+        alt: "meals",
+      },
     },
   ],
 };

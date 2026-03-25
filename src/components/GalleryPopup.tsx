@@ -20,14 +20,17 @@ const GalleryPopup: React.FC<Props> = ({ initialSlide }) => {
 };
 
 const Section = styled.section`
-  max-width: 1200px;
+  max-width: 800px;
   width: 100%;
-  padding: 0 80px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
+
+  .container {
+    padding: 0;
+  }
 
   @media (max-width: 768px) {
     padding: 0;
@@ -39,19 +42,34 @@ const Section = styled.section`
 `;
 
 const Wrapper = styled.div`
-  @media (max-width: 768px) {
-    padding: 0;
-  }
-  .slick-arrow::before {
-    font-size: 40px;
+  .slick-next,
+  .slick-prev {
+    width: 45px;
+    height: 100px;
+    background-color: #a5c4d8;
+    opacity: 0.75;
+    z-index: 99;
   }
 
   .slick-next {
-    right: -30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    right: 2px;
   }
 
   .slick-prev {
-    left: -50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    left: 2px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 25px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
   }
 `;
 
