@@ -69,14 +69,11 @@ const StyledIntro = styled.section`
   .intro_flex {
     max-width: 550px;
     margin-bottom: 50px;
-  }
-
-  .intro_title {
-    animation: intro_title 2s;
+    animation: intro_flex 2s;
     will-change: transform, opacity;
   }
 
-  @keyframes intro_title {
+  @keyframes intro_flex {
     0% {
       opacity: 0;
       transform: translateY(-100px); /* Начинаем выше, чем нужно */
@@ -100,19 +97,7 @@ const StyledIntro = styled.section`
     font-style: italic;
     line-height: 1.5em;
     font-family: "Cormorant Garamond", serif;
-    animation: intro_text 2s;
     will-change: transform, opacity;
-  }
-
-  @keyframes intro_text {
-    0% {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
   }
 
   @media (max-width: 768px) {

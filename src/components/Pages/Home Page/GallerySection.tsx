@@ -1,13 +1,12 @@
 import React, { lazy, Suspense, useState } from "react";
 import styled from "styled-components";
 import { galleryData } from "../../../data";
-import PopupBackground from "../../PopupBackground";
-// import GalleryPopup from "../../GalleryPopup";
 
 const GalleryPopup = lazy(() => import("../../GalleryPopup"));
+const PopupBackground = lazy(() => import("../../PopupBackground"));
 
 const GallerySection = () => {
-  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<boolean | number | null>(false);
   const [initialSlide, setInitialSlide] = useState<number>(0);
 
   const handleClick = (index: number) => {
@@ -34,12 +33,16 @@ const GallerySection = () => {
             />
           ))}
           {isActive && (
-            <>
+            <Suspense
+              fallback={
+                <div>
+                  <p>Loading...</p>
+                </div>
+              }
+            >
               <PopupBackground isOpen={isActive} setIsOpen={setIsActive} />
-              <Suspense>
-                <GalleryPopup initialSlide={initialSlide} />
-              </Suspense>
-            </>
+              <GalleryPopup initialSlide={initialSlide} />
+            </Suspense>
           )}
         </div>
       </div>

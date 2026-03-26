@@ -44,6 +44,7 @@ const RoomsGallery: React.FC<Props> = ({ media, settings }) => {
                 src={item.url}
                 alt={item.alt || `gallery-image-${index}`}
                 className="rooms_image"
+                loading="lazy"
               />
             ) : (
               <video autoPlay muted loop playsInline className="rooms_video">

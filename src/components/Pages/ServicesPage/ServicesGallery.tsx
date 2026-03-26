@@ -43,6 +43,7 @@ const ServicesGallery: React.FC<Props> = ({ images, settings }) => {
               src={image.url}
               alt={image.alt || `meal-image-${index}`}
               className="services_image"
+              loading="lazy"
             />
           </div>
         ))}

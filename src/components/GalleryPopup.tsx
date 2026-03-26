@@ -46,6 +46,7 @@ const Wrapper = styled.div`
   .slick-prev {
     width: 45px;
     height: 100px;
+    padding: 5px;
     background-color: #a5c4d8;
     opacity: 0.75;
     z-index: 99;
@@ -63,9 +64,12 @@ const Wrapper = styled.div`
     left: 2px;
   }
 
-  .slick-prev:before,
   .slick-next:before {
-    font-size: 25px;
+    content: url("./next.svg");
+  }
+
+  .slick-prev:before {
+    content: url("./prev.svg");
   }
 
   @media (max-width: 768px) {

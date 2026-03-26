@@ -1,13 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 import styled from "styled-components";
 import { socialsData } from "../../data";
-import Certificates from "./Certificates";
+import { lazy, Suspense } from "react";
+
+const Certificates = lazy(() => import("./Certificates"));
 
 const FooterSocial: React.FC = () => {
   return (
     <Socials>
       <h3 className="f_social-title">Certificates</h3>
-      <Certificates />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Certificates />
+      </Suspense>
       <div className="flex_row">
         {socialsData.map((i) => (
           <a target="_blank" rel="noreferrer" href={i.href} key={i.href}>
