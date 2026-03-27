@@ -2,6 +2,8 @@ import styled from "styled-components";
 import PopupFormMessage from "./PopupFormMessage";
 import ErrorMessage from "./ErrorMessage";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 interface IForm {
   name: string;
@@ -12,6 +14,8 @@ interface IForm {
 
 const FormArea: React.FC = () => {
   const today = new Date().toISOString().split("T")[0];
+  const [isLoading, setIsLoading] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
 
   const {
     register,
@@ -27,11 +31,45 @@ const FormArea: React.FC = () => {
   const nameError = errors["name"]?.message;
   const emailError = errors["email"]?.message;
 
-  const onSubmit: SubmitHandler<IForm> = (data) => {};
+  const onSubmit: SubmitHandler<IForm> = async (data) => {
+    setIsLoading(true);
+    try {
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Email service is not configured properly");
+      }
+      // Отправка email через EmailJS
+      const templateParams = {
+        to_email: "follower.az@gmail.com", // куда отправлять
+        from_name: data.name,
+        from_email: data.email,
+        guests: data.guests || 1,
+        date: data.date,
+        reply_to: data.email,
+      };
+
+      await emailjs.send(
+        serviceId, // ID сервиса EmailJS
+        templateId, // ID шаблона
+        templateParams,
+        publicKey, // Публичный ключ
+      );
+
+      // Если успешно - форма очистится, покажется PopupFormMessage
+    } catch (error) {
+      console.error("Ошибка отправки:", error);
+      alert("Не удалось отправить заявку. Попробуйте позже.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <StyledForm className="form_wrapper">
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <form onSubmit={handleSubmit(onSubmit)} className="form" ref={form}>
         <label className="name_label" htmlFor="userName">
           <input
             className="name"
@@ -56,7 +94,7 @@ const FormArea: React.FC = () => {
               required: "This field is required",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email adress",
+                message: "Invalid email address",
               },
             })}
           />
@@ -87,7 +125,7 @@ const FormArea: React.FC = () => {
             className="submit"
             type="submit"
             id="formSubmit"
-            value="Book"
+            value={isLoading ? "Sending..." : "Book"}
           />
         </label>
       </form>
