@@ -1,0 +1,76 @@
+import styled from "styled-components";
+import { feedbackData } from "../data";
+
+const Feedback: React.FC = () => {
+  return (
+    <StyledFeedback>
+      <FeedbackContent>
+        <h2>Our guests</h2>
+        {feedbackData.map((i) => (
+          <div key={i.image.url}>
+            <img src={i.image.url} alt={i.guest || i.image.alt} />
+            <p>"{i.feedbackText}"</p>
+            <p>{i.guest}</p>
+          </div>
+        ))}
+      </FeedbackContent>
+    </StyledFeedback>
+  );
+};
+
+const StyledFeedback = styled.section`
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const FeedbackContent = styled.div`
+  width: 1200px;
+  padding: 0 1rem 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: normal;
+  }
+
+  div {
+    max-width: 60%;
+    @media (max-width: 768px) {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 100px;
+    @media (max-width: 768px) {
+    }
+  }
+
+  p:first-of-type {
+    margin-bottom: 30px;
+    line-height: 1.7;
+  }
+
+  p:nth-of-type(1) {
+    font-style: italic;
+  }
+`;
+
+export default Feedback;

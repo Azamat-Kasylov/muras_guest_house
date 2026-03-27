@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# gh-pages cache
+node_modules/.cache/
+gh-pages/
+.gh-pages/
+__gh-pages__
