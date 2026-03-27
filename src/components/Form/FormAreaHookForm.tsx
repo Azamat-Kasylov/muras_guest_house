@@ -76,6 +76,7 @@ const FormArea: React.FC = () => {
             type="text"
             id="userName"
             placeholder="Name"
+            disabled={isLoading}
             {...register("name", {
               required: "This field is required",
             })}
@@ -90,6 +91,7 @@ const FormArea: React.FC = () => {
             type="text"
             id="userEmail"
             placeholder="Email"
+            disabled={isLoading}
             {...register("email", {
               required: "This field is required",
               pattern: {
@@ -109,6 +111,7 @@ const FormArea: React.FC = () => {
             type="date"
             id="dateIn"
             aria-label="Check-in date"
+            disabled={isLoading}
             {...register("date")}
           />
           <label htmlFor="guestsCount"></label>
@@ -117,6 +120,7 @@ const FormArea: React.FC = () => {
             type="number"
             id="guestsCount"
             placeholder="Guests"
+            disabled={isLoading}
             {...register("guests")}
           />
         </div>
@@ -126,6 +130,7 @@ const FormArea: React.FC = () => {
             type="submit"
             id="formSubmit"
             value={isLoading ? "Sending..." : "Book"}
+            disabled={isLoading}
           />
         </label>
       </form>
