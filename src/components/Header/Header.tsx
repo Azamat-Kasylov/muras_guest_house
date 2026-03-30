@@ -32,7 +32,7 @@ const StyledHeader = styled.header<{ $isVisible: boolean }>`
   }
 
   @media (max-width: 1024px) {
-    height: ${({ $isVisible }) => ($isVisible ? "230px" : "50px")};
+    height: ${({ $isVisible }) => ($isVisible ? "190px" : "50px")};
     will-change: height;
     display: flex;
     align-items: start;

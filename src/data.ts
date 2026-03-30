@@ -22,7 +22,7 @@ export interface NavBarDataInterface {
 
 export const navBarData: NavBarDataInterface[] = [
   { title: "home", link: "/main" },
-  { title: "about us", link: "/aboutUs" },
+  // { title: "about us", link: "/aboutUs" },
   { title: "rooms", link: "/rooms" },
   { title: "services", link: "/services" },
 ];

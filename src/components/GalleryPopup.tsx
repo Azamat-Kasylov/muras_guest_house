@@ -47,9 +47,16 @@ const Wrapper = styled.div`
     width: 45px;
     height: 100px;
     padding: 5px;
-    background-color: #a5c4d8;
-    opacity: 0.75;
+    background-color: #515151;
+    opacity: 0.7;
     z-index: 99;
+  }
+
+  .slick-next:focus,
+  .slick-next:hover,
+  .slick-prev:focus,
+  .slick-prev:hover {
+    background: #515151;
   }
 
   .slick-next {
