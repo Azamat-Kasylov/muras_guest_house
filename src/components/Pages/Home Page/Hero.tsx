@@ -35,12 +35,18 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
-        <img
-          className="hero_img"
-          src="./14_hotel-back-view.jpeg"
-          alt="Muras Guest House"
-          loading="lazy"
-        />
+        <picture>
+          <source
+            srcSet="./14_hotel-back-view_768.webp"
+            media="(max-width: 768px)"
+          />
+          <img
+            className="hero_img"
+            src="./14_hotel-back-view.webp"
+            alt="Muras Guest House"
+            fetchPriority="high"
+          />
+        </picture>
       </div>
     </StyledHero>
   );
@@ -96,6 +102,7 @@ const StyledHero = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex: 1;
   }
 
   .hero_suptitle,
@@ -117,9 +124,12 @@ const StyledHero = styled.section`
     line-height: 1.7;
   }
 
-  .hero_img {
+  picture {
     max-width: 55%;
-    max-height: 100%;
+  }
+
+  .hero_img {
+    height: 100%;
     object-fit: cover;
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
@@ -136,6 +146,10 @@ const StyledHero = styled.section`
       padding: 0 1rem;
       flex-direction: column;
       gap: 30px;
+    }
+
+    picture {
+      max-width: 100%;
     }
 
     .hero_flex {

@@ -20,22 +20,6 @@ const PopupBackground = <T extends number | boolean | null>({
 
   return <StyledDiv className="popup" onClick={popupHandleClick}></StyledDiv>;
 };
-// interface PopupProps {
-//   setIsOpen: (v: any) => void;
-//   isOpen: any;
-// }
-
-// const PopupBackground: React.FC<PopupProps> = ({ setIsOpen, isOpen }) => {
-//   const popupHadleClick = () => {
-//     if (typeof isOpen === "number") {
-//       setIsOpen(null);
-//     } else if (typeof isOpen === "boolean") {
-//       setIsOpen(!isOpen);
-//     }
-//   };
-
-//   return <StyledDiv className="popup" onClick={popupHadleClick}></StyledDiv>;
-// };
 
 const StyledDiv = styled.div`
   position: fixed;

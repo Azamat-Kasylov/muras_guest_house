@@ -13,7 +13,14 @@ const NavBar: React.FC<Props> = ({ setIsVisible }) => {
   return (
     <StyledNavBar>
       <a href="/muras_guest_house/">
-        <img className="header-logo" src="./logo.webp" alt="muras logo" />
+        <img
+          width={"50px"}
+          height={"50px"}
+          className="header-logo"
+          src="./logo.webp"
+          fetchPriority="high"
+          alt="muras logo"
+        />
       </a>
       <ul className="nav_list">
         {navBarData.map((i, index) => (

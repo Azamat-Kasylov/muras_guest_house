@@ -1,11 +1,30 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { feedbackData } from "../../../data";
 import Slider, { Settings } from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
+import { useEffect } from "react";
+
+const useAsyncSlickStyles = () => {
+  useEffect(() => {
+    // Загружаем CSS после того, как страница отрендерилась
+    const loadStyles = async () => {
+      // @ts-ignore
+      await import("slick-carousel/slick/slick.css");
+      // @ts-ignore
+      await import("slick-carousel/slick/slick-theme.css");
+    };
+
+    // Откладываем загрузку до после интерактива
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => loadStyles());
+    } else {
+      setTimeout(loadStyles, 100);
+    }
+  }, []);
+};
 
 const FeedbackSection: React.FC = () => {
+  useAsyncSlickStyles();
   return (
     <StyledSection id="feedback">
       <div className="container">

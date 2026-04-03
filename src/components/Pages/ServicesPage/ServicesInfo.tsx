@@ -13,7 +13,13 @@ const ServicesInfo: React.FC<ServicesInfoProps> = ({ service, className }) => {
       {service.map(
         ({ title, description, menu, price, image: { url, alt } }, index) => (
           <div key={index} className="service-card">
-            <img src={url} alt={alt} className="service-img" />
+            <img
+              src={url}
+              alt={alt}
+              className="service-img"
+              width={"24px"}
+              height={"24px"}
+            />
             <h3 className="service-title">{title}</h3>
             <p className="service-description">{description}</p>
             <p className={`service-menu ${className}`}>{`Menu: ${menu}`}</p>
@@ -42,7 +48,6 @@ const StyledYurt = styled.div`
   }
 
   .service-img {
-    height: 24px;
     margin-bottom: 1rem;
   }
 
@@ -61,7 +66,6 @@ const StyledYurt = styled.div`
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
     font-size: 24px;
-    font-weight: 400;
     color: #000;
     border-radius: 5px;
   }

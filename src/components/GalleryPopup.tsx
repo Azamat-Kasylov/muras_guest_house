@@ -1,19 +1,41 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { galleryData } from "../data";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
+import { lazy, Suspense, useEffect } from "react";
+
+const Slider = lazy(() => import("react-slick"));
+
+const useAsyncSlickStyles = () => {
+  useEffect(() => {
+    // Загружаем CSS после того, как страница отрендерилась
+    const loadStyles = async () => {
+      // @ts-ignore
+      await import("slick-carousel/slick/slick.css");
+      // @ts-ignore
+      await import("slick-carousel/slick/slick-theme.css");
+    };
+
+    // Откладываем загрузку до после интерактива
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => loadStyles());
+    } else {
+      setTimeout(loadStyles, 100);
+    }
+  }, []);
+};
 
 interface Props {
   initialSlide: number;
 }
 
 const GalleryPopup: React.FC<Props> = ({ initialSlide }) => {
+  useAsyncSlickStyles();
   return (
     <Section id="gallery">
       <Wrapper className="container">
-        <SimpleSlider initialSlide={initialSlide} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <SimpleSlider initialSlide={initialSlide} />
+        </Suspense>
       </Wrapper>
     </Section>
   );
@@ -30,6 +52,8 @@ const Section = styled.section`
 
   .container {
     padding: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   @media (max-width: 768px) {
@@ -93,6 +117,13 @@ const SimpleSlider: React.FC<Props> = ({ initialSlide }) => {
     slidesToScroll: 1,
     touchThreshold: 20,
     initialSlide: initialSlide,
+    adaptiveHeight: false,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    swipe: true,
+    touchMove: true,
+    waitForAnimate: true,
+    lazyLoad: "ondemand",
     responsive: [
       {
         breakpoint: 768,

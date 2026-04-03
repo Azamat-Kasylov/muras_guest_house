@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import styled from "styled-components";
-import FormAreaHookForm from "../../Form/FormAreaHookForm";
+import { lazy, Suspense } from "react";
+import Spinner from "../../Spinner";
+
+const FormAreaHookForm = lazy(() => import("../../Form/FormAreaHookForm"));
 
 const Intro: React.FC = () => {
   return (
@@ -34,14 +37,22 @@ const Intro: React.FC = () => {
       </picture>
       <div className="container">
         <div className="intro_flex">
-          <img src="./muras.png" alt="Muras" className="intro_title" />
+          <img
+            src="./muras.png"
+            alt="Muras"
+            className="intro_title"
+            width={"330px"}
+            height={"105px"}
+          />
           <p className="intro_text">
             Wake up to snow-capped peaks, crystal-clear air, and warm Kyrgyz
             hospitality at our family-run mountain retreat.
           </p>
         </div>
       </div>
-      <FormAreaHookForm />
+      <Suspense fallback={<Spinner />}>
+        <FormAreaHookForm />
+      </Suspense>
     </StyledIntro>
   );
 };
@@ -85,7 +96,6 @@ const StyledIntro = styled.section`
   }
 
   .intro_title {
-    max-width: 60%;
     margin-bottom: 10px;
   }
 

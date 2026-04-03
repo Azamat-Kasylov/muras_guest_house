@@ -16,7 +16,13 @@ const ServicesSection: React.FC = () => {
               index,
             ) => (
               <div key={index} className="services-card">
-                <img src={url} alt={alt} className="img" />
+                <img
+                  src={url}
+                  alt={alt}
+                  className="img"
+                  width={"24px"}
+                  height={"24px"}
+                />
                 <h3 className="services-title">{title}</h3>
                 <p className="services-description">{description}</p>
                 <NavLink to={link} className="services_details">
@@ -58,7 +64,6 @@ const StyledServices = styled.section`
 
   .services-title {
     font-size: 26px;
-    font-weight: 400;
     margin-bottom: 15px;
   }
 

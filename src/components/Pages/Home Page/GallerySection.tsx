@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useState } from "react";
 import styled from "styled-components";
 import { galleryData } from "../../../data";
+import Spinner from "../../Spinner";
 
 const GalleryPopup = lazy(() => import("../../GalleryPopup"));
 const PopupBackground = lazy(() => import("../../PopupBackground"));
@@ -33,13 +34,7 @@ const GallerySection = () => {
             />
           ))}
           {isActive && (
-            <Suspense
-              fallback={
-                <div>
-                  <p>Loading...</p>
-                </div>
-              }
-            >
+            <Suspense fallback={<Spinner />}>
               <PopupBackground isOpen={isActive} setIsOpen={setIsActive} />
               <GalleryPopup initialSlide={initialSlide} />
             </Suspense>

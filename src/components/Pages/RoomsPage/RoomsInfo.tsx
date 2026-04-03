@@ -45,7 +45,6 @@ const StyledYurt = styled.div`
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
     font-size: 24px;
-    font-weight: 400;
     color: #000;
     border-radius: 5px;
   }

@@ -20,6 +20,8 @@ const Certificates: React.FC = () => {
           className={item.className}
           onClick={() => handleClick(index)}
           loading="lazy"
+          width={"64px"}
+          height={"64px"}
         />
       ))}
       {bigCertificateData.map((item, index) => (
@@ -52,10 +54,6 @@ const StyledDiv = styled.div`
     &:hover {
       cursor: pointer;
     }
-  }
-
-  .small {
-    width: 4rem;
   }
 
   .popupHiddenImage {
