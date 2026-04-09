@@ -44,6 +44,7 @@ const Intro: React.FC = () => {
             width={"330px"}
             height={"105px"}
           />
+          {/* <h1 className="intro_title">Muras</h1> */}
           <p className="intro_text">
             Wake up to snow-capped peaks, crystal-clear air, and warm Kyrgyz
             hospitality at our family-run mountain retreat.
@@ -96,6 +97,9 @@ const StyledIntro = styled.section`
   }
 
   .intro_title {
+    /* color: #ffffff;
+    font-size: 150px;
+    font-weight: 300; */
     margin-bottom: 10px;
   }
 

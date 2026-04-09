@@ -6,7 +6,10 @@ const Hero: React.FC = () => {
     <StyledHero id="aboutUs">
       <div className="container">
         <div className="hero_flex">
-          <h2 className="hero_title">About Muras</h2>
+          <h2 className="hero_title">About Us</h2>
+          <h1 className="hero_subtitle">
+            Muras Guest House & Yurt Camp – Alay Valley, Kyrgyzstan
+          </h1>
           <p className="hero_suptitle">
             A cozy basecamp for exploring the wild beauty of the Alay Valley
           </p>
@@ -73,7 +76,8 @@ const StyledHero = styled.section`
   }
 
   .loc_alt,
-  .view_desc {
+  .view_desc,
+  .hero_subtitle {
     color: #7e7367;
   }
 
@@ -113,6 +117,12 @@ const StyledHero = styled.section`
 
   .hero_title {
     margin-bottom: 10px;
+  }
+
+  .hero_subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 1rem;
   }
 
   .hero_suptitle {

@@ -31,17 +31,17 @@ interface Props {
 const GalleryPopup: React.FC<Props> = ({ initialSlide }) => {
   useAsyncSlickStyles();
   return (
-    <Section id="gallery">
+    <Gallery id="gallery">
       <Wrapper className="container">
         <Suspense fallback={<div>Loading...</div>}>
           <SimpleSlider initialSlide={initialSlide} />
         </Suspense>
       </Wrapper>
-    </Section>
+    </Gallery>
   );
 };
 
-const Section = styled.section`
+const Gallery = styled.div`
   max-width: 800px;
   width: 100%;
   position: absolute;
