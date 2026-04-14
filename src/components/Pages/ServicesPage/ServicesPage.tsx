@@ -7,7 +7,7 @@ import { serviceImages, serviceInfo } from "../../../data";
 const ServicesPage: React.FC = () => {
   return (
     <Section className="services">
-      <h2 className="title">Our Services</h2>
+      <h1 className="title">Our Services</h1>
       <p className="suptitle">What we offer</p>
       <div className="container">
         <div className="flex_cont">

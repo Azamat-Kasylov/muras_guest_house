@@ -47,7 +47,6 @@ const Hero: React.FC = () => {
             className="hero_img"
             src="./14_hotel-back-view.webp"
             alt="Muras Guest House"
-            fetchPriority="high"
           />
         </picture>
       </div>
@@ -120,7 +119,7 @@ const StyledHero = styled.section`
   }
 
   .hero_subtitle {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 300;
     margin-bottom: 1rem;
   }

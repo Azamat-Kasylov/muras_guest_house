@@ -68,88 +68,88 @@ const FormArea: React.FC = () => {
   };
 
   return (
-    <StyledForm className="form_wrapper">
-      <form onSubmit={handleSubmit(onSubmit)} className="form" ref={form}>
-        <label className="name_label" htmlFor="userName">
-          <input
-            className="name"
-            type="text"
-            id="userName"
-            placeholder="Name"
-            disabled={isLoading}
-            {...register("name", {
-              required: "This field is required",
-            })}
-          />
-          {nameError && (
-            <ErrorMessage className="errorName">{nameError}</ErrorMessage>
-          )}
-        </label>
-        <label className="email_label" htmlFor="userEmail">
-          <input
-            className="email"
-            type="text"
-            id="userEmail"
-            placeholder="Email"
-            disabled={isLoading}
-            {...register("email", {
-              required: "This field is required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address",
-              },
-            })}
-          />
-          {emailError && (
-            <ErrorMessage className="errorEmail">{emailError}</ErrorMessage>
-          )}
-        </label>
-        <div className="row">
-          <label htmlFor="dateIn" className="date_label"></label>
-          <input
-            className="check-in"
-            type="date"
-            id="dateIn"
-            aria-label="Check-in date"
-            disabled={isLoading}
-            {...register("date")}
-          />
-          <label htmlFor="guestsCount"></label>
-          <input
-            className="guests"
-            type="number"
-            id="guestsCount"
-            placeholder="Guests"
-            disabled={isLoading}
-            {...register("guests")}
-          />
-        </div>
-        <label htmlFor="formSubmit">
-          <input
-            className="submit"
-            type="submit"
-            id="formSubmit"
-            value={isLoading ? "Sending..." : "Book"}
-            disabled={isLoading}
-          />
-        </label>
-      </form>
+    <StyledForm
+      onSubmit={handleSubmit(onSubmit)}
+      className="form_wrapper"
+      ref={form}
+    >
+      <label className="name_label" htmlFor="userName">
+        <input
+          className="name"
+          type="text"
+          id="userName"
+          placeholder="Name"
+          disabled={isLoading}
+          {...register("name", {
+            required: "This field is required",
+          })}
+        />
+        {nameError && (
+          <ErrorMessage className="errorName">{nameError}</ErrorMessage>
+        )}
+      </label>
+      <label className="email_label" htmlFor="userEmail">
+        <input
+          className="email"
+          type="text"
+          id="userEmail"
+          placeholder="Email"
+          disabled={isLoading}
+          {...register("email", {
+            required: "This field is required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address",
+            },
+          })}
+        />
+        {emailError && (
+          <ErrorMessage className="errorEmail">{emailError}</ErrorMessage>
+        )}
+      </label>
+      <div className="row">
+        <label htmlFor="dateIn" className="date_label"></label>
+        <input
+          className="check-in"
+          type="date"
+          id="dateIn"
+          aria-label="Check-in date"
+          disabled={isLoading}
+          {...register("date")}
+        />
+        <label htmlFor="guestsCount"></label>
+        <input
+          className="guests"
+          type="number"
+          id="guestsCount"
+          placeholder="Guests"
+          disabled={isLoading}
+          {...register("guests")}
+        />
+      </div>
+      <label htmlFor="formSubmit">
+        <input
+          className="submit"
+          type="submit"
+          id="formSubmit"
+          value={isLoading ? "Sending..." : "Inquire Now"}
+          disabled={isLoading}
+        />
+      </label>
       {isSubmitSuccessful && <PopupFormMessage onButtonClick={reset} />}
     </StyledForm>
   );
 };
 
-const StyledForm = styled.div`
-  .form {
-    width: 100%;
-    height: 90px;
-    background-color: #f8f6f2;
-    padding: 0 6rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    gap: 15px;
-  }
+const StyledForm = styled.form`
+  width: 100%;
+  height: 90px;
+  background-color: #f8f6f2;
+  padding: 0 6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 15px;
 
   .name_label,
   .email_label {
@@ -209,12 +209,10 @@ const StyledForm = styled.div`
   }
 
   @media (max-width: 768px) {
-    .form {
-      height: 250px;
-      grid-template-columns: 1fr;
-      padding: 0 1rem;
-      padding-bottom: 12px;
-    }
+    height: 250px;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    padding-bottom: 12px;
 
     .name {
       margin-top: 12px;

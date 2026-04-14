@@ -15,22 +15,12 @@ const Intro: React.FC = () => {
           type="image/webp"
         />
         <source
-          media="(min-width: 768px)"
-          srcSet="./alay_valley.jpg"
-          type="image/jpg"
-        />
-        <source
-          media="(max-width: 768px)"
-          srcSet="./alay_valley_768.jpg"
-          type="image/jpg"
-        />
-        <source
           media="(max-width: 768px)"
           srcSet="./alay_valley_768.webp"
           type="image/webp"
         />
         <img
-          src="./alay_valley.jpg"
+          src="./alay_valley.webp"
           alt="intro background-image"
           className="intro_img"
         />
@@ -38,13 +28,12 @@ const Intro: React.FC = () => {
       <div className="container">
         <div className="intro_flex">
           <img
-            src="./muras.png"
+            src="./muras.webp"
             alt="Muras"
             className="intro_title"
             width={"330px"}
             height={"105px"}
           />
-          {/* <h1 className="intro_title">Muras</h1> */}
           <p className="intro_text">
             Wake up to snow-capped peaks, crystal-clear air, and warm Kyrgyz
             hospitality at our family-run mountain retreat.

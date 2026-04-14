@@ -84,11 +84,11 @@ export const roomsData: RoomsDataInterface[] = [
 //---------------------------------------------------- Gallery data ---------------------------------------------------
 
 export const galleryData: IImage[] = [
-  { url: "./3_ainura.jpg", alt: "Muras Guest House" },
-  { url: "./7_hotel-front-view.jpeg", alt: "Muras Guest House" },
-  { url: "./13_new-dinning-room.jpeg", alt: "Muras Guest House" },
-  { url: "./14_hotel-back-view.jpeg", alt: "Muras Guest House" },
-  { url: "./4_window-view.jpeg", alt: "Muras Guest House" },
+  { url: "./3_ainura.webp", alt: "Muras Guest House" },
+  { url: "./7_hotel-front-view.webp", alt: "Muras Guest House" },
+  { url: "./13_new-dinning-room.webp", alt: "Muras Guest House" },
+  { url: "./14_hotel-back-view.webp", alt: "Muras Guest House" },
+  { url: "./4_window-view.webp", alt: "Muras Guest House" },
   { url: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
   { url: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
   { url: "./9_new-room-view.jpeg", alt: "Muras Guest House" },

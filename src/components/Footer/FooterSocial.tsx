@@ -44,7 +44,6 @@ const Socials = styled.div`
   }
 
   a {
-    font-size: 15px;
     color: #7e7367;
     text-transform: uppercase;
     transition: all 0.3s;

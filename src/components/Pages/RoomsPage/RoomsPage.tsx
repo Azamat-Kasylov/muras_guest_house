@@ -7,7 +7,7 @@ import RoomsGallery from "./RoomsGallery";
 const RoomsPage: React.FC = () => {
   return (
     <StyledRooms className="rooms">
-      <h2 className="title">Room Types</h2>
+      <h1 className="title">Room Types</h1>
       <p className="suptitle">Choose the stay that suits your journey</p>
       <div className="container">
         <div className="flex_cont">
