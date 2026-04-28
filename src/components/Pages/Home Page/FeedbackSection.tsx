@@ -62,6 +62,7 @@ const GallerySection: React.FC = () => {
               return (
                 <button
                   key={idx}
+                  aria-label="Pagination dots"
                   onClick={() => {
                     instanceRef.current?.moveToIdx(idx);
                   }}
@@ -110,6 +111,11 @@ const Gallery = styled.section`
   display: flex;
   align-items: center;
   background-color: #fff;
+
+  .keen-slider__slide {
+    will-change: transform;
+    will-change: transform, opacity;
+  }
 
   .container {
     max-width: 1000px;

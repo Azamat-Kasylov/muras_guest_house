@@ -17,6 +17,8 @@ const Slider: React.FC<Props> = ({ initialSlide, className, item }) => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: initialSlide,
     loop: true,
+    rubberband: false,
+    renderMode: "performance",
     slides: {
       spacing: 5,
     },
@@ -85,6 +87,7 @@ const Slider: React.FC<Props> = ({ initialSlide, className, item }) => {
             return (
               <button
                 key={idx}
+                aria-label="Pagination dots"
                 onClick={() => {
                   instanceRef.current?.moveToIdx(idx);
                 }}
@@ -135,6 +138,11 @@ const Gallery = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
+
+  .keen-slider__slide {
+    will-change: transform;
+    will-change: transform, opacity;
+  }
 
   &.mini_gallery {
     max-width: 50%;
