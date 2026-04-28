@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/muras_guest_house/static/css/main.9228853b.css",
+    "main.js": "/muras_guest_house/static/js/main.7bd38275.js",
+    "static/js/429.fc1ee42f.chunk.js": "/muras_guest_house/static/js/429.fc1ee42f.chunk.js",
+    "static/css/204.ccde474f.chunk.css": "/muras_guest_house/static/css/204.ccde474f.chunk.css",
+    "static/js/204.bb164cf2.chunk.js": "/muras_guest_house/static/js/204.bb164cf2.chunk.js",
+    "static/js/29.6c481ffb.chunk.js": "/muras_guest_house/static/js/29.6c481ffb.chunk.js",
+    "static/css/36.ccde474f.chunk.css": "/muras_guest_house/static/css/36.ccde474f.chunk.css",
+    "static/js/36.cf70d696.chunk.js": "/muras_guest_house/static/js/36.cf70d696.chunk.js",
+    "static/css/591.ccde474f.chunk.css": "/muras_guest_house/static/css/591.ccde474f.chunk.css",
+    "static/js/591.f9571d35.chunk.js": "/muras_guest_house/static/js/591.f9571d35.chunk.js",
+    "static/js/20.96721326.chunk.js": "/muras_guest_house/static/js/20.96721326.chunk.js",
+    "static/js/626.7d689d08.chunk.js": "/muras_guest_house/static/js/626.7d689d08.chunk.js",
+    "static/js/147.3714053e.chunk.js": "/muras_guest_house/static/js/147.3714053e.chunk.js",
+    "static/js/693.67b28f07.chunk.js": "/muras_guest_house/static/js/693.67b28f07.chunk.js",
+    "static/js/629.e6694e76.chunk.js": "/muras_guest_house/static/js/629.e6694e76.chunk.js",
+    "index.html": "/muras_guest_house/index.html",
+    "main.9228853b.css.map": "/muras_guest_house/static/css/main.9228853b.css.map",
+    "main.7bd38275.js.map": "/muras_guest_house/static/js/main.7bd38275.js.map",
+    "429.fc1ee42f.chunk.js.map": "/muras_guest_house/static/js/429.fc1ee42f.chunk.js.map",
+    "204.ccde474f.chunk.css.map": "/muras_guest_house/static/css/204.ccde474f.chunk.css.map",
+    "204.bb164cf2.chunk.js.map": "/muras_guest_house/static/js/204.bb164cf2.chunk.js.map",
+    "29.6c481ffb.chunk.js.map": "/muras_guest_house/static/js/29.6c481ffb.chunk.js.map",
+    "36.ccde474f.chunk.css.map": "/muras_guest_house/static/css/36.ccde474f.chunk.css.map",
+    "36.cf70d696.chunk.js.map": "/muras_guest_house/static/js/36.cf70d696.chunk.js.map",
+    "591.ccde474f.chunk.css.map": "/muras_guest_house/static/css/591.ccde474f.chunk.css.map",
+    "591.f9571d35.chunk.js.map": "/muras_guest_house/static/js/591.f9571d35.chunk.js.map",
+    "20.96721326.chunk.js.map": "/muras_guest_house/static/js/20.96721326.chunk.js.map",
+    "626.7d689d08.chunk.js.map": "/muras_guest_house/static/js/626.7d689d08.chunk.js.map",
+    "147.3714053e.chunk.js.map": "/muras_guest_house/static/js/147.3714053e.chunk.js.map",
+    "693.67b28f07.chunk.js.map": "/muras_guest_house/static/js/693.67b28f07.chunk.js.map",
+    "629.e6694e76.chunk.js.map": "/muras_guest_house/static/js/629.e6694e76.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9228853b.css",
+    "static/js/main.7bd38275.js"
+  ]
+}
