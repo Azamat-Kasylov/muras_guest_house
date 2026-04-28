@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ServicesGallery from "./ServicesGallery";
+import Slider from "../../Slider";
 import ServicesInfo from "./ServicesInfo";
 import { serviceImages, serviceInfo } from "../../../data";
 
@@ -12,7 +12,8 @@ const ServicesPage: React.FC = () => {
       <div className="container">
         <div className="flex_cont">
           <ServicesInfo service={serviceInfo.mealsInfo} className={""} />
-          <ServicesGallery images={serviceImages.meals} />
+          {/* <ServicesGallery images={serviceImages.meals} /> */}
+          <Slider item={serviceImages} className={"mini_gallery"} />
         </div>
         <div className="flex_cont">
           <ServicesInfo

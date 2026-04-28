@@ -5,6 +5,7 @@
 export interface IImage {
   url: string;
   alt: string;
+  type?: string;
 }
 
 export interface IInfo {
@@ -84,18 +85,22 @@ export const roomsData: RoomsDataInterface[] = [
 //---------------------------------------------------- Gallery data ---------------------------------------------------
 
 export const galleryData: IImage[] = [
-  { url: "./3_ainura.webp", alt: "Muras Guest House" },
-  { url: "./7_hotel-front-view.webp", alt: "Muras Guest House" },
-  { url: "./13_new-dinning-room.webp", alt: "Muras Guest House" },
-  { url: "./14_hotel-back-view.webp", alt: "Muras Guest House" },
-  { url: "./4_window-view.webp", alt: "Muras Guest House" },
-  { url: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
-  { url: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
-  { url: "./9_new-room-view.jpeg", alt: "Muras Guest House" },
-  { url: "./17_alay-valley.jpeg", alt: "Muras Guest House" },
-  { url: "./18_taldyk-road.jpeg", alt: "Muras Guest House" },
-  { url: "./19_pamir-mountains.jpeg", alt: "Muras Guest House" },
-  { url: "./20_pamir-mountains.jpeg", alt: "Muras Guest House" },
+  { type: "image", url: "./3_ainura.jpg", alt: "Muras Guest House" },
+  { type: "image", url: "./7_hotel-front-view.webp", alt: "Muras Guest House" },
+  {
+    type: "image",
+    url: "./13_new-dinning-room.webp",
+    alt: "Muras Guest House",
+  },
+  { type: "image", url: "./14_hotel-back-view.webp", alt: "Muras Guest House" },
+  { type: "image", url: "./4_window-view.webp", alt: "Muras Guest House" },
+  { type: "image", url: "./6_guests-lunch.jpeg", alt: "Muras Guest House" },
+  { type: "image", url: "./8_old-room-view.jpeg", alt: "Muras Guest House" },
+  { type: "image", url: "./9_new-room-view.jpeg", alt: "Muras Guest House" },
+  { type: "image", url: "./17_alay-valley.jpeg", alt: "Muras Guest House" },
+  { type: "image", url: "./18_taldyk-road.jpeg", alt: "Muras Guest House" },
+  { type: "image", url: "./19_pamir-mountains.jpeg", alt: "Muras Guest House" },
+  { type: "image", url: "./20_pamir-mountains.jpeg", alt: "Muras Guest House" },
 ];
 
 // ---------------------------------------------------- Rooms images ------------------------------------------------------
@@ -286,19 +291,11 @@ export const servicesData: ServicesDataInterface[] = [
 
 //---------------------------------------------------- Services images ----------------------------------------------------
 
-export interface ServiceImagesInterface {
-  meals: IImage[];
-}
-
-export const serviceImages: ServiceImagesInterface = {
-  meals: [
-    { url: "./breakfast.jpg", alt: "Breackfast photo" },
-    { url: "./breakfast-muras.jpg", alt: "Breackfast photo" },
-    { url: "./6_guests-lunch.jpeg", alt: "lunch photo" },
-    { url: "./breakfast.jpg", alt: "Breackfast photo" },
-    { url: "./breakfast.jpg", alt: "Breackfast photo" },
-  ],
-};
+export const serviceImages: IImage[] = [
+  { type: "image", url: "./breakfast.jpg", alt: "Breackfast photo" },
+  { type: "image", url: "./breakfast-muras.jpg", alt: "Breackfast photo" },
+  { type: "image", url: "./6_guests-lunch.jpeg", alt: "lunch photo" },
+];
 
 //---------------------------------------------------- Services info ------------------------------------------------------
 

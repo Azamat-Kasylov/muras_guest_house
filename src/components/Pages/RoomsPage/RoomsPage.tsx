@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import RoomsInfo from "./RoomsInfo";
 import { roomsImages, roomsInfo } from "../../../data";
-import RoomsGallery from "./RoomsGallery";
+import Slider from "../../Slider";
 
 const RoomsPage: React.FC = () => {
   return (
@@ -12,15 +12,21 @@ const RoomsPage: React.FC = () => {
       <div className="container">
         <div className="flex_cont">
           <RoomsInfo rooms={roomsInfo.yurtInfo} />
-          <RoomsGallery media={roomsImages.yurtImages} />
+          <Slider item={roomsImages.yurtImages} className={"mini_gallery"} />
         </div>
         <div className="flex_cont">
           <RoomsInfo rooms={roomsInfo.standardRoomInfo} />
-          <RoomsGallery media={roomsImages.standardRoomImages} />
+          <Slider
+            item={roomsImages.standardRoomImages}
+            className={"mini_gallery"}
+          />
         </div>
         <div className="flex_cont">
           <RoomsInfo rooms={roomsInfo.comfortRoomInfo} />
-          <RoomsGallery media={roomsImages.comfortRoomImages} />
+          <Slider
+            item={roomsImages.comfortRoomImages}
+            className={"mini_gallery"}
+          />
         </div>
       </div>
     </StyledRooms>

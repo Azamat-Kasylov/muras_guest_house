@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { galleryData } from "../../../data";
 import Spinner from "../../Spinner";
 
-const GalleryPopup = lazy(() => import("../../GalleryPopup"));
+const Slider = lazy(() => import("../../Slider"));
 const PopupBackground = lazy(() => import("../../PopupBackground"));
 
 const GallerySection = () => {
@@ -36,7 +36,7 @@ const GallerySection = () => {
           {isActive && (
             <Suspense fallback={<Spinner />}>
               <PopupBackground isOpen={isActive} setIsOpen={setIsActive} />
-              <GalleryPopup initialSlide={initialSlide} />
+              <Slider initialSlide={initialSlide} item={galleryData} />
             </Suspense>
           )}
         </div>
